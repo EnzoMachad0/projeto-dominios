@@ -1,6 +1,6 @@
-# Sistema de Gestão de Competências e Feedback
+# Gestão de Competências e Feedback
 
-Projeto acadêmico desenvolvido para a disciplina de Engenharia de Software, com o objetivo de especificar um sistema web para gestão de competências e avaliação de desempenho por meio de feedbacks.
+Projeto acadêmico desenvolvido para a disciplina de Domínios de Software, com o objetivo de especificar um sistema web para gestão de competências e avaliação de desempenho por meio de feedbacks.
 
 ## Atividades previstas
 
@@ -32,7 +32,7 @@ Aplicar técnicas de Engenharia de Requisitos para identificar necessidades dos 
 | Instituicao | Universidade Federal de Goias (UFG) |
 | Unidade | Instituto de Informatica |
 | Curso | Bacharelado em Engenharia de Software |
-| Disciplina | Dominios de Software |
+| Disciplina | Domínios de Software |
 | Semestre | 2026/2 |
 
 ## Equipe
