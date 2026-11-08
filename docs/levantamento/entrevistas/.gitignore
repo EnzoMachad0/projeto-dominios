@@ -1,0 +1,12 @@
+# Registros restritos e gravações não devem ir para o repositório público.
+restrito/
+*.mp3
+*.m4a
+*.wav
+*.ogg
+*.opus
+*.mp4
+*.mov
+*.webm
+*.xlsx
+*.csv
