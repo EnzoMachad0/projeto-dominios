@@ -1,5 +1,19 @@
 # Entrevista com o stakeholder — Sistema de avaliação e feedback
 
+## Abertura
+
+Antes da primeira pergunta, o entrevistador deve:
+
+1. Apresentar a equipe, a disciplina e o objetivo da entrevista.
+2. Explicar que a participação é voluntária e que o participante pode deixar de responder a qualquer pergunta.
+3. Informar quais dados serão registrados, quem terá acesso a eles e que a transcrição publicada usará um código, conforme as [regras de acesso](levantamento/entrevistas/README.md#regras-de-acesso).
+4. Pedir autorização para gravar, se houver gravação, e registrar a resposta.
+5. Pedir ao participante que evite citar nomes de colegas e dados pessoais de terceiros.
+
+**Como conduzir:** priorize relatos do que já aconteceu antes de perguntar o que o sistema deveria fazer. Com participantes que não sejam o stakeholder, adapte as perguntas sobre "o sistema" para a experiência da pessoa, por exemplo: "O que ajudaria você nessa etapa?".
+
+**Se o tempo for curto**, priorize as perguntas 25, 1 a 3, 16 a 18, 22, 28 e 30. Sugere-se fazer a pergunta 25 logo após a abertura.
+
 ## 1. Processo atual e necessidades
 
 **Pergunta central:** Como funciona atualmente o processo de avaliação e feedback, e quais problemas o sistema deve resolver?
@@ -63,3 +77,18 @@
 22. Qual funcionalidade será indispensável para a primeira versão?
 23. Quais resultados práticos demonstrariam que o sistema atendeu às necessidades do stakeholder?
 24. Quais critérios serão utilizados para avaliar se a primeira versão atingiu seus objetivos?
+
+## 9. Perguntas complementares
+
+**Pergunta central:** Quais fatos concretos e condições da organização ainda faltam para esclarecer as dúvidas da [pesquisa documental](levantamento/pesquisa-documental.md#6-dúvidas-de-interpretação-e-pendências)?
+
+25. Pode contar, do início ao fim, a avaliação ou o feedback mais recente de que você participou?
+26. Que tipo de organização utilizaria o sistema: pública ou privada, de que porte e com quantos colaboradores? *(D-01)*
+27. Existem sistemas, como os de RH, ou fornecedores externos com os quais o novo sistema precisaria trocar dados? *(D-01)*
+28. Para que os resultados são ou serão usados: desenvolvimento, promoção, remuneração, desligamento ou outra finalidade? *(D-02, D-09)*
+29. Alguma decisão sobre o colaborador resultaria diretamente de uma nota, ou sempre haveria uma pessoa decidindo? *(D-09)*
+30. Quando uma avaliação é anônima, alguém deveria conseguir descobrir quem respondeu, como o RH ou um administrador? Há um número mínimo de respondentes para mostrar um resultado? *(D-03)*
+31. O que acontece, ou deveria acontecer, quando o avaliado discorda de um feedback? *(D-05)*
+32. Por quanto tempo avaliações e históricos precisam ser mantidos, e o que acontece com eles quando o colaborador sai? *(D-06)*
+33. Já houve comentários ofensivos ou com informações pessoais delicadas? Como foram tratados? *(D-07)*
+34. Quantas pessoas responderiam ao mesmo tempo em um ciclo, em quais dispositivos, e há participantes com necessidades de acessibilidade? *(D-12)*
