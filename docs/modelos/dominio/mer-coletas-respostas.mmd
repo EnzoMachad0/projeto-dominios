@@ -1,0 +1,84 @@
+erDiagram
+    USUARIO ||--o{ COLETA : cria
+    COLETA ||--o{ COLETA_TIME : seleciona
+    TIME ||--o{ COLETA_TIME : participa
+    COLETA ||--o{ COLETA_PAR : seleciona_manualmente
+    USUARIO ||--o{ COLETA_PAR : usuario_a
+    USUARIO ||--o{ COLETA_PAR : usuario_b
+    COLETA ||--o{ COLETA_GRUPO : possui
+    GRUPO_PARAM ||--o{ COLETA_GRUPO : origina
+    COLETA_GRUPO ||--o{ COLETA_PARAM : contem
+    PARAM ||--o{ COLETA_PARAM : origina
+    COLETA ||--o{ AVALIACAO : possui
+    USUARIO ||--o{ AVALIACAO : avaliador
+    USUARIO ||--o{ AVALIACAO : receptor
+    AVALIACAO ||--o{ FEEDBACK : respostas
+    COLETA_PARAM ||--o{ FEEDBACK : pergunta
+    TIME ||--o{ AVALIACAO : time_avaliador_historico
+    TIME ||--o{ AVALIACAO : time_receptor_historico
+
+    COLETA {
+        uuid id PK
+        uuid id_criador FK
+        string titulo
+        enum modo_selecao
+        datetime inicio_em
+        datetime fim_em
+        enum status
+        datetime encerrada_em
+        datetime cancelada_em
+        string motivo_cancelamento
+    }
+    COLETA_TIME {
+        uuid id_coleta PK,FK
+        uuid id_time PK,FK
+        boolean ativo
+    }
+    COLETA_PAR {
+        uuid id_coleta PK,FK
+        uuid id_usuario_a PK,FK
+        uuid id_usuario_b PK,FK
+        boolean ativo
+    }
+    COLETA_GRUPO {
+        uuid id PK
+        uuid id_coleta FK
+        uuid id_grupo_origem FK
+        string titulo_snapshot
+        string descricao_snapshot
+        int ordem
+        boolean ativo
+    }
+    COLETA_PARAM {
+        uuid id PK
+        uuid id_coleta FK
+        uuid id_coleta_grupo FK
+        uuid id_param_origem FK
+        string pergunta_snapshot
+        enum score_snapshot
+        int ordem
+        boolean ativo
+    }
+    AVALIACAO {
+        uuid id PK
+        uuid id_coleta FK
+        uuid id_avaliador FK
+        uuid id_receptor FK
+        uuid id_time_avaliador_snapshot FK
+        uuid id_time_receptor_snapshot FK
+        string contexto_avaliador_snapshot
+        string contexto_receptor_snapshot
+        enum status
+        datetime enviada_em
+        datetime cancelada_em
+        string motivo_cancelamento
+    }
+    FEEDBACK {
+        uuid id PK
+        uuid id_coleta FK
+        uuid id_avaliacao FK
+        uuid id_coleta_param FK
+        json valor
+        string comentario
+        boolean ativo
+    }

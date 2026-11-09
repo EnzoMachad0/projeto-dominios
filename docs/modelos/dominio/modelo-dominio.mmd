@@ -1,0 +1,16 @@
+classDiagram
+    Time "1" -- "0..*" Usuario : reúne
+    Usuario "0..*" -- "0..*" Usuario : trabalha com
+    GrupoParametro "1" -- "0..*" Parametro : organiza no catálogo
+    Coleta "1" *-- "1..*" GrupoDaColeta : publica
+    GrupoDaColeta "1" *-- "1..*" ParametroDaColeta : contém
+    GrupoParametro "1" -- "0..*" GrupoDaColeta : origina cópia
+    Parametro "1" -- "0..*" ParametroDaColeta : origina cópia
+    Coleta "1" *-- "0..*" Avaliacao : atribui
+    Coleta "0..*" -- "0..*" Time : seleciona no modo por times
+    Coleta "1" *-- "0..*" ParSelecionado : registra no modo por pares
+    ParSelecionado "0..*" -- "2" Usuario : combina
+    Usuario "1" -- "0..*" Avaliacao : avalia
+    Usuario "1" -- "0..*" Avaliacao : recebe
+    Avaliacao "1" *-- "0..*" Feedback : reúne
+    ParametroDaColeta "1" -- "0..*" Feedback : recebe resposta

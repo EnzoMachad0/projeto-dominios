@@ -1,0 +1,41 @@
+erDiagram
+    TIME o|--o{ USUARIO : lota
+    USUARIO o|--o{ TIME : gerencia
+    USUARIO ||--o{ RELACAO_TRABALHO : usuario_a
+    USUARIO ||--o{ RELACAO_TRABALHO : usuario_b
+    GRUPO_PARAM ||--o{ PARAM : agrupa
+
+    TIME {
+        uuid id PK
+        string nome
+        string setor
+        uuid id_gestor FK
+        boolean ativo
+    }
+    USUARIO {
+        uuid id PK
+        uuid id_time FK
+        string nome
+        string cargo
+        string email UK "único (UQ)"
+        enum role
+        boolean ativo
+    }
+    RELACAO_TRABALHO {
+        uuid id_usuario_a PK,FK
+        uuid id_usuario_b PK,FK
+        boolean ativo
+    }
+    GRUPO_PARAM {
+        uuid id PK
+        string titulo
+        string descricao
+        boolean ativo
+    }
+    PARAM {
+        uuid id PK
+        uuid id_grupo_param FK
+        string pergunta
+        enum score
+        boolean ativo
+    }
