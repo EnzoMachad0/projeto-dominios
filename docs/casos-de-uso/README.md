@@ -35,7 +35,7 @@ Casos de uso **essenciais** descrevem a intenção do ator e a responsabilidade 
 | CU-02 | Responder e enviar avaliação | Participante | RF11, RF12, RN06, RN08, RN09 | Completo | Luiz Augusto Vaz | [CU-02](CU-02-responder-e-enviar-avaliacao.md) |
 | CU-03 | Encerrar ou cancelar coleta | RH | RF13, RN01, RN07 | Completo | Heitor (proposta) | A elaborar |
 | CU-04 | Consultar análise de resultados | Participante, Gestor | RF14, RF15, RN09 a RN11 | Completo | Enzo (proposta) | A elaborar |
-| CU-05 | Manter catálogo de parâmetros | RH | RF05, RF06, RF07, RN04 | Completo | Danilo (proposta) | A elaborar |
+| CU-05 | Manter catálogo de parâmetros | RH | RF05, RF06, RF07, RN04 | Completo | Danilo Sucupira Galvão | [CU-05](CU-05-manter-catalogo-de-parametros.md) |
 | CU-06 | Manter usuários e times | RH | RF02, RF03 | Resumido | — | Abaixo |
 | CU-07 | Manter relações de trabalho | RH | RF04 | Resumido | — | Abaixo |
 | CU-08 | Autenticar-se | Participante | RF01, RNF09 | Resumido | — | Abaixo |
