@@ -1,0 +1,32 @@
+flowchart LR
+    RH(["👤 RH"])
+
+    subgraph SIS["Sistema de gestão de competências e feedback"]
+        direction TB
+        CU06(["CU-06 Manter usuários e times"])
+        CU07(["CU-07 Manter relações de trabalho"])
+        CU05(["CU-05 Manter catálogo de parâmetros"])
+        CU01(["CU-01 Configurar e abrir coleta"])
+        CU03(["CU-03 Encerrar ou cancelar coleta"])
+        CU02(["CU-02 Responder e enviar avaliação"])
+        CU04(["CU-04 Consultar análise de resultados"])
+        CU08(["CU-08 Autenticar-se"])
+    end
+
+    PART(["👤 Participante<br/>(qualquer perfil)"])
+    GESTOR(["👤 Gestor"])
+    PROF(["👤 Profissional"])
+
+    RH --- CU06
+    RH --- CU07
+    RH --- CU05
+    RH --- CU01
+    RH --- CU03
+    CU02 --- PART
+    CU04 --- PART
+    CU08 --- PART
+    CU04 --- GESTOR
+
+    GESTOR -. "generalização" .-> PART
+    PROF -. "generalização" .-> PART
+    RH -. "generalização (RH também participa)" .-> PART

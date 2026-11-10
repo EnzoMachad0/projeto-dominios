@@ -1,0 +1,34 @@
+@startuml diagrama-casos-de-uso
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Participante\n(qualquer perfil)" as PART
+actor RH
+actor Gestor
+actor Profissional as PROF
+
+RH -|> PART
+Gestor -|> PART
+PROF -|> PART
+
+rectangle "Sistema de gestão de competências e feedback" {
+  usecase "CU-01 Configurar e abrir coleta" as CU01
+  usecase "CU-02 Responder e enviar avaliação" as CU02
+  usecase "CU-03 Encerrar ou cancelar coleta" as CU03
+  usecase "CU-04 Consultar análise de resultados" as CU04
+  usecase "CU-05 Manter catálogo de parâmetros" as CU05
+  usecase "CU-06 Manter usuários e times" as CU06
+  usecase "CU-07 Manter relações de trabalho" as CU07
+  usecase "CU-08 Autenticar-se" as CU08
+}
+
+RH --> CU01
+RH --> CU03
+RH --> CU05
+RH --> CU06
+RH --> CU07
+PART --> CU02
+PART --> CU04
+Gestor --> CU04
+PART --> CU08
+@enduml
