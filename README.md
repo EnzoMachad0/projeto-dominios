@@ -21,6 +21,10 @@ Projeto acadêmico desenvolvido para a disciplina de Domínios de Software, com 
 
 Em fase de levantamento e especificação de requisitos.
 
+## Planejamento das atividades
+
+O planejamento e o acompanhamento das atividades estão no [quadro Kanban do GitHub Projects](https://github.com/users/EnzoMachad0/projects/1).
+
 ## Objetivo acadêmico
 
 Aplicar técnicas de Engenharia de Requisitos para identificar necessidades dos usuários, documentar requisitos e modelar uma solução alinhada às necessidades de gestão de competências e feedback.
