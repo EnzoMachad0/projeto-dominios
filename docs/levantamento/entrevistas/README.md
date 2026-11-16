@@ -15,6 +15,10 @@ As duas entrevistas foram realizadas. Os arquivos vinculados são registros temp
 
 Na coluna **Registro restrito**, informe apenas se o registro de E01 ou E02 foi preenchido (`Sim` ou `Não`), sem copiar dados dele.
 
+## Síntese dos requisitos
+
+A [síntese dos requisitos das entrevistas](../sintese-entrevistas.md) reúne os entendimentos de E01 e E02, com base nas entrevistas e nas anotações elaboradas a partir delas. Sua conferência com as transcrições permanece pendente na issue #6. O recebimento e a revisão das transcrições são acompanhados na #41.
+
 ## Regras de acesso
 
 | Informação | Onde fica | Quem acessa |
