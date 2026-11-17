@@ -19,7 +19,8 @@ O modelo de domínio usa a notação de classes da UML apenas com conceitos e as
 | [modelo-entidade-relacionamento.md](modelo-entidade-relacionamento.md) | Descrição | Entidades, chaves, restrições, cancelamento e auditoria. |
 | [modelo-dominio.mmd](modelo-dominio.mmd) | Fonte editável | Diagrama de classes conceitual em Mermaid. |
 | [mer-organizacao-catalogo.mmd](mer-organizacao-catalogo.mmd) | Fonte editável | MER da estrutura organizacional e do catálogo de perguntas. |
-| [mer-coletas-respostas.mmd](mer-coletas-respostas.mmd) | Fonte editável | MER das coletas, avaliações e respostas. |
+| [mer-coletas-respostas.mmd](mer-coletas-respostas.mmd) | Fonte editável | MER das coletas, avaliações e respostas, com as modalidades recíproca, 360° e autoavaliação. |
+| [mer-feedback-desenvolvimento.mmd](mer-feedback-desenvolvimento.mmd) | Fonte editável | MER dos registros de feedback e dos planos de ação. |
 | `exportacoes/*.png` | Exportação | Imagens geradas a partir das fontes. |
 
 As fontes podem ser editadas em qualquer editor de texto e visualizadas no GitHub, no [Mermaid Live Editor](https://mermaid.live) ou no VS Code com extensão compatível. Para regenerar as exportações:
@@ -37,8 +38,11 @@ npx -p @mermaid-js/mermaid-cli mmdc -i modelo-dominio.mmd -o exportacoes/modelo-
 | Relação de trabalho | RELACAO_TRABALHO | RF04 | CU-07 |
 | Grupo de parâmetros e Parâmetro | GRUPO_PARAM, PARAM | RF05, RF06, RF07 | CU-05 |
 | Coleta | COLETA, COLETA_TIME, COLETA_PAR | RF08, RF09, RF13 | CU-01, CU-03 |
+| Participante selecionado | COLETA_PARTICIPANTE | RF17, RF22, RN15 | CU-09 |
 | Grupo e Parâmetro da coleta | COLETA_GRUPO, COLETA_PARAM | RF09, RN04, RN05 | CU-01 |
-| Avaliação | AVALIACAO | RF10, RF12, RN01 a RN03 | CU-01, CU-02 |
+| Avaliação | AVALIACAO | RF10, RF12, RF17, RF22, RN01 a RN03, RN15 | CU-01, CU-02, CU-09 |
+| Registro de feedback | REGISTRO_FEEDBACK | RF19, RF20, RF21, RN16 | CU-02, CU-10 |
+| Plano de ação, ação e acompanhamento | PLANO_ACAO, ACAO_PLANO, ACOMPANHAMENTO_ACAO | RF18, RN13, RN14 | CU-11 |
 | Feedback | FEEDBACK | RF11, RF12, RN06 | CU-02 |
 | Histórico e análise | Consultas sobre AVALIACAO e FEEDBACK | RF14, RF15, RN09 a RN11 | CU-04 |
 | — | EVENTO_AUDITORIA | RF16, RNF06 | Todos os que alteram dados |
@@ -48,5 +52,6 @@ Os identificadores de requisitos seguem a [lista geral](../../requisitos/lista-g
 ## Dúvidas registradas
 
 - Os requisitos documentais de eliminação e anonimização (RF-DOC-07 e RF-DOC-08) conflitam com a regra de não haver exclusão física (RN12). O modelo segue a RN12 até a decisão da PV05.
-- O modelo não tem entidades para feedback 360°, anonimato, planos de desenvolvimento individual e classificação dos feedbacks (RF17 a RF20). Elas serão incluídas se essas extensões forem confirmadas (PV08).
+- O 360°, a autoavaliação, o feedback informal, a classificação e os planos de ação (RF17 a RF22) foram modelados na consolidação da issue #40. O anonimato continua sem atributos, pois depende do conflito C02.
+- As imagens em `exportacoes/` ainda refletem a versão anterior e precisam ser regeradas a partir das fontes `.mmd` com o comando acima.
 - Multiplicidade de perfis por conta, gestor único por time e grupo único por parâmetro são decisões propostas (PV01 e PV06).

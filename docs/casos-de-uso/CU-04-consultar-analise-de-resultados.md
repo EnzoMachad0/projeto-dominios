@@ -9,7 +9,7 @@
 
 ## Escopo
 
-Sistema de gestão de competências e feedback. Nesta versão, a consulta cobre as coletas recíprocas por pares ou times já descritas na especificação. O tratamento de feedback informal, autoavaliação e avaliação 360° depende da consolidação da issue #40.
+Sistema de gestão de competências e feedback. Nesta versão, a consulta cobre as coletas recíprocas por pares ou times já descritas na especificação. Com a consolidação da issue #40, os resultados do 360°, da autoavaliação e dos feedbacks informais seguem a RN15 da especificação; seu detalhamento neste caso de uso é a próxima extensão.
 
 ## Nível
 
@@ -127,7 +127,7 @@ Repetida após o encerramento de coletas e durante o acompanhamento da evoluçã
 
 - **PV03:** a exigência de dois envios e encerramento para liberar resultados recebidos é a política proposta para coletas recíprocas, ainda não validada.
 - **PV04 / conflito C02:** a matriz de acesso a notas, comentários e identidades, inclusive para RH e gestor, ainda precisa de aprovação. Este caso não promete anonimato nem concede acesso irrestrito a resultados individuais.
-- **Issue #40:** a síntese das entrevistas acrescenta feedback informal, autoavaliação e avaliação 360°. Suas regras próprias de consulta e liberação ainda não foram incorporadas à especificação; a regra do par recíproco não é aplicada automaticamente a essas modalidades.
+- **RN15 / PV04:** a liberação proposta para o 360°, a autoavaliação e o feedback informal está na RN15 da especificação e ainda depende de validação. A regra do par recíproco não é aplicada a essas modalidades.
 - **PV05 / conflito C01:** a política de retenção ou eliminação de dados pessoais permanece pendente; a consulta não resolve essa decisão.
 
 ## Rastreabilidade

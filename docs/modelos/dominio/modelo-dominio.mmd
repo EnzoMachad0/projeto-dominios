@@ -14,3 +14,14 @@ classDiagram
     Usuario "1" -- "0..*" Avaliacao : recebe
     Avaliacao "1" *-- "0..*" Feedback : reúne
     ParametroDaColeta "1" -- "0..*" Feedback : recebe resposta
+    Coleta "1" *-- "0..*" ParticipanteSelecionado : registra no 360° e na autoavaliação
+    ParticipanteSelecionado "0..*" -- "1" Usuario : avaliado
+    ParticipanteSelecionado "0..*" -- "1" Usuario : participante
+    Usuario "1" -- "0..*" RegistroFeedback : emite
+    Usuario "1" -- "0..*" RegistroFeedback : recebe
+    Avaliacao "1" -- "0..1" RegistroFeedback : contextualiza
+    RegistroFeedback "1" -- "0..*" PlanoAcao : motiva
+    PlanoAcao "0..*" -- "0..1" RegistroFeedback : é avaliado por
+    PlanoAcao "1" *-- "1..*" AcaoPlano : contém
+    AcaoPlano "1" *-- "0..*" AcompanhamentoAcao : registra
+    Usuario "1" -- "0..*" AcaoPlano : executa

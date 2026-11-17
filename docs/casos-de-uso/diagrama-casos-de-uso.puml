@@ -20,6 +20,9 @@ rectangle "Sistema de gestão de competências e feedback" {
   usecase "CU-06 Manter usuários e times" as CU06
   usecase "CU-07 Manter relações de trabalho" as CU07
   usecase "CU-08 Autenticar-se" as CU08
+  usecase "CU-09 Conduzir avaliação 360°" as CU09
+  usecase "CU-10 Registrar feedback informal" as CU10
+  usecase "CU-11 Manter plano de ação" as CU11
 }
 
 RH --> CU01
@@ -31,4 +34,12 @@ PART --> CU02
 PART --> CU04
 Gestor --> CU04
 PART --> CU08
+PART --> CU10
+PART --> CU11
+RH --> CU09
+RH --> CU11
+Gestor --> CU01
+Gestor --> CU03
+Gestor --> CU09
+Gestor --> CU11
 @enduml

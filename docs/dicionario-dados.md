@@ -62,9 +62,10 @@ Alterar pergunta ou score modifica o catálogo para futuras configurações; as 
 ## COLETA
 
 - `id` — UUID, PK.
-- `id_criador` — UUID, FK de USUARIO, obrigatório; criador deve ter role RH no momento da criação.
+- `id_criador` — UUID, FK de USUARIO, obrigatório; criador deve ter role RH ou, para os times sob sua responsabilidade, role GESTOR (RN14).
 - `titulo` — VARCHAR(150), obrigatório.
-- `modo_selecao` — ENUM `PARES | TIMES`, obrigatório e escolhido pelo RH, sem padrão automático. PARES permite selecionar pares individuais; TIMES permite selecionar um ou mais times e gerar todas as combinações internas nos dois sentidos.
+- `modalidade` — ENUM `RECIPROCA | AVALIACAO_360 | AUTOAVALIACAO`, obrigatório e sem padrão automático; define como as avaliações são geradas (RN15).
+- `modo_selecao` — ENUM `PARES | TIMES`, obrigatório na modalidade RECIPROCA e vazio nas demais, sem padrão automático. PARES permite selecionar pares individuais; TIMES permite selecionar um ou mais times e gerar todas as combinações internas nos dois sentidos.
 - `inicio_em` — TIMESTAMPTZ, obrigatório; início inclusivo para responder.
 - `fim_em` — TIMESTAMPTZ, obrigatório e posterior ao início; fim exclusivo para responder.
 - `status` — ENUM `PREPARACAO | ABERTA | ENCERRADA | CANCELADA`, obrigatório; inicia em PREPARACAO.
@@ -97,6 +98,16 @@ Cada time selecionado deve possuir pelo menos dois usuários ativos na abertura.
 
 Os participantes efetivos ficam registrados nas avaliações e seus campos históricos. COLETA_TIME preserva a seleção do time, mas não implica inclusão automática de futuros integrantes na coleta aberta.
 
+## COLETA_PARTICIPANTE
+
+- `id_coleta` — UUID, PK composta e FK de COLETA, obrigatório; coleta nas modalidades AVALIACAO_360 ou AUTOAVALIACAO.
+- `id_avaliado` — UUID, PK composta e FK de USUARIO, obrigatório; usuário ativo dentro do escopo de quem configura a coleta.
+- `id_avaliador` — UUID, PK composta e FK de USUARIO, obrigatório; usuário ativo.
+- `papel` — ENUM `GESTOR | COLEGA | SUBORDINADO | AUTO`, obrigatório; AUTO exige avaliador igual ao avaliado. Na modalidade AUTOAVALIACAO, só se admite AUTO.
+- `ativo` — BOOLEAN, obrigatório; indica se o vínculo integra a seleção vigente.
+
+Registra quem avalia quem no 360° e na autoavaliação. A abertura gera uma avaliação por vínculo ativo, sem reciprocidade, e a seleção fica imutável. Aplicam-se os campos comuns `criado_em` e `atualizado_em`.
+
 ## COLETA_GRUPO
 
 - `id` — UUID, PK.
@@ -127,7 +138,8 @@ Um parâmetro de origem aparece no máximo uma vez por coleta. Reativação reut
 - `id` — UUID, PK.
 - `id_coleta` — UUID, FK de COLETA, obrigatório.
 - `id_avaliador` — UUID, FK de USUARIO, obrigatório; autor do questionário.
-- `id_receptor` — UUID, FK de USUARIO, obrigatório e diferente do avaliador.
+- `id_receptor` — UUID, FK de USUARIO, obrigatório; diferente do avaliador, exceto na autoavaliação.
+- `papel_avaliador` — ENUM `PAR | GESTOR | COLEGA | SUBORDINADO | AUTO`, obrigatório; PAR na modalidade RECIPROCA e copiado de COLETA_PARTICIPANTE nas demais.
 - `id_time_avaliador_snapshot` — UUID, FK de TIME; obrigatório na abertura.
 - `id_time_receptor_snapshot` — UUID, FK de TIME; obrigatório na abertura.
 - `nome_avaliador_snapshot` e `nome_receptor_snapshot` — VARCHAR(150) cada, obrigatórios na abertura.
@@ -155,6 +167,58 @@ As avaliações são criadas na abertura, com todos os campos históricos preenc
 - `status` — derivado de AVALIACAO.status, disponível em consulta.
 
 Uma avaliação só admite uma linha de feedback por pergunta publicada, incluindo linhas inativas. Atualização, desativação e reativação são permitidas apenas ao autor, em rascunho e dentro do período da coleta aberta. Reativar reutiliza o mesmo ID. O envio exige uma resposta ativa para cada pergunta ativa e valida o conjunto inteiro antes de torná-lo imutável; nenhuma linha é excluída fisicamente.
+
+## REGISTRO_FEEDBACK
+
+- `id` — UUID, PK.
+- `id_emissor` — UUID, FK de USUARIO, obrigatório.
+- `id_receptor` — UUID, FK de USUARIO, obrigatório; igual ao emissor apenas no registro de uma autoavaliação.
+- `id_avaliacao` — UUID, FK de AVALIACAO, opcional e único; preenchido no feedback formal de coleta, vazio no informal.
+- `formalidade` — ENUM `FORMAL | INFORMAL`, obrigatório; FORMAL quando há avaliação vinculada (RF19).
+- `natureza` — ENUM `POSITIVO | CONSTRUTIVO`, obrigatório no envio; informada pelo emissor (RF19).
+- `ocorrido_em` — DATE, obrigatório; data do fato motivador, não posterior ao registro.
+- `fato` — VARCHAR(1.000), obrigatório no envio; descrição do fato observado (RN16).
+- `impacto` — VARCHAR(1.000), obrigatório no envio; efeitos observados para a pessoa, o time ou a organização.
+- `conteudo` — VARCHAR(4.000), obrigatório no envio; orientação ou reconhecimento. Não deve conter dados sensíveis (RF-DOC-14).
+- `status` — ENUM `RASCUNHO | ENVIADO | CANCELADO`, obrigatório; no feedback formal, acompanha o estado da avaliação.
+- `enviado_em` — TIMESTAMPTZ, opcional; obrigatório se ENVIADO.
+
+Após o envio, o registro é imutável. O feedback informal fica visível ao receptor depois do envio, conforme a RN15.
+
+## PLANO_ACAO
+
+- `id` — UUID, PK.
+- `id_colaborador` — UUID, FK de USUARIO, obrigatório; pessoa cujo desenvolvimento o plano acompanha.
+- `id_responsavel` — UUID, FK de USUARIO, obrigatório; gestor do time do colaborador ou RH (RN14).
+- `id_registro_origem` — UUID, FK de REGISTRO_FEEDBACK, obrigatório; feedback enviado, recebido pelo colaborador, que motivou o plano (RN13).
+- `id_registro_resultado` — UUID, FK de REGISTRO_FEEDBACK, opcional; feedback posterior que avalia os resultados.
+- `objetivo` — VARCHAR(500), obrigatório.
+- `status` — ENUM `ATIVO | CONCLUIDO | CANCELADO`, obrigatório; inicia em ATIVO.
+- `concluido_em` e `cancelado_em` — TIMESTAMPTZ, opcionais; obrigatórios no estado correspondente.
+- `motivo_cancelamento` — VARCHAR(500), obrigatório se CANCELADO.
+
+## ACAO_PLANO
+
+- `id` — UUID, PK.
+- `id_plano` — UUID, FK de PLANO_ACAO, obrigatório; o plano exige ao menos uma ação.
+- `id_responsavel_execucao` — UUID, FK de USUARIO, obrigatório; normalmente o próprio colaborador.
+- `meta` — VARCHAR(300), obrigatório; resultado esperado e observável.
+- `descricao` — VARCHAR(1.000), obrigatório.
+- `prazo` — DATE, obrigatório.
+- `ponto_verificacao` — VARCHAR(300), obrigatório; como e quando o progresso será verificado.
+- `status` — ENUM `PENDENTE | EM_ANDAMENTO | CONCLUIDA | CANCELADA`, obrigatório; inicia em PENDENTE.
+
+## ACOMPANHAMENTO_ACAO
+
+- `id` — UUID, PK.
+- `id_acao` — UUID, FK de ACAO_PLANO, obrigatório.
+- `id_registrado_por` — UUID, FK de USUARIO, obrigatório; o executor registra PROGRESSO e o responsável registra VERIFICACAO.
+- `tipo` — ENUM `PROGRESSO | VERIFICACAO`, obrigatório.
+- `descricao` — VARCHAR(1.000), obrigatório.
+- `percentual` — INTEGER de 0 a 100, opcional.
+- `registrado_em` — TIMESTAMPTZ, obrigatório, gerenciado pelo servidor.
+
+Acompanhamentos são inclusões imutáveis; correções são feitas por um novo registro.
 
 ## EVENTO_AUDITORIA
 
@@ -185,7 +249,7 @@ O cálculo utiliza valores históricos, sem arredondar as parcelas. O resultado 
 
 - **Unidades:** tamanhos em caracteres (`VARCHAR(n)`); instantes em UTC (`TIMESTAMPTZ`); notas sem unidade física, normalizadas em percentual (0 a 100) apenas nos indicadores; tempos de desempenho e recuperação, em segundos e horas, estão na [especificação suplementar](requisitos/especificacao-suplementar.md).
 - **Não aplicável:** unidade de medida para IDs, textos, booleanos e ENUMs; tamanho para `BOOLEAN`, `UUID`, `TIMESTAMPTZ` e `INTEGER`.
-- **Pendente:** limites de texto e uso de inteiros nas escalas (PV07); múltiplos perfis por conta (PV01); dados de anonimato, planos de desenvolvimento, classificação de feedback e 360° ainda não têm atributos, pois dependem de PV08 e do conflito C02; campos de retenção e anonimização dependem do conflito C01.
+- **Pendente:** limites de texto e uso de inteiros nas escalas (PV07); múltiplos perfis por conta (PV01); dados de anonimato ainda não têm atributos, pois dependem do conflito C02; a liberação dos resultados do 360°, da autoavaliação e do feedback informal depende de PV04; campos de retenção e anonimização dependem do conflito C01.
 
 ## Glossário
 
@@ -197,7 +261,8 @@ Termos em ordem alfabética. A coluna **Representação** indica onde o termo ap
 | Análise individual | Leitura dos resultados recebidos por uma pessoa, calculada apenas sobre respostas válidas e comparáveis. | Consulta derivada | Relatório individual. |
 | Auditoria | Registro imutável de quem fez qual operação, sobre qual registro e quando. | EVENTO_AUDITORIA | Log de auditoria; não confundir com log técnico. |
 | Avaliação | Preenchimento do questionário de uma coleta por um avaliador sobre um receptor, em um sentido. | AVALIACAO | Evitar "feedback" para o questionário inteiro. |
-| Avaliação 360° | Avaliação de uma pessoa por gestor, colegas, subordinados e por ela mesma. Extensão pendente (RF17). | Não modelada | — |
+| Autoavaliação | Avaliação em que a pessoa responde ao questionário sobre si mesma (RF22). | `AVALIACAO.papel_avaliador = AUTO` | — |
+| Avaliação 360° | Avaliação de uma pessoa por gestor, colegas, subordinados e por ela mesma, com participantes escolhidos por papel (RF17). | `COLETA.modalidade = AVALIACAO_360`, COLETA_PARTICIPANTE | Feedback 360°. |
 | Avaliador | Papel de quem responde a uma avaliação. Não é perfil de acesso. | `AVALIACAO.id_avaliador` | Autor. |
 | Cancelamento | Encerramento de uma coleta ou avaliação sem efeito para análise, preservando os dados. | Status CANCELADA | Evitar "excluir". |
 | Coleta | Campanha de avaliação com título, período, questionário, modo de seleção e estado. | COLETA | Ciclo, campanha. |
@@ -205,6 +270,7 @@ Termos em ordem alfabética. A coluna **Representação** indica onde o termo ap
 | Conclusão da coleta | Percentual de avaliações enviadas sobre as não canceladas. | Indicador derivado | Taxa de resposta. |
 | Desativação | Retirada lógica de um registro do uso operacional, sem excluí-lo. | Atributo `ativo` | Evitar "excluir" ou "apagar". |
 | Encerramento | Transição da coleta de ABERTA para ENCERRADA, que cancela pendências e libera os resultados elegíveis. | `COLETA.encerrada_em` | Fechamento. |
+| Feedback informal | Feedback motivado por um evento, registrado sem coleta (RF20). | `REGISTRO_FEEDBACK.formalidade = INFORMAL` | Feedback espontâneo. |
 | Feedback | Resposta a uma pergunta de uma avaliação: valor compatível com o tipo e comentário opcional. | FEEDBACK | Resposta. No uso comum, "feedback" também designa o processo como um todo. |
 | Gestor | Perfil de acesso de quem acompanha os times sob sua responsabilidade. | `role = GESTOR`, `TIME.id_gestor` | Líder, chefe. |
 | Grupo de parâmetros | Conjunto de perguntas de um mesmo tema, como Comunicação. | GRUPO_PARAM | Competência, dimensão. |
@@ -214,8 +280,11 @@ Termos em ordem alfabética. A coluna **Representação** indica onde o termo ap
 | Par | Dois usuários distintos que se avaliam mutuamente em uma coleta. | COLETA_PAR, pares de AVALIACAO | Dupla. |
 | Parâmetro | Pergunta de avaliação com tipo definido em `score`. | PARAM | Pergunta, critério. |
 | Perfil | Valor que define as permissões de acesso: RH, GESTOR ou PROF. | `USUARIO.role` | Papel de acesso. Não confundir com cargo. |
-| Plano de desenvolvimento individual (PDI) | Conjunto de metas e ações de melhoria de uma pessoa. Extensão pendente (RF18). | Não modelado | Plano de ação. |
+| Modalidade | Forma de gerar as avaliações de uma coleta: recíproca, 360° ou autoavaliação (RN15). | `COLETA.modalidade` | — |
+| Natureza do feedback | Classificação do feedback como positivo ou construtivo (RF19). | `REGISTRO_FEEDBACK.natureza` | — |
+| Plano de ação | Conjunto de ações com meta, responsável, prazo e ponto de verificação, criado a partir de um feedback (RF18, RN13). | PLANO_ACAO, ACAO_PLANO | Plano de desenvolvimento individual (PDI). |
 | Profissional (PROF) | Perfil do participante comum. | `role = PROF` | Colaborador. |
+| Registro de feedback | Contexto de um feedback: fato, impacto, data, emissor, receptor, conteúdo e classificação (RF21). | REGISTRO_FEEDBACK | — |
 | Questionário da coleta | Cópia imutável dos grupos e perguntas selecionados para uma coleta. | COLETA_GRUPO, COLETA_PARAM | Formulário. |
 | Receptor | Papel de quem é avaliado em uma avaliação. Não é perfil de acesso. | `AVALIACAO.id_receptor` | Avaliado. |
 | Reciprocidade | Regra de que cada par gera duas avaliações independentes, uma em cada sentido. | RN01 | Avaliação mútua. |

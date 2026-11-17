@@ -1,0 +1,58 @@
+erDiagram
+    USUARIO ||--o{ REGISTRO_FEEDBACK : emite
+    USUARIO ||--o{ REGISTRO_FEEDBACK : recebe
+    AVALIACAO |o--o| REGISTRO_FEEDBACK : contextualiza
+    REGISTRO_FEEDBACK ||--o{ PLANO_ACAO : motiva
+    REGISTRO_FEEDBACK |o--o{ PLANO_ACAO : avalia_resultado
+    USUARIO ||--o{ PLANO_ACAO : colaborador
+    USUARIO ||--o{ PLANO_ACAO : responsavel
+    PLANO_ACAO ||--|{ ACAO_PLANO : contem
+    USUARIO ||--o{ ACAO_PLANO : executa
+    ACAO_PLANO ||--o{ ACOMPANHAMENTO_ACAO : registra
+    USUARIO ||--o{ ACOMPANHAMENTO_ACAO : registrado_por
+
+    REGISTRO_FEEDBACK {
+        uuid id PK
+        uuid id_emissor FK
+        uuid id_receptor FK
+        uuid id_avaliacao FK "opcional; UQ"
+        enum formalidade
+        enum natureza
+        date ocorrido_em
+        string fato
+        string impacto
+        string conteudo
+        enum status
+        datetime enviado_em
+    }
+    PLANO_ACAO {
+        uuid id PK
+        uuid id_colaborador FK
+        uuid id_responsavel FK
+        uuid id_registro_origem FK
+        uuid id_registro_resultado FK "opcional"
+        string objetivo
+        enum status
+        datetime concluido_em
+        datetime cancelado_em
+        string motivo_cancelamento
+    }
+    ACAO_PLANO {
+        uuid id PK
+        uuid id_plano FK
+        uuid id_responsavel_execucao FK
+        string meta
+        string descricao
+        date prazo
+        string ponto_verificacao
+        enum status
+    }
+    ACOMPANHAMENTO_ACAO {
+        uuid id PK
+        uuid id_acao FK
+        uuid id_registrado_por FK
+        enum tipo
+        string descricao
+        int percentual "opcional, 0 a 100"
+        datetime registrado_em
+    }
