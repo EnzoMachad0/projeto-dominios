@@ -1,0 +1,90 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='2430' height='740' viewBox='0 0 2430 740'>
+<defs><marker id='arr' viewBox='0 0 10 10' refX='10' refY='5' markerWidth='8' markerHeight='8' orient='auto'><path d='M0,0 L10,5 L0,10 z' fill='#333'/></marker></defs>
+<rect x='0' y='0' width='2430' height='740' fill='#ffffff'/>
+<text x='40' y='26' font-family='Arial, sans-serif' font-size='15' font-weight='bold' fill='#1F3A5F'>Processo proposto com o sistema (como será) — proposta a validar</text>
+<rect x='40' y='40' width='2370' height='680' fill='none' stroke='#333' stroke-width='1.5'/>
+<line x1='70' y1='40' x2='70' y2='720' stroke='#333'/>
+<text font-family='Arial, sans-serif' font-size='13' font-weight='bold' fill='#1F3A5F' text-anchor='middle' transform='translate(60.0,125.0) rotate(-90)'>RH ou Gestor</text>
+<line x1='70' y1='210' x2='2410' y2='210' stroke='#333'/>
+<text font-family='Arial, sans-serif' font-size='13' font-weight='bold' fill='#1F3A5F' text-anchor='middle' transform='translate(60.0,295.0) rotate(-90)'>Sistema</text>
+<line x1='70' y1='380' x2='2410' y2='380' stroke='#333'/>
+<text font-family='Arial, sans-serif' font-size='13' font-weight='bold' fill='#1F3A5F' text-anchor='middle' transform='translate(60.0,465.0) rotate(-90)'>Avaliadores</text>
+<line x1='70' y1='550' x2='2410' y2='550' stroke='#333'/>
+<text font-family='Arial, sans-serif' font-size='13' font-weight='bold' fill='#1F3A5F' text-anchor='middle' transform='translate(60.0,635.0) rotate(-90)'>Colaborador avaliado</text>
+<polyline points='203,125 300,125' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<polyline points='450,125 470,125 470,295 490,295' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<polyline points='640,295 660,295 660,465 680,465' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<polyline points='830,465 850,465 850,125 870,125' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<polyline points='1020,125 1040,125 1040,295 1060,295' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<polyline points='1210,295 1230,295 1230,635 1250,635' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<polyline points='1400,635 1445,635 1445,125 1490,125' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<polyline points='1540,125 1630,125' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<text x='1546' y='119' font-family='Arial, sans-serif' font-size='11' fill='#333'>sim</text>
+<polyline points='1515,150 1515,635 1687,635' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<text x='1521' y='164' font-family='Arial, sans-serif' font-size='11' fill='#333'>não</text>
+<polyline points='1780,125 1800,125 1800,635 1820,635' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<polyline points='1970,635 1990,635 1990,125 2010,125' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<polyline points='2160,125 2257,125' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<polyline points='203,465 300,465' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<polyline points='450,465 547,465' fill='none' stroke='#333' stroke-width='1.4' marker-end='url(#arr)'/>
+<circle cx='185' cy='125' r='18' fill='#fff' stroke='#333' stroke-width='1.5'/>
+<text x='185' y='159' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>Ciclo de avaliação</text>
+<text x='185' y='172' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>planejado</text>
+<rect x='300' y='85' width='150' height='80' rx='10' fill='#EAF2F8' stroke='#1F3A5F' stroke-width='1.4'/>
+<text x='375' y='101' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>Configurar coleta:</text>
+<text x='375' y='115' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>modalidade,</text>
+<text x='375' y='129' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>questionário e</text>
+<text x='375' y='143' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>participantes (CU-01,</text>
+<text x='375' y='157' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>CU-09)</text>
+<rect x='490' y='255' width='150' height='80' rx='10' fill='#E8F5EE' stroke='#1F3A5F' stroke-width='1.4'/>
+<text x='565' y='285' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>Publicar questionário</text>
+<text x='565' y='299' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>e gerar avaliações</text>
+<text x='565' y='313' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>(RF09, RF10, RF17)</text>
+<rect x='680' y='425' width='150' height='80' rx='10' fill='#EAF2F8' stroke='#1F3A5F' stroke-width='1.4'/>
+<text x='755' y='455' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>Responder e enviar</text>
+<text x='755' y='469' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>avaliações, inclusive</text>
+<text x='755' y='483' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>autoavaliação (CU-02)</text>
+<rect x='870' y='85' width='150' height='80' rx='10' fill='#EAF2F8' stroke='#1F3A5F' stroke-width='1.4'/>
+<text x='945' y='122' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>Acompanhar e encerrar</text>
+<text x='945' y='136' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>a coleta (CU-03)</text>
+<rect x='1060' y='255' width='150' height='80' rx='10' fill='#E8F5EE' stroke='#1F3A5F' stroke-width='1.4'/>
+<text x='1135' y='285' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>Liberar resultados e</text>
+<text x='1135' y='299' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>calcular indicadores</text>
+<text x='1135' y='313' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>(RF15, RN15)</text>
+<rect x='1250' y='595' width='150' height='80' rx='10' fill='#EAF2F8' stroke='#1F3A5F' stroke-width='1.4'/>
+<text x='1325' y='632' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>Consultar resultados</text>
+<text x='1325' y='646' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>e histórico (CU-04)</text>
+<polygon points='1515.0,100.0 1540.0,125.0 1515.0,150.0 1490.0,125.0' fill='#fff' stroke='#333' stroke-width='1.5'/>
+<text x='1515' y='131' font-family='Arial, sans-serif' font-size='18' fill='#333' text-anchor='middle'>×</text>
+<text x='1515' y='64' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>Ação de</text>
+<text x='1515' y='77' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>desenvolvimento</text>
+<text x='1515' y='90' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>acordada?</text>
+<rect x='1630' y='85' width='150' height='80' rx='10' fill='#EAF2F8' stroke='#1F3A5F' stroke-width='1.4'/>
+<text x='1705' y='115' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>Criar plano de ação</text>
+<text x='1705' y='129' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>com o colaborador</text>
+<text x='1705' y='143' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>(CU-11)</text>
+<rect x='1820' y='595' width='150' height='80' rx='10' fill='#EAF2F8' stroke='#1F3A5F' stroke-width='1.4'/>
+<text x='1895' y='625' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>Executar ações e</text>
+<text x='1895' y='639' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>registrar progresso</text>
+<text x='1895' y='653' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>(RF18)</text>
+<rect x='2010' y='85' width='150' height='80' rx='10' fill='#EAF2F8' stroke='#1F3A5F' stroke-width='1.4'/>
+<text x='2085' y='115' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>Registrar</text>
+<text x='2085' y='129' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>verificações e novo</text>
+<text x='2085' y='143' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>feedback (RN13)</text>
+<circle cx='2275' cy='125' r='18' fill='#fff' stroke='#333' stroke-width='4'/>
+<text x='2275' y='159' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>Resultados</text>
+<text x='2275' y='172' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>avaliados no</text>
+<text x='2275' y='185' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>próximo ciclo</text>
+<circle cx='1705' cy='635' r='18' fill='#fff' stroke='#333' stroke-width='4'/>
+<text x='1705' y='669' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>Ciclo encerrado</text>
+<circle cx='185' cy='465' r='18' fill='#fff' stroke='#333' stroke-width='1.5'/>
+<text x='185' y='499' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>Evento observado</text>
+<rect x='300' y='425' width='150' height='80' rx='10' fill='#EAF2F8' stroke='#1F3A5F' stroke-width='1.4'/>
+<text x='375' y='455' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>Registrar feedback</text>
+<text x='375' y='469' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>informal com fato e</text>
+<text x='375' y='483' font-family='Arial, sans-serif' font-size='11.5' fill='#1B2A3A' text-anchor='middle'>impacto (CU-10)</text>
+<circle cx='565' cy='465' r='18' fill='#fff' stroke='#333' stroke-width='4'/>
+<text x='565' y='499' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>Feedback</text>
+<text x='565' y='512' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>disponível ao</text>
+<text x='565' y='525' font-family='Arial, sans-serif' font-size='11' fill='#333' text-anchor='middle'>receptor</text>
+</svg>
