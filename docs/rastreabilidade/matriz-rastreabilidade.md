@@ -33,7 +33,7 @@ Nas linhas de origem DOC, esta matriz cita o documento pelo nome (LGPD, resoluç
 
 | Valor | Significado |
 | --- | --- |
-| `CU-01 (a elaborar)` | O caso de uso está no [índice](../casos-de-uso/README.md), mas a descrição ainda não existe. |
+| `CU-04 (a elaborar)` | O caso de uso está no [índice](../casos-de-uso/README.md), mas a descrição ainda não existe. |
 | `Pendente (#22)` | O artefato está planejado e ainda não foi produzido. |
 | `—` | Não há vínculo. A justificativa está na seção 6. |
 | `N/A` | O vínculo não se aplica: requisito de infraestrutura ou de armazenamento, sem caso de uso nem tela própria, ou sem tela prevista na interface do usuário (RI01 da especificação). |
@@ -49,7 +49,7 @@ Nas linhas de origem DOC, esta matriz cita o documento pelo nome (LGPD, resoluç
 | RF17 a RF20 | [Lista geral](../requisitos/lista-geral.md), seção 3 |
 | RF-DOC, RN-DOC e RNF-DOC | [Pesquisa documental](../levantamento/pesquisa-documental.md), seção 5 |
 | RNF01 a RNF16 | [Especificação suplementar](../requisitos/especificacao-suplementar.md), seção 3 |
-| Casos de uso | [Índice e diagrama](../casos-de-uso/README.md), [CU-02](../casos-de-uso/CU-02-responder-e-enviar-avaliacao.md), [CU-03](../casos-de-uso/CU-03-encerrar-ou-cancelar-coleta.md) e [CU-05](../casos-de-uso/CU-05-manter-catalogo-de-parametros.md) |
+| Casos de uso | [Índice e diagrama](../casos-de-uso/README.md), [CU-01](../casos-de-uso/CU-01-configurar-e-abrir-coleta.md), [CU-02](../casos-de-uso/CU-02-responder-e-enviar-avaliacao.md), [CU-03](../casos-de-uso/CU-03-encerrar-ou-cancelar-coleta.md) e [CU-05](../casos-de-uso/CU-05-manter-catalogo-de-parametros.md) |
 | Entidades | [MER](../modelos/dominio/modelo-entidade-relacionamento.md) e [dicionário de dados](../dicionario-dados.md) |
 
 ## 2. Fontes e necessidades
@@ -82,22 +82,22 @@ Nas linhas de origem DOC, esta matriz cita o documento pelo nome (LGPD, resoluç
 
 | ID | Resumo | Fonte | Necessidade | Caso de uso | Entidades | Protótipo | Verificação | Situação |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| RF01 | Autenticar e autorizar em cada operação | E01, DOC | N05 | CU-08; pré-condição de CU-02, CU-03 e CU-05 | USUARIO | Pendente (#22) | CA02 | Proposto |
+| RF01 | Autenticar e autorizar em cada operação | E01, DOC | N05 | CU-08; pré-condição de CU-01, CU-02, CU-03 e CU-05 | USUARIO | Pendente (#22) | CA02 | Proposto |
 | RF02 | Manter usuários | E01 | N02 | CU-06 | USUARIO, TIME | Pendente (#22) | CA01 | Proposto |
 | RF03 | Manter times | E01 | N02 | CU-06 | TIME, USUARIO | Pendente (#22) | CA01 | Proposto |
 | RF04 | Manter relações de trabalho | E01 | N02 | CU-07 | RELACAO_TRABALHO | Pendente (#22) | CA01, CA03 | Proposto |
 | RF05 | Manter parâmetros | E01 | N01 | CU-05 | PARAM, GRUPO_PARAM | Pendente (#22) | CA01, CA05, CA11 | Validado |
 | RF06 | Manter grupos de parâmetros | E01 | N01 | CU-05 | GRUPO_PARAM | Pendente (#22) | CA01, CA05 | Proposto |
 | RF07 | Remanejar parâmetros entre grupos | E01 | N01 | CU-05 | PARAM, GRUPO_PARAM, COLETA_GRUPO, COLETA_PARAM | Pendente (#22) | CA04, CA11 | Proposto |
-| RF08 | Configurar coletas | E01 | N02 | CU-01 (a elaborar) | COLETA, COLETA_PAR, COLETA_TIME, COLETA_GRUPO, COLETA_PARAM | Pendente (#22) | CA01, CA05 | Proposto |
-| RF09 | Publicar o questionário da coleta | E01 | N02 | CU-01 (a elaborar) | COLETA, COLETA_GRUPO, COLETA_PARAM, AVALIACAO | Pendente (#22) | CA05, CA06, CA06C | Proposto |
-| RF10 | Atribuir avaliações mútuas por pares ou times | E01 | N02 | CU-01 (a elaborar) | AVALIACAO, COLETA_PAR, COLETA_TIME, RELACAO_TRABALHO | Pendente (#22) | CA06, CA06A, CA06B | Proposto |
+| RF08 | Configurar coletas | E01 | N02 | CU-01 | COLETA, COLETA_PAR, COLETA_TIME, COLETA_GRUPO, COLETA_PARAM | Pendente (#22) | CA01, CA05 | Proposto |
+| RF09 | Publicar o questionário da coleta | E01 | N02 | CU-01 | COLETA, COLETA_GRUPO, COLETA_PARAM, AVALIACAO | Pendente (#22) | CA05, CA06, CA06C | Proposto |
+| RF10 | Atribuir avaliações mútuas por pares ou times | E01 | N02 | CU-01 | AVALIACAO, COLETA_PAR, COLETA_TIME, RELACAO_TRABALHO | Pendente (#22) | CA06, CA06A, CA06B | Proposto |
 | RF11 | Manter respostas em rascunho | E01 | N03 | CU-02 | FEEDBACK, AVALIACAO | Pendente (#22) | CA01, CA07 | Proposto |
 | RF12 | Enviar avaliação | E01 | N03 | CU-02 | AVALIACAO, FEEDBACK | Pendente (#22) | CA08 | Proposto |
 | RF13 | Acompanhar, encerrar e cancelar coletas | E01 | N02 | CU-03 | COLETA, AVALIACAO | Pendente (#22) | CA12 | Proposto |
 | RF14 | Consultar histórico individual | E01, ENU | N04 | CU-04 (a elaborar) | AVALIACAO, FEEDBACK, COLETA_PARAM | Pendente (#22) | CA09, CA11 | Proposto |
 | RF15 | Analisar resultados por usuário | E01, ENU | N04 | CU-04 (a elaborar) | AVALIACAO, FEEDBACK, COLETA_PARAM | Pendente (#22) | CA10, CA11 | Proposto |
-| RF16 | Registrar eventos de auditoria | E01, DOC | N05 | CU-02, CU-03, CU-05 | EVENTO_AUDITORIA | N/A | CA11, CA13 | Proposto |
+| RF16 | Registrar eventos de auditoria | E01, DOC | N05 | CU-01, CU-02, CU-03, CU-05 | EVENTO_AUDITORIA | N/A | CA11, CA13 | Proposto |
 | RF17 | Avaliação 360° | ENU | N02 | — | — | — | — | Pendente (PV08) |
 | RF18 | Plano de desenvolvimento individual com metas | ENU | N06 | — | — | — | — | Pendente (PV08) |
 | RF19 | Classificar feedbacks (formal ou informal, positivo ou construtivo) | ENU | — | — | — | — | — | Pendente (PV08) |
@@ -123,18 +123,18 @@ Regras de negócio não têm tela própria. Elas aparecem nas telas dos requisit
 
 | ID | Resumo | Fonte | Necessidade | Caso de uso | Entidades | Verificação | Situação |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| RN01 | Reciprocidade | E01 | N02 | CU-02, CU-03 | AVALIACAO | CA06, CA06C, CA12 | Proposto |
-| RN02 | Unicidade de avaliação e de resposta | E01 | N02 | CU-02 | AVALIACAO, FEEDBACK | CA06, CA06A, CA06B, CA07 | Proposto |
-| RN03 | Elegibilidade | E01 | N02 | CU-01 (a elaborar) | USUARIO, TIME, RELACAO_TRABALHO, COLETA_PAR, COLETA_TIME | CA06A, CA06B | Proposto |
-| RN04 | Composição do catálogo e da coleta | E01 | N01 | CU-01 (a elaborar), CU-05 | PARAM, COLETA_PARAM | CA04, CA05 | Proposto |
-| RN05 | Preservação do que foi publicado | E01 | N04 | CU-01 (a elaborar), CU-05 | COLETA, COLETA_TIME, COLETA_GRUPO, COLETA_PARAM, AVALIACAO | CA04, CA06C, CA11 | Proposto |
+| RN01 | Reciprocidade | E01 | N02 | CU-01, CU-02, CU-03 | AVALIACAO | CA06, CA06C, CA12 | Proposto |
+| RN02 | Unicidade de avaliação e de resposta | E01 | N02 | CU-01, CU-02 | AVALIACAO, FEEDBACK | CA06, CA06A, CA06B, CA07 | Proposto |
+| RN03 | Elegibilidade | E01 | N02 | CU-01 | USUARIO, TIME, RELACAO_TRABALHO, COLETA_PAR, COLETA_TIME | CA06A, CA06B | Proposto |
+| RN04 | Composição do catálogo e da coleta | E01 | N01 | CU-01, CU-05 | PARAM, COLETA_PARAM | CA04, CA05 | Proposto |
+| RN05 | Preservação do que foi publicado | E01 | N04 | CU-01, CU-05 | COLETA, COLETA_TIME, COLETA_GRUPO, COLETA_PARAM, AVALIACAO | CA04, CA06C, CA11 | Proposto |
 | RN06 | Tipo de avaliação (`score`) | E01 | N01 | CU-02, CU-05 | PARAM, COLETA_PARAM, FEEDBACK | CA07 | Validado |
-| RN07 | Estados da coleta | E01 | N02 | CU-02, CU-03 | COLETA | CA12 | Proposto |
+| RN07 | Estados da coleta | E01 | N02 | CU-01, CU-02, CU-03 | COLETA | CA12 | Proposto |
 | RN08 | Estados da avaliação e do feedback | E01 | N03 | CU-02, CU-03 | AVALIACAO, FEEDBACK | CA08, CA12 | Proposto |
 | RN09 | Independência e liberação | E01 | N03 | CU-02, CU-03, CU-04 (a elaborar) | AVALIACAO, FEEDBACK | CA09 | Pendente (PV03, PV04) |
 | RN10 | Cálculo dos indicadores | E01, DOC | N04 | CU-04 (a elaborar) | FEEDBACK, COLETA_PARAM (indicadores derivados do dicionário) | CA10 | Proposto |
 | RN11 | Comparabilidade entre coletas | E01 | N04 | CU-04 (a elaborar), CU-05 | COLETA_PARAM | CA11 | Proposto |
-| RN12 | Sem exclusão física | E01 | N04 | CU-03, CU-05, CU-06 | Todas | CA01 | Validado — conflito C01 |
+| RN12 | Sem exclusão física | E01 | N04 | CU-01, CU-03, CU-05, CU-06 | Todas | CA01 | Validado — conflito C01 |
 | RN-DOC-01 | Finalidade definida para cada dado | DOC (LGPD, art. 6º, I a III) | N05 | — | — | — | Proposto |
 | RN-DOC-02 | Regime de identificação do avaliador | DOC (LGPD, arts. 5º, III, 6º, VI, e 12) | N05 | — | — | — | Pendente — conflito C02 |
 | RN-DOC-03 | Mínimo de respondentes em resultados anônimos | DOC (LGPD, arts. 5º, III, e 12) | N05 | — | — | — | Pendente — conflito C02 |
@@ -148,12 +148,12 @@ Os RNF03 e RNF13 tratam das telas e serão verificados também nos protótipos (
 
 | ID | Característica (ISO/IEC 25010:2023) | Fonte | Necessidade | Caso de uso | Especificação suplementar | Entidades | Verificação | Situação |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| RNF01 | *Security* (*confidentiality*) | E01, DOC | N05 | CU-02, CU-03, CU-05 | 3.1 | N/A | CA02, CA13; testes de autorização | Proposto |
-| RNF02 | *Reliability* (*faultlessness*); *Security* (*integrity*) | E01, DOC | N02, N03 | CU-02, CU-03, CU-05 | 3.3 | N/A | CA06, CA08, CA13; teste de concorrência | Proposto |
-| RNF03 | *Interaction capability* (*inclusivity*, *operability*); *Flexibility* (*adaptability*) | E01, DOC | N03 | CU-02, CU-03, CU-05 | 3.5 e 3.6 (ID duplicado, ver I02) | N/A | CA13; uso por teclado e teste nas larguras-limite | Proposto |
+| RNF01 | *Security* (*confidentiality*) | E01, DOC | N05 | CU-01, CU-02, CU-03, CU-05 | 3.1 | N/A | CA02, CA13; testes de autorização | Proposto |
+| RNF02 | *Reliability* (*faultlessness*); *Security* (*integrity*) | E01, DOC | N02, N03 | CU-01, CU-02, CU-03, CU-05 | 3.3 | N/A | CA06, CA08, CA13; teste de concorrência | Proposto |
+| RNF03 | *Interaction capability* (*inclusivity*, *operability*); *Flexibility* (*adaptability*) | E01, DOC | N03 | CU-01, CU-02, CU-03, CU-05 | 3.5 e 3.6 (ID duplicado, ver I02) | N/A | CA13; uso por teclado e teste nas larguras-limite | Proposto |
 | RNF04 | *Performance efficiency* | E01, DOC | N04 | CU-05 | 3.4 | N/A | CA13; ensaio de carga | Pendente (PV07) |
 | RNF05 | *Reliability* (*recoverability*) | E01, DOC | Transversal | N/A | 3.3 | N/A | CA13; simulação de restauração | Pendente (PV07) |
-| RNF06 | *Security* (*accountability*) | E01, DOC | N05 | CU-03, CU-05 | 3.1 | EVENTO_AUDITORIA | CA13; inspeção dos eventos | Proposto |
+| RNF06 | *Security* (*accountability*) | E01, DOC | N05 | CU-01, CU-03, CU-05 | 3.1 | EVENTO_AUDITORIA | CA13; inspeção dos eventos | Proposto |
 | RNF07 | *Security* (*confidentiality*) | E01, DOC | N05 | CU-02, CU-03 | 3.1 | N/A | CA13; inspeção de logs | Pendente (PV05) |
 | RNF08 | *Security* (*confidentiality*) | E01, DOC | N05 | N/A | 3.1 | N/A | Varredura da configuração TLS | Proposto |
 | RNF09 | *Security* (*authenticity*) | DOC | N05 | CU-08 | 3.1 | USUARIO | Testes de senha fraca e de MFA | Proposto |
@@ -243,13 +243,13 @@ O RF01 não é restringido por regras de negócio. Seus vínculos horizontais s�
 
 | Tipo | Total | Com caso de uso descrito | Só com caso de uso a elaborar | Sem caso de uso ou N/A | Com entidade | Com verificação | Com protótipo |
 | --- | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| RF01 a RF20 | 20 | 11 | 5 | 4 | 16 | 16 | 0 |
+| RF01 a RF20 | 20 | 14 | 2 | 4 | 16 | 16 | 0 |
 | RF-DOC | 14 | 2 | 0 | 12 | 2 | 1 | 0 |
-| RN01 a RN12 | 12 | 10 | 2 | 0 | 12 | 12 | N/A |
+| RN01 a RN12 | 12 | 11 | 1 | 0 | 12 | 12 | N/A |
 | RN-DOC | 6 | 1 | 0 | 5 | 1 | 0 | N/A |
 | RNF01 a RNF16 | 16 | 9 | 1 | 6 | 3 | 16 | 0 |
 
-"Caso de uso descrito" inclui os casos completos (CU-02, CU-03 e CU-05) e os resumidos no índice (CU-06, CU-07 e CU-08). No RNF, "com verificação" considera os métodos da especificação suplementar.
+"Caso de uso descrito" inclui os casos completos (CU-01, CU-02, CU-03 e CU-05) e os resumidos no índice (CU-06, CU-07 e CU-08). No RNF, "com verificação" considera os métodos da especificação suplementar.
 
 ## 6. Lacunas e inconsistências
 
@@ -260,7 +260,7 @@ O RF01 não é restringido por regras de negócio. Seus vínculos horizontais s�
 | L01 | Os requisitos com fonte E01 apontam para uma entrevista cuja transcrição não está no repositório. O [README das entrevistas](../levantamento/entrevistas/README.md) ainda marca a E01 como "Não realizada". | Registrar a transcrição e atualizar o README (#5, #6). |
 | L02 | Nenhum requisito tem origem em E02, Q01, Q02 ou SA. | Fontes ainda não realizadas (#7, #8, #9). Os requisitos que vierem delas devem seguir a regra de identificadores da lista geral. |
 | L03 | Nenhum requisito tem protótipo. | Protótipos ainda não produzidos (#22). Ao concluí-los, substituir "Pendente (#22)" pelo nome da tela. |
-| L04 | RF08 a RF10, RF14, RF15, RN03 e RN10 só se ligam a casos de uso ainda não descritos (CU-01 e CU-04). | Descrições pendentes nas issues #14 e #16. O CU-03 já foi descrito na entrega da issue #17. |
+| L04 | RF14, RF15 e RN10 só se ligam a um caso de uso ainda não descrito (CU-04). | Descrição pendente na issue #16. O CU-01 e o CU-03 já foram descritos nas entregas das issues #14 e #17. |
 | L05 | RF17 a RF20 não têm caso de uso, entidade nem verificação. RF19 e RF20 também não têm necessidade correspondente na visão. | Dependem da PV08. Se forem confirmados, a visão precisa de uma necessidade para tipos de feedback e feedback espontâneo. |
 | L06 | 12 dos 14 RF-DOC e 5 dos 6 RN-DOC não têm caso de uso, e quase todos não têm critério de aceitação. | Os critérios CA01 a CA13 cobrem os requisitos de E01. Vários itens DOC dependem das dúvidas D-01 a D-13 da pesquisa documental. |
 | L07 | O RF10 rejeita a autoavaliação, e o RF17 (360°) a inclui. O conflito não está na seção 7 da lista geral. | Registrar como C03 na lista geral e decidir junto com a PV08. |
