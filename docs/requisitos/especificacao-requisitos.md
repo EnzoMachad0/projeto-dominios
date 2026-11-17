@@ -26,12 +26,14 @@ Os identificadores `RF` representam requisitos funcionais, `RNF` requisitos não
 
 ### 1.4 Referências e origem
 
-- F01 — Entrevista E01 com o stakeholder e esclarecimentos posteriores: entidades, campos, perfis, seleção por pares ou times, PROF como profissional, ausência de exclusão física e score como tipo de avaliação.
-- F02 — `trabalho_da_disciplina_de_domnio.pdf`, páginas 1 e 2: contexto de gestão de competências, plataforma web e objetivos complementares; página 3: artefatos de requisitos e modelagem solicitados pela disciplina.
-- F03 — [IEEE 830 de 1998](https://standards.ieee.org/ieee/830/1222/): referência para a organização da especificação.
-- F04 — [Pesquisa documental sobre LGPD e ISO/IEC 25010](../levantamento/pesquisa-documental.md): requisitos candidatos com sufixo `DOC` (RF-DOC, RN-DOC e RNF-DOC).
+Os códigos de fonte (E01, ENU e DOC) são os mesmos da [lista geral](lista-geral.md), seção 1.
 
-F02 é uma fonte de contexto e de expectativas acadêmicas. Orientações de entrevistas, cronograma, pesquisas e prototipação do PDF não constituem ações executadas nem novos pedidos do stakeholder. Não foram inventadas entrevistas, respostas de questionários ou aprovações de stakeholders. Fontes ainda não realizadas (segunda entrevista, questionários e sistema análogo) estão registradas como pendentes na [lista geral](lista-geral.md).
+- E01 — Entrevista com o stakeholder e esclarecimentos posteriores: entidades, campos, perfis, seleção por pares ou times, PROF como profissional, ausência de exclusão física e score como tipo de avaliação.
+- ENU — `trabalho_da_disciplina_de_domnio.pdf`, páginas 1 e 2: contexto de gestão de competências, plataforma web e objetivos complementares; página 3: artefatos de requisitos e modelagem solicitados pela disciplina.
+- IEEE 830 — [norma de 1998](https://standards.ieee.org/ieee/830/1222/): referência para a organização da especificação, e não fonte de requisitos.
+- DOC — [Pesquisa documental sobre LGPD e ISO/IEC 25010](../levantamento/pesquisa-documental.md): requisitos candidatos com sufixo `DOC` (RF-DOC, RN-DOC e RNF-DOC).
+
+ENU é uma fonte de contexto e de expectativas acadêmicas. Orientações de entrevistas, cronograma, pesquisas e prototipação do PDF não constituem ações executadas nem novos pedidos do stakeholder. Não foram inventadas entrevistas, respostas de questionários ou aprovações de stakeholders. Fontes ainda não realizadas (segunda entrevista, questionários e sistema análogo) estão registradas como pendentes na [lista geral](lista-geral.md).
 
 ### 1.5 Organização e documentos relacionados
 
@@ -43,7 +45,7 @@ Os identificadores são os mesmos da [lista geral de requisitos](lista-geral.md)
 | --- | --- |
 | [Documento de visão](../visao.md) | Problema, stakeholders, escopo e funcionalidades principais. |
 | [Casos de uso](../casos-de-uso/README.md) | Atores, diagrama, índice e descrições completas. |
-| [Especificação suplementar](especificacao-suplementar.md) | Requisitos não funcionais detalhados segundo a ISO/IEC 25010:2023. Detalha os RNF01 a RNF07 desta seção 3.4. |
+| [Especificação suplementar](especificacao-suplementar.md) | Requisitos não funcionais detalhados segundo a ISO/IEC 25010:2023. Detalha os RNF01 a RNF07 desta seção 3.4 e acrescenta os RNF08 a RNF16. |
 | [Modelo de domínio e MER](../modelos/dominio/README.md) | Conceitos, entidades, cardinalidades e restrições. |
 | [Dicionário de dados e glossário](../dicionario-dados.md) | Atributos, tipos, validações e definição dos termos. |
 
@@ -98,35 +100,35 @@ O modelo deve preservar os identificadores e conceitos fornecidos, admitindo nor
 
 **RF01 Autenticar e autorizar usuários — essencial, proposta de suporte.** O sistema deve autenticar contas ativas, identificar o perfil e verificar em cada operação o recurso e o escopo de acesso. Uma tentativa de acessar dados de outro usuário deve ser rejeitada se não houver permissão explícita.
 
-**RF02 Manter usuários — essencial, F01.** O RH deve poder criar, listar, consultar, alterar e desativar usuários. O cadastro deve conter nome, cargo, time, perfil e identificador de conta. Não deve haver exclusão física, mesmo sem dependências. A desativação deve impedir novas atribuições e autenticação, preservando registros anteriores.
+**RF02 Manter usuários — essencial, E01.** O RH deve poder criar, listar, consultar, alterar e desativar usuários. O cadastro deve conter nome, cargo, time, perfil e identificador de conta. Não deve haver exclusão física, mesmo sem dependências. A desativação deve impedir novas atribuições e autenticação, preservando registros anteriores.
 
-**RF03 Manter times — essencial, F01.** O RH deve poder criar, consultar, alterar e desativar times, informando nome e setor. Deve ser possível atribuir um gestor ativo com perfil `GESTOR`. A desativação preserva todos os vínculos e registros históricos; não deve haver exclusão física.
+**RF03 Manter times — essencial, E01.** O RH deve poder criar, consultar, alterar e desativar times, informando nome e setor. Deve ser possível atribuir um gestor ativo com perfil `GESTOR`. A desativação preserva todos os vínculos e registros históricos; não deve haver exclusão física.
 
-**RF04 Manter relações de trabalho — essencial, F01.** O RH deve poder vincular e desvincular usuários que trabalham juntos. O sistema deve impedir vínculos de um usuário consigo mesmo e vínculos duplicados, tratando A com B e B com A como a mesma relação. A desvinculação não deve remover avaliações já atribuídas.
+**RF04 Manter relações de trabalho — essencial, E01.** O RH deve poder vincular e desvincular usuários que trabalham juntos. O sistema deve impedir vínculos de um usuário consigo mesmo e vínculos duplicados, tratando A com B e B com A como a mesma relação. A desvinculação não deve remover avaliações já atribuídas.
 
-**RF05 Manter parâmetros — essencial, F01.** O RH deve poder cadastrar, consultar, alterar e desativar parâmetros, informando pergunta, score e grupo. O campo score deve permitir escolher o tipo de avaliação ESCALA_0_10, ESCALA_0_5 ou BOOLEANO. Não deve haver exclusão física. Alterações no catálogo não devem atualizar cópias de coletas publicadas.
+**RF05 Manter parâmetros — essencial, E01.** O RH deve poder cadastrar, consultar, alterar e desativar parâmetros, informando pergunta, score e grupo. O campo score deve permitir escolher o tipo de avaliação ESCALA_0_10, ESCALA_0_5 ou BOOLEANO. Não deve haver exclusão física. Alterações no catálogo não devem atualizar cópias de coletas publicadas.
 
-**RF06 Manter grupos de parâmetros — essencial, F01.** O RH deve poder cadastrar, consultar, alterar e desativar grupos, informando título e descrição. A lista de parâmetros deve ser obtida pelos vínculos dos parâmetros com o grupo. Não deve haver exclusão física.
+**RF06 Manter grupos de parâmetros — essencial, E01.** O RH deve poder cadastrar, consultar, alterar e desativar grupos, informando título e descrição. A lista de parâmetros deve ser obtida pelos vínculos dos parâmetros com o grupo. Não deve haver exclusão física.
 
-**RF07 Remanejar parâmetros — essencial, F01.** O RH deve poder transferir um parâmetro ativo entre grupos ativos. A transferência deve ser atômica, mantendo um único grupo atual. Deve afetar o catálogo e novas configurações, preservando coletas já publicadas. Coletas ainda em preparação somente devem incorporar a mudança por atualização explícita do questionário.
+**RF07 Remanejar parâmetros — importante, E01.** O RH deve poder transferir um parâmetro ativo entre grupos ativos. A transferência deve ser atômica, mantendo um único grupo atual. Deve afetar o catálogo e novas configurações, preservando coletas já publicadas. Coletas ainda em preparação somente devem incorporar a mudança por atualização explícita do questionário.
 
-**RF08 Configurar coletas — essencial, F01 e modelagem.** O RH deve poder criar, consultar, alterar e cancelar coletas em preparação, definindo título, início, fim, grupos, parâmetros e modo de seleção PARES ou TIMES. No modo PARES, deve selecionar pares elegíveis individualmente; no modo TIMES, deve selecionar um ou mais times ativos. Deve ser possível escolher um subconjunto não vazio dos parâmetros ativos de cada grupo selecionado. A troca de modo na preparação deve desativar em transação as seleções do modo anterior, sem misturar os dois modos e sem apagar registros. As avaliações são criadas somente na abertura. Grupos e perguntas retirados da preparação também devem ser desativados, preservando suas cópias.
+**RF08 Configurar coletas — essencial, E01 e modelagem.** O RH deve poder criar, consultar, alterar e cancelar coletas em preparação, definindo título, início, fim, grupos, parâmetros e modo de seleção PARES ou TIMES. No modo PARES, deve selecionar pares elegíveis individualmente; no modo TIMES, deve selecionar um ou mais times ativos. Deve ser possível escolher um subconjunto não vazio dos parâmetros ativos de cada grupo selecionado. A troca de modo na preparação deve desativar em transação as seleções do modo anterior, sem misturar os dois modos e sem apagar registros. As avaliações são criadas somente na abertura. Grupos e perguntas retirados da preparação também devem ser desativados, preservando suas cópias.
 
-**RF09 Publicar questionário da coleta — essencial, derivado de F01.** Ao abrir a coleta, o sistema deve preservar cópias do título e descrição dos grupos e da pergunta, score e ordem dos parâmetros. Deve validar as seleções do modo escolhido, resolver os integrantes elegíveis dos times naquele instante e congelar o conjunto final de pares. Antes da publicação, deve apresentar uma prévia dos participantes e da quantidade de avaliações; se a composição mudar antes da abertura, deve atualizar a prévia para confirmação do RH. Deve rejeitar coleta sem grupo, grupo sem parâmetro, período inválido, seleção vazia, ausência de pares válidos ou time selecionado com menos de dois integrantes elegíveis. Publicação e geração de todas as avaliações devem ser atômicas. O questionário deve permanecer imutável após a abertura.
+**RF09 Publicar questionário da coleta — essencial, derivado de E01.** Ao abrir a coleta, o sistema deve preservar cópias do título e descrição dos grupos e da pergunta, score e ordem dos parâmetros. Deve validar as seleções do modo escolhido, resolver os integrantes elegíveis dos times naquele instante e congelar o conjunto final de pares. Antes da publicação, deve apresentar uma prévia dos participantes e da quantidade de avaliações; se a composição mudar antes da abertura, deve atualizar a prévia para confirmação do RH. Deve rejeitar coleta sem grupo, grupo sem parâmetro, período inválido, seleção vazia, ausência de pares válidos ou time selecionado com menos de dois integrantes elegíveis. Publicação e geração de todas as avaliações devem ser atômicas. O questionário deve permanecer imutável após a abertura.
 
-**RF10 Atribuir avaliações mútuas por pares ou times — essencial, F01.** No modo PARES, o sistema deve criar A sobre B e B sobre A para cada par selecionado com relação de trabalho vigente. No modo TIMES, deve combinar todos os integrantes elegíveis de cada time selecionado, gerando avaliações nos dois sentidos para cada combinação, independentemente de vínculos individuais em `trabalha_com`. Usuários de times diferentes não são combinados automaticamente. Para um time com `n` integrantes elegíveis, devem ser gerados `n × (n − 1) / 2` pares e `n × (n − 1)` avaliações. Repetir a operação ou selecionar o mesmo time novamente não deve gerar duplicatas. Autoavaliações devem ser rejeitadas.
+**RF10 Atribuir avaliações mútuas por pares ou times — essencial, E01.** No modo PARES, o sistema deve criar A sobre B e B sobre A para cada par selecionado com relação de trabalho vigente. No modo TIMES, deve combinar todos os integrantes elegíveis de cada time selecionado, gerando avaliações nos dois sentidos para cada combinação, independentemente de vínculos individuais em `trabalha_com`. Usuários de times diferentes não são combinados automaticamente. Para um time com `n` integrantes elegíveis, devem ser gerados `n × (n − 1) / 2` pares e `n × (n − 1)` avaliações. Repetir a operação ou selecionar o mesmo time novamente não deve gerar duplicatas. Autoavaliações devem ser rejeitadas.
 
-**RF11 Manter feedbacks em rascunho — essencial, F01.** O avaliador deve poder criar, consultar, alterar e desativar suas respostas em avaliação atribuída, enquanto ela estiver em rascunho e a coleta estiver aberta no período permitido. Cada resposta deve conter parâmetro, valor compatível com o tipo de avaliação e comentário opcional. Desativar uma resposta preserva seu registro e torna a pergunta pendente, sem cancelar a avaliação recíproca. Voltar a responder deve reativar a linha existente, respeitando sua unicidade. O formulário deve apresentar entrada numérica para escalas e seleção explícita Sim ou Não para booleanos, sem resposta pré-selecionada.
+**RF11 Manter feedbacks em rascunho — essencial, E01.** O avaliador deve poder criar, consultar, alterar e desativar suas respostas em avaliação atribuída, enquanto ela estiver em rascunho e a coleta estiver aberta no período permitido. Cada resposta deve conter parâmetro, valor compatível com o tipo de avaliação e comentário opcional. Desativar uma resposta preserva seu registro e torna a pergunta pendente, sem cancelar a avaliação recíproca. Voltar a responder deve reativar a linha existente, respeitando sua unicidade. O formulário deve apresentar entrada numérica para escalas e seleção explícita Sim ou Não para booleanos, sem resposta pré-selecionada.
 
-**RF12 Enviar avaliação — essencial, F01.** O avaliador deve poder enviar o questionário completo. O sistema deve validar todas as respostas e registrar o envio de forma atômica. Após o envio, respostas devem ficar imutáveis. Enviar A sobre B não deve preencher nem enviar B sobre A.
+**RF12 Enviar avaliação — essencial, E01.** O avaliador deve poder enviar o questionário completo. O sistema deve validar todas as respostas e registrar o envio de forma atômica. Após o envio, respostas devem ficar imutáveis. Enviar A sobre B não deve preencher nem enviar B sobre A.
 
-**RF13 Acompanhar e finalizar coletas — essencial, derivado de F01.** O RH deve consultar avaliações pendentes, enviadas e canceladas, encerrar coleta aberta e cancelar coleta em preparação ou aberta com justificativa. No encerramento, avaliações incompletas devem ser canceladas com motivo. Respostas já enviadas devem ser preservadas. Uma coleta cancelada não deve integrar análises.
+**RF13 Acompanhar e finalizar coletas — essencial, derivado de E01.** O RH deve consultar avaliações pendentes, enviadas e canceladas, encerrar coleta aberta e cancelar coleta em preparação ou aberta com justificativa. No encerramento, avaliações incompletas devem ser canceladas com motivo. Respostas já enviadas devem ser preservadas. Uma coleta cancelada não deve integrar análises.
 
-**RF14 Consultar histórico individual — essencial, F01.** O sistema deve permitir filtrar por usuário, período de encerramento, coleta, grupo e parâmetro, respeitando as permissões. O autor pode consultar seus envios; o receptor consulta resultados liberados de coletas encerradas. Rascunhos de terceiros não devem aparecer em consultas ou relatórios.
+**RF14 Consultar histórico individual — essencial, E01.** O sistema deve permitir filtrar por usuário, período de encerramento, coleta, grupo e parâmetro, respeitando as permissões. O autor pode consultar seus envios; o receptor consulta resultados liberados de coletas encerradas. Rascunhos de terceiros não devem aparecer em consultas ou relatórios.
 
-**RF15 Analisar resultados por usuário — essencial, F01.** O sistema deve apresentar quantidade de avaliações válidas e respostas ativas, por coleta, grupo e parâmetro. Para escalas numéricas, deve apresentar média normalizada; para booleanos, contagem e proporção de Sim e Não, separadamente das médias numéricas. Grupos com tipos mistos devem apresentar indicadores separados, sem média única que combine booleanos e notas. Deve apresentar evolução entre coletas somente quando houver comparabilidade de perguntas e tipos de avaliação. Resultado sem respostas válidas deve aparecer como “sem dados”.
+**RF15 Analisar resultados por usuário — essencial, E01.** O sistema deve apresentar quantidade de avaliações válidas e respostas ativas, por coleta, grupo e parâmetro. Para escalas numéricas, deve apresentar média normalizada; para booleanos, contagem e proporção de Sim e Não, separadamente das médias numéricas. Grupos com tipos mistos devem apresentar indicadores separados, sem média única que combine booleanos e notas. Deve apresentar evolução entre coletas somente quando houver comparabilidade de perguntas e tipos de avaliação. Resultado sem respostas válidas deve aparecer como “sem dados”.
 
-**RF16 Preservar e auditar histórico — essencial, proposta de suporte.** O sistema deve registrar autor, instante, operação, entidade e identificador das mudanças administrativas, transições de estado e remanejamentos. Os eventos não devem conter texto de comentários nem credenciais. A troca de time do usuário não deve alterar o time registrado nas avaliações antigas.
+**RF16 Preservar e auditar histórico — importante, proposta de suporte.** O sistema deve registrar autor, instante, operação, entidade e identificador das mudanças administrativas, transições de estado e remanejamentos. Os eventos não devem conter texto de comentários nem credenciais. A troca de time do usuário não deve alterar o time registrado nas avaliações antigas.
 
 ### 3.3 Regras de negócio propostas
 
@@ -193,7 +195,7 @@ O modelo deve manter usuários, times, relações de trabalho, grupos e parâmet
 - **CA10 Análise:** duas respostas numéricas válidas, 2 em ESCALA_0_5 e 10 em ESCALA_0_10, devem gerar 40% e 100%, com média numérica 70%. Duas respostas booleanas válidas, verdadeiro e falso, devem gerar 50% de Sim e 50% de Não, sem alterar a média numérica. Rascunho, resposta desativada e par incompleto não devem alterar os indicadores. Sem respostas válidas do tipo consultado, mostrar “sem dados”.
 - **CA11 Histórico:** trocar usuário de time e alterar pergunta e score do catálogo deve manter time, pergunta e score antigos na coleta publicada; a série deve separar versões incompatíveis.
 - **CA12 Encerramento:** após o fim, impedir novos envios; ao encerrar, cancelar pendências com motivo, preservar envios e impedir reabertura. Cancelar a coleta deve excluí-la das análises sem apagá-la.
-- **CA13 Qualidade:** comprovar os critérios de RNF01 a RNF07 por testes de autorização e concorrência, inspeção de logs, ensaio de carga, uso por teclado e simulação de restauração; registrar ambiente e evidências.
+- **CA13 Qualidade:** comprovar os critérios de RNF01 a RNF16 com os métodos de verificação da especificação suplementar, como testes de autorização e concorrência, inspeção de logs, ensaio de carga, uso por teclado e simulação de restauração; registrar ambiente e evidências.
 
 ## 4 Pendências e extensões
 
@@ -216,14 +218,14 @@ Entrevistas, questionários, BPMN, protótipos Figma e outros artefatos listados
 
 ## 5 Rastreabilidade
 
-- CRUD de usuários e `trabalha_com` — F01 → RF02 e RF04 → Usuario e RelacaoTrabalho → CA01 e CA03.
-- CRUD de times — F01 → RF03 → Time → CA01.
-- CRUD de grupos e parâmetros — F01 → RF05 e RF06 → GrupoParametro e Parametro → CA01 e CA05.
-- Remanejamento — F01 → RF07 e RF09, RN04 e RN05 → Parametro, ColetaGrupo e ColetaParametro → CA04 e CA11.
-- Coletas com grupos — F01 → RF08 e RF09 → Coleta, ColetaGrupo e ColetaParametro → CA05.
-- Avaliação mútua por pares ou times — F01 → RF08 a RF10 e RF12, RN01 a RN03 e RN05 → Coleta, ColetaTime e Avaliacao → CA06, CA06A a CA06C e CA08.
-- CRUD de feedback — F01 → RF11 e RF12, RN06 e RN08 → Feedback e Avaliacao → CA01, CA07 e CA08.
-- Histórico e análise individual — F01 → RF14 e RF15, RN09 a RN11 → Avaliacao e Feedback com cópias do questionário → CA09 a CA11.
-- Perfis RH, PROF e GESTOR — F01 → RF01 e seção 2.3 → Usuario e Time → CA02.
+- CRUD de usuários e `trabalha_com` — E01 → RF02 e RF04 → Usuario e RelacaoTrabalho → CA01 e CA03.
+- CRUD de times — E01 → RF03 → Time → CA01.
+- CRUD de grupos e parâmetros — E01 → RF05 e RF06 → GrupoParametro e Parametro → CA01 e CA05.
+- Remanejamento — E01 → RF07 e RF09, RN04 e RN05 → Parametro, ColetaGrupo e ColetaParametro → CA04 e CA11.
+- Coletas com grupos — E01 → RF08 e RF09 → Coleta, ColetaGrupo e ColetaParametro → CA05.
+- Avaliação mútua por pares ou times — E01 → RF08 a RF10 e RF12, RN01 a RN03 e RN05 → Coleta, ColetaTime e Avaliacao → CA06, CA06A a CA06C e CA08.
+- CRUD de feedback — E01 → RF11 e RF12, RN06 e RN08 → Feedback e Avaliacao → CA01, CA07 e CA08.
+- Histórico e análise individual — E01 → RF14 e RF15, RN09 a RN11 → Avaliacao e Feedback com cópias do questionário → CA09 a CA11.
+- Perfis RH, PROF e GESTOR — E01 → RF01 e seção 2.3 → Usuario e Time → CA02.
 - Ciclo da coleta — proposta derivada → RF13, RN07 → Coleta e Avaliacao → CA12.
-- Segurança e preservação — proposta de suporte e contexto F02 → RF16 e RNF01 a RNF07 → EventoAuditoria e demais entidades → CA11 e CA13.
+- Segurança e preservação — proposta de suporte e contexto ENU → RF16 e RNF01 a RNF16 → EventoAuditoria e demais entidades → CA11 e CA13.

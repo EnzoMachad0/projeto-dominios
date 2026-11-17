@@ -3,9 +3,9 @@
 | Campo | Informação |
 | --- | --- |
 | Autoria | Danilo Sucupira Galvão |
-| Versão | 0.4 — 17 de novembro de 2026 |
+| Versão | 0.5 — 17 de novembro de 2026 |
 | Base inicial | `main` em 10/11/2026 (commit `0bd8dc9`), com os artefatos dos PRs #27 a #37 |
-| Atualização | CU-03 de Heitor Barbosa Souza em 15/11/2026; CU-01 de Brenner Rodrigues Sardinha e CU-04 de Enzo de Oliveira Machado em 17/11/2026 |
+| Atualização | CU-03 de Heitor Barbosa Souza em 15/11/2026; CU-01 de Brenner Rodrigues Sardinha e CU-04 de Enzo de Oliveira Machado em 17/11/2026; situação das entrevistas e correção das inconsistências I01 a I05 em 17/11/2026, sobre a `main` no commit `f7250bc` |
 | Situação | Proposta para revisão |
 
 Relaciona as fontes, as necessidades e os requisitos aos artefatos que os detalham, modelam e verificam (rastreabilidade vertical), e os requisitos entre si (rastreabilidade horizontal). Atende à issue #24 e à seção 3 do [processo de requisitos](../PROCESSO_REQUISITOS.md).
@@ -19,15 +19,9 @@ Relaciona as fontes, as necessidades e os requisitos aos artefatos que os detalh
 
 ### 1.2. Códigos de fonte
 
-São os mesmos da [lista geral](../requisitos/lista-geral.md) (seção 1). Outros documentos usam códigos diferentes para as mesmas fontes:
+São os mesmos da [lista geral](../requisitos/lista-geral.md) (seção 1) e da [especificação de requisitos](../requisitos/especificacao-requisitos.md) (seção 1.4): E01, E02, Q01, Q02, SA, DOC e ENU.
 
-| Lista geral e esta matriz | Especificação de requisitos (seção 1.4) | Pesquisa documental (seção 2) |
-| --- | --- | --- |
-| E01 | F01 | — |
-| ENU | F02 | — |
-| DOC | F04 | F01 a F14 identificam cada documento consultado (F01 é a LGPD) |
-
-Nas linhas de origem DOC, esta matriz cita o documento pelo nome (LGPD, resoluções da ANPD), e não pelo código da pesquisa documental, para evitar confusão com o F01 da especificação.
+A [pesquisa documental](../levantamento/pesquisa-documental.md) (seção 2) usa F01 a F14 para identificar cada documento consultado dentro da fonte DOC (F01 é a LGPD). Nas linhas de origem DOC, esta matriz cita o documento pelo nome (LGPD, resoluções da ANPD).
 
 ### 1.3. Legenda
 
@@ -57,8 +51,8 @@ Nas linhas de origem DOC, esta matriz cita o documento pelo nome (LGPD, resoluç
 
 | Código | Fonte | Situação | Registro no repositório |
 | --- | --- | --- | --- |
-| E01 | Entrevista com o stakeholder e esclarecimentos posteriores | Realizada | Transcrição ausente (lacuna L01) |
-| E02 | Segunda entrevista | Pendente | — (lacuna L02) |
+| E01 | Entrevista com o stakeholder e esclarecimentos posteriores | Realizada | Transcrição pendente (#41, lacuna L01); [síntese preliminar](../levantamento/sintese-entrevistas.md) |
+| E02 | Segunda entrevista | Realizada | Transcrição pendente (#41, lacuna L01); síntese preliminar junto com a E01; nenhum requisito da lista geral ainda (lacuna L02) |
 | Q01, Q02 | Questionários de levantamento | Pendentes | — (lacuna L02) |
 | SA | Análise de sistema análogo | Pendente | — (lacuna L02) |
 | DOC | Pesquisa documental sobre LGPD e ISO/IEC 25010 | Realizada | [pesquisa-documental.md](../levantamento/pesquisa-documental.md) |
@@ -149,7 +143,7 @@ Os RNF03 e RNF13 tratam das telas e serão verificados também nos protótipos (
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | RNF01 | *Security* (*confidentiality*) | E01, DOC | N05 | CU-01 a CU-05 | 3.1 | N/A | CA02, CA13; testes de autorização | Proposto |
 | RNF02 | *Reliability* (*faultlessness*); *Security* (*integrity*) | E01, DOC | N02, N03 | CU-01, CU-02, CU-03, CU-05 | 3.3 | N/A | CA06, CA08, CA13; teste de concorrência | Proposto |
-| RNF03 | *Interaction capability* (*inclusivity*, *operability*); *Flexibility* (*adaptability*) | E01, DOC | N03 | CU-01 a CU-05 | 3.5 e 3.6 (ID duplicado, ver I02) | N/A | CA13; uso por teclado e teste nas larguras-limite | Proposto |
+| RNF03 | *Interaction capability* (*inclusivity*, *operability*); *Flexibility* (*adaptability*) | E01, DOC | N03 | CU-01 a CU-05 | 3.5 (a 3.6 remete a ele) | N/A | CA13; uso por teclado e teste nas larguras-limite | Proposto |
 | RNF04 | *Performance efficiency* | E01, DOC | N04 | CU-04, CU-05 | 3.4 | N/A | CA13; ensaio de carga | Pendente (PV07) |
 | RNF05 | *Reliability* (*recoverability*) | E01, DOC | Transversal | N/A | 3.3 | N/A | CA13; simulação de restauração | Pendente (PV07) |
 | RNF06 | *Security* (*accountability*) | E01, DOC | N05 | CU-01, CU-03, CU-05 | 3.1 | EVENTO_AUDITORIA | CA13; inspeção dos eventos | Proposto |
@@ -256,23 +250,27 @@ O RF01 não é restringido por regras de negócio. Seus vínculos horizontais s�
 
 | ID | Lacuna | Justificativa ou encaminhamento |
 | --- | --- | --- |
-| L01 | Os requisitos com fonte E01 apontam para uma entrevista cuja transcrição não está no repositório. O [README das entrevistas](../levantamento/entrevistas/README.md) ainda marca a E01 como "Não realizada". | Registrar a transcrição e atualizar o README (#5, #6). |
-| L02 | Nenhum requisito tem origem em E02, Q01, Q02 ou SA. | Fontes ainda não realizadas (#7, #8, #9). Os requisitos que vierem delas devem seguir a regra de identificadores da lista geral. |
+| L01 | As duas entrevistas foram realizadas, mas as transcrições ainda não estão no repositório: `E01-transcricao.md` e `E02-transcricao.md` são registros temporários ([README das entrevistas](../levantamento/entrevistas/README.md)). Por isso, os requisitos com fonte E01 e a [síntese das entrevistas](../levantamento/sintese-entrevistas.md) não citam trechos das respostas (`E0X-Rxx`). | Receber e revisar as transcrições (#41) e conferir a síntese com elas (#6). |
+| L02 | Nenhum requisito da lista geral tem origem em E02, Q01, Q02 ou SA. A síntese das entrevistas já reúne a E01 e a E02, com identificadores locais (`SIN-*`), mas ainda não foi incorporada à lista geral. | Incorporar a síntese na consolidação (#40). Questionários e sistema análogo ainda pendentes (#7, #8, #9); os requisitos que vierem deles devem seguir a regra de identificadores da lista geral. |
 | L03 | Nenhum requisito tem protótipo. | Protótipos ainda não produzidos (#22). Ao concluí-los, substituir "Pendente (#22)" pelo nome da tela. |
 | L04 | Resolvida: RF08 a RF10, RF14, RF15, RN03 e RN10 têm casos de uso completos. | CU-01 descrito na issue #14 e CU-04 na issue #16; CU-03 já havia sido descrito na issue #17. |
 | L05 | RF17 a RF20 não têm caso de uso, entidade nem verificação. RF19 e RF20 também não têm necessidade correspondente na visão. | Dependem da PV08. Se forem confirmados, a visão precisa de uma necessidade para tipos de feedback e feedback espontâneo. |
 | L06 | 12 dos 14 RF-DOC e 5 dos 6 RN-DOC não têm caso de uso, e quase todos não têm critério de aceitação. | Os critérios CA01 a CA13 cobrem os requisitos de E01. Vários itens DOC dependem das dúvidas D-01 a D-13 da pesquisa documental. |
-| L07 | O RF10 rejeita a autoavaliação, e o RF17 (360°) a inclui. O conflito não está na seção 7 da lista geral. | Registrar como C03 na lista geral e decidir junto com a PV08. |
+| L07 | O RF10 rejeita a autoavaliação, e o RF17 (360°) a inclui. A síntese das entrevistas (SIN-RF04 e SIN-RN04) põe o 360° e a autoavaliação na primeira versão, mas a lista geral e a especificação (seção 2.6: "Não há autoavaliação no núcleo") ainda a excluem. O conflito não está na seção 7 da lista geral. | Resolver na consolidação (#40): registrar como C03 na lista geral e decidir junto com a PV08. |
 
 ### 6.2. Inconsistências entre artefatos
 
 | ID | Inconsistência | Onde |
 | --- | --- | --- |
-| I01 | Três esquemas de código para as fontes (seção 1.2 desta matriz). | Lista geral, especificação de requisitos e pesquisa documental |
-| I02 | O RNF03 aparece duas vezes, com conteúdos diferentes. | Especificação suplementar, 3.5 e 3.6 |
-| I03 | O CA13 e a seção 1.5 da especificação citam só o RNF01 a RNF07. A verificação do RNF08 ao RNF16 está apenas na especificação suplementar. | Especificação de requisitos, 1.5 e 3.6 |
-| I04 | O RF07 é Importante na lista geral e essencial na especificação. | Lista geral, seção 3; especificação, RF07 |
-| I05 | EVENTO_AUDITORIA está no texto do MER e no dicionário, mas não nos diagramas Mermaid do MER. | `mer-organizacao-catalogo.mmd` e `mer-coletas-respostas.mmd` |
+Todas as inconsistências abaixo foram corrigidas em 17/11/2026. As linhas ficam como registro do que mudou.
+
+| ID | Inconsistência | Onde | Correção |
+| --- | --- | --- | --- |
+| I01 | Três esquemas de código para as fontes: a especificação usava F01, F02 e F04 para E01, ENU e DOC, e o F01 coincidia com o código da LGPD na pesquisa documental. | Lista geral, especificação de requisitos e pesquisa documental | A especificação passou a usar os códigos da lista geral. Os F01 a F14 da pesquisa documental continuam identificando documentos dentro da fonte DOC (seção 1.2). |
+| I02 | O RNF03 aparecia duas vezes, com conteúdos diferentes. | Especificação suplementar, 3.5 e 3.6 | O RNF03 aparece uma vez, na seção 3.5, com teclado, rótulos e larguras de 360 a 1.440 px, como na lista geral e na especificação. A seção 3.6 remete a ele. |
+| I03 | O CA13 e a seção 1.5 da especificação citavam só o RNF01 a RNF07. | Especificação de requisitos, 1.5, 3.6 e 5 | Os dois trechos e a cadeia "Segurança e preservação" da seção 5 passaram a abranger os RNF01 a RNF16, com os métodos de verificação da especificação suplementar. |
+| I04 | O RF07 e o RF16 eram Importantes na lista geral e essenciais na especificação. | Lista geral, seção 3; especificação, RF07 e RF16 | A especificação passou a seguir a lista geral, onde a priorização foi feita (#11). |
+| I05 | EVENTO_AUDITORIA estava no texto do MER e no dicionário, mas não nos diagramas. | `mer-organizacao-catalogo.mmd` e MER, seção "Estrutura organizacional e catálogo" | A entidade entrou no diagrama de organização e catálogo, com os atributos do dicionário e a associação opcional com o usuário que executa a operação. |
 
 ## 7. Manutenção
 
