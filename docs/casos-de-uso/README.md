@@ -34,13 +34,13 @@ Casos de uso **essenciais** descrevem a intenção do ator e a responsabilidade 
 | CU-01 | Configurar e abrir coleta | RH | RF08, RF09, RF10, RN03 a RN05 | Completo | Brenner Rodrigues Sardinha | [CU-01](CU-01-configurar-e-abrir-coleta.md) |
 | CU-02 | Responder e enviar avaliação | Participante | RF11, RF12, RN06, RN08, RN09 | Completo | Luiz Augusto Vaz | [CU-02](CU-02-responder-e-enviar-avaliacao.md) |
 | CU-03 | Encerrar ou cancelar coleta | RH | RF13, RF16, RN01, RN07 a RN09, RN12 | Completo | Heitor Barbosa Souza | [CU-03](CU-03-encerrar-ou-cancelar-coleta.md) |
-| CU-04 | Consultar análise de resultados | Participante, Gestor | RF14, RF15, RN09 a RN11 | Completo | Enzo (proposta) | A elaborar |
+| CU-04 | Consultar análise de resultados | Participante, Gestor | RF14, RF15, RN09 a RN11 | Completo | Enzo de Oliveira Machado | [CU-04](CU-04-consultar-analise-de-resultados.md) |
 | CU-05 | Manter catálogo de parâmetros | RH | RF05, RF06, RF07, RN04 | Completo | Danilo Sucupira Galvão | [CU-05](CU-05-manter-catalogo-de-parametros.md) |
 | CU-06 | Manter usuários e times | RH | RF02, RF03 | Resumido | — | Abaixo |
 | CU-07 | Manter relações de trabalho | RH | RF04 | Resumido | — | Abaixo |
 | CU-08 | Autenticar-se | Participante | RF01, RNF09 | Resumido | — | Abaixo |
 
-CU-02, CU-03 e CU-05 têm autoria registrada nos respectivos documentos. A distribuição de CU-01 e CU-04 permanece como **proposta** para evitar sobreposição entre as issues #14 e #16; os responsáveis devem confirmar ou trocar seu caso na própria issue.
+CU-01 a CU-05 têm autoria registrada nos respectivos documentos. O CU-01 foi descrito por Brenner na issue #14, e o CU-04 é a entrega de Enzo para a issue #16.
 
 ## Relacionamentos
 
