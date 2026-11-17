@@ -11,6 +11,9 @@ flowchart LR
         CU02(["CU-02 Responder e enviar avaliação"])
         CU04(["CU-04 Consultar análise de resultados"])
         CU08(["CU-08 Autenticar-se"])
+        CU09(["CU-09 Conduzir avaliação 360°"])
+        CU10(["CU-10 Registrar feedback informal"])
+        CU11(["CU-11 Manter plano de ação"])
     end
 
     PART(["👤 Participante<br/>(qualquer perfil)"])
@@ -26,6 +29,14 @@ flowchart LR
     CU04 --- PART
     CU08 --- PART
     CU04 --- GESTOR
+    RH --- CU09
+    RH --- CU11
+    CU01 --- GESTOR
+    CU03 --- GESTOR
+    CU09 --- GESTOR
+    CU11 --- GESTOR
+    CU10 --- PART
+    CU11 --- PART
 
     GESTOR -. "generalização" .-> PART
     PROF -. "generalização" .-> PART

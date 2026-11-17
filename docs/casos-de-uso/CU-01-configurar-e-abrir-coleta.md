@@ -198,11 +198,12 @@ Uma abertura por coleta, conforme o calendário de ciclos da organização, que 
 
 - **Fim do período já passado (14c):** a abertura com o fim no passado é rejeitada nesta elaboração. A regra é proposta e deve ser validada.
 - **Início no passado:** pode-se abrir uma coleta cujo início já passou? Nesta elaboração, sim, desde que o fim seja futuro; o preenchimento fica liberado imediatamente.
-- **Gestor responsável fora do time:** no modo TIMES, só entram os usuários lotados no time. O gestor responsável que não está lotado no time não participa automaticamente. Falta confirmar se isso atende ao feedback gestor-colaborador previsto no enunciado (PV08).
+- **Gestor responsável fora do time:** no modo TIMES, só entram os usuários lotados no time. O gestor responsável que não está lotado no time não participa automaticamente. O feedback gestor-colaborador previsto no enunciado é atendido pela avaliação 360° (CU-09), em que o gestor participa com o papel de gestor.
 - **Quem pode alterar a preparação:** qualquer pessoa do RH ou somente o criador? Esta elaboração permite qualquer pessoa do RH, com o registro de autoria na auditoria.
 - **Aviso aos participantes:** os avaliadores são informados da abertura? Não há requisito de notificação nesta versão (mesma questão do CU-02).
 - **PV06:** a premissa de um time por usuário evita que a mesma pessoa apareça em dois times selecionados. Se a premissa mudar, a geração precisa evitar pares repetidos entre times.
-- **Lacuna L07:** a abertura rejeita autoavaliações (RF10); o RF17 (360°) as inclui. A decisão depende de PV08.
+- **Lacuna L07 resolvida:** a coleta recíproca continua rejeitando autoavaliações (RF10); a autoavaliação passou a ser uma modalidade própria (RF22) e parte do 360° (RF17, CU-09).
+- **Gestor como ator (RN14):** com a consolidação da issue #40, o gestor também configura e abre coletas dos times sob sua responsabilidade. O fluxo é o mesmo, limitado a esse escopo.
 
 ## Rastreabilidade
 
