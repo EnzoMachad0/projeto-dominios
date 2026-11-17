@@ -1,6 +1,6 @@
 # Modelo de domínio do sistema de feedbacks
 
-O domínio é a avaliação e o acompanhamento de pessoas por meio de feedbacks estruturados. Uma coleta estabelece quem avalia quem e qual questionário será utilizado. A avaliação é mútua, mas cada participante responde de forma independente.
+O domínio é a avaliação e o acompanhamento de pessoas por meio de feedbacks estruturados. Uma coleta estabelece quem avalia quem e qual questionário será utilizado. Na coleta recíproca, a avaliação é mútua, mas cada participante responde de forma independente. O domínio também abrange a avaliação 360°, a autoavaliação, o feedback informal e os planos de ação que transformam um feedback em desenvolvimento.
 
 ## Conceitos e linguagem do negócio
 
@@ -16,11 +16,17 @@ O domínio é a avaliação e o acompanhamento de pessoas por meio de feedbacks 
 
 **Coleta** é uma campanha com título, período, estado, questionário e modo de seleção de participantes: pares ou times. No modo por pares, o RH escolhe os pares elegíveis individualmente. No modo por times, o RH escolhe um ou mais times e o sistema forma todos os pares de integrantes elegíveis dentro de cada time. Selecionar vários times não cria combinações entre times diferentes. **Questionário da coleta** é a cópia dos grupos e perguntas selecionados para aquela campanha. A cópia permanece estável após a abertura.
 
-**Avaliação** é o preenchimento do questionário por uma pessoa sobre outra em uma coleta. O par A e B produz duas avaliações, e não uma resposta compartilhada.
+**Modalidade** define como a coleta forma suas avaliações: **recíproca** (por pares ou por times, nos dois sentidos), **360°** (um avaliado recebe avaliações de participantes escolhidos por papel: gestor, colegas, subordinados e ele mesmo) ou **autoavaliação** (a pessoa avalia a si mesma). **Participante selecionado** é a escolha de quem avalia quem no 360° e na autoavaliação, com o papel de cada um.
+
+**Avaliação** é o preenchimento do questionário por uma pessoa sobre outra, ou sobre si mesma, em uma coleta. Na coleta recíproca, o par A e B produz duas avaliações, e não uma resposta compartilhada. No 360°, cada avaliação registra o papel do avaliador em relação ao avaliado.
 
 **Feedback** é a resposta a uma pergunta da avaliação, contendo valor compatível com o tipo definido em `score` e comentário opcional. Zero e falso são respostas válidas. O conjunto de feedbacks ativos compõe o questionário respondido. O status pertence à avaliação e é exposto em cada feedback por derivação; o atributo `ativo` indica se a resposta integra o preenchimento atual.
 
-**Histórico** é o conjunto de avaliações e resultados preservados ao longo das coletas. **Análise individual** é a leitura dos resultados recebidos por uma pessoa, filtrada e calculada sobre respostas válidas e comparáveis.
+**Registro de feedback** é o contexto de um feedback: fato motivador, impactos, data, emissor, receptor, conteúdo e classificação em dois eixos, formal ou informal e positivo ou construtivo. O feedback formal nasce de uma avaliação de coleta; o **feedback informal** é registrado diretamente, motivado por um evento, sem coleta.
+
+**Plano de ação** é o compromisso de desenvolvimento que nasce de um feedback. Reúne **ações** com meta, responsável, prazo e ponto de verificação, e **acompanhamentos** que registram o progresso e as verificações. O ciclo é feedback inicial → plano → acompanhamento → novo feedback, que avalia os resultados.
+
+**Histórico** é o conjunto de avaliações, registros de feedback, planos e resultados preservados ao longo do tempo. **Análise individual** é a leitura dos resultados recebidos por uma pessoa, filtrada e calculada sobre respostas válidas e comparáveis.
 
 ## Modelo de domínio conceitual
 
@@ -43,6 +49,17 @@ classDiagram
     Usuario "1" -- "0..*" Avaliacao : recebe
     Avaliacao "1" *-- "0..*" Feedback : reúne
     ParametroDaColeta "1" -- "0..*" Feedback : recebe resposta
+    Coleta "1" *-- "0..*" ParticipanteSelecionado : registra no 360° e na autoavaliação
+    ParticipanteSelecionado "0..*" -- "1" Usuario : avaliado
+    ParticipanteSelecionado "0..*" -- "1" Usuario : participante
+    Usuario "1" -- "0..*" RegistroFeedback : emite
+    Usuario "1" -- "0..*" RegistroFeedback : recebe
+    Avaliacao "1" -- "0..1" RegistroFeedback : contextualiza
+    RegistroFeedback "1" -- "0..*" PlanoAcao : motiva
+    PlanoAcao "0..*" -- "0..1" RegistroFeedback : é avaliado por
+    PlanoAcao "1" *-- "1..*" AcaoPlano : contém
+    AcaoPlano "1" *-- "0..*" AcompanhamentoAcao : registra
+    Usuario "1" -- "0..*" AcaoPlano : executa
 ```
 
 As cardinalidades de um ou mais grupos e perguntas descrevem os itens ativos da coleta publicada. Uma coleta em preparação pode estar vazia. Cada avaliação enviada deve conter uma resposta ativa por pergunta ativa publicada, embora rascunhos possam estar vazios. A autorrelação de usuários é simétrica e proíbe vínculo consigo mesmo.
@@ -63,6 +80,9 @@ Não há exclusão física de dados, mesmo de cadastros sem dependências ou ras
 4. Cada avaliador salva seus rascunhos e envia o questionário completo dentro do período.
 5. O RH encerra a coleta e o sistema cancela as pendências, preservando envios.
 6. Os resultados elegíveis são liberados e passam a compor o histórico e a análise, conforme as permissões propostas.
+7. A partir de um feedback recebido, o gestor ou o RH pode criar um plano de ação com o colaborador; o progresso é acompanhado até o feedback seguinte.
+
+No 360°, o RH ou o gestor escolhe o avaliado e os participantes por papel, e a abertura gera uma avaliação por participante, sem reciprocidade. O feedback informal não passa por coleta: o emissor registra o contexto e envia diretamente ao receptor.
 
 ## Exemplo de reciprocidade
 
@@ -82,4 +102,4 @@ O parâmetro P1 pertence ao grupo Comunicação e integra a coleta C1. Após sua
 
 ## Limites e decisões propostas
 
-Não há autoavaliação, pesos individuais, múltiplos grupos simultâneos para o mesmo parâmetro nem formulários diferentes por par nesta versão. `PROF` significa profissional e `score` define o tipo de avaliação, conforme confirmado pelo stakeholder na entrevista E01. Permissões, multiplicidade de perfis e política de liberação dependem das pendências da [especificação](../../requisitos/especificacao-requisitos.md). Planos de ação, metas e avaliação 360° constituem extensões a detalhar.
+Não há pesos individuais, múltiplos grupos simultâneos para o mesmo parâmetro nem formulários diferentes por par nesta versão. A autoavaliação é aceita apenas nas modalidades de autoavaliação e 360°, e nunca em uma coleta recíproca. `PROF` significa profissional e `score` define o tipo de avaliação, conforme confirmado pelo stakeholder na entrevista E01. Permissões, multiplicidade de perfis e política de liberação dependem das pendências da [especificação](../../requisitos/especificacao-requisitos.md). Avaliação 360°, autoavaliação, feedback informal e planos de ação foram incluídos com a consolidação da síntese das entrevistas (issue #40); a liberação de seus resultados depende de PV04.

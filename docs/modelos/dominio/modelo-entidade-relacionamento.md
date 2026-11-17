@@ -1,6 +1,6 @@
 # Modelo entidade-relacionamento
 
-Modelo lógico proposto para armazenar coletas com avaliação mútua e questionários históricos. Os nomes originais são preservados conceitualmente; campos derivados e relações substituem duplicações e listas de identificadores.
+Modelo lógico proposto para armazenar coletas recíprocas, avaliações 360°, autoavaliações, registros de feedback, planos de ação e questionários históricos. Os nomes originais são preservados conceitualmente; campos derivados e relações substituem duplicações e listas de identificadores.
 
 ## Convenções
 
@@ -85,6 +85,9 @@ erDiagram
     GRUPO_PARAM ||--o{ COLETA_GRUPO : origina
     COLETA_GRUPO ||--o{ COLETA_PARAM : contem
     PARAM ||--o{ COLETA_PARAM : origina
+    COLETA ||--o{ COLETA_PARTICIPANTE : seleciona_por_papel
+    USUARIO ||--o{ COLETA_PARTICIPANTE : avaliado
+    USUARIO ||--o{ COLETA_PARTICIPANTE : avaliador
     COLETA ||--o{ AVALIACAO : possui
     USUARIO ||--o{ AVALIACAO : avaliador
     USUARIO ||--o{ AVALIACAO : receptor
@@ -97,6 +100,7 @@ erDiagram
         uuid id PK
         uuid id_criador FK
         string titulo
+        enum modalidade
         enum modo_selecao
         datetime inicio_em
         datetime fim_em
@@ -114,6 +118,13 @@ erDiagram
         uuid id_coleta PK,FK
         uuid id_usuario_a PK,FK
         uuid id_usuario_b PK,FK
+        boolean ativo
+    }
+    COLETA_PARTICIPANTE {
+        uuid id_coleta PK,FK
+        uuid id_avaliado PK,FK
+        uuid id_avaliador PK,FK
+        enum papel
         boolean ativo
     }
     COLETA_GRUPO {
@@ -140,6 +151,7 @@ erDiagram
         uuid id_coleta FK
         uuid id_avaliador FK
         uuid id_receptor FK
+        enum papel_avaliador
         uuid id_time_avaliador_snapshot FK
         uuid id_time_receptor_snapshot FK
         string contexto_avaliador_snapshot
@@ -164,7 +176,74 @@ Os campos de contexto do diagrama abreviam conjuntos de atributos: nome, cargo, 
 
 No armazenamento, uma coleta em preparação pode não ter grupos nem seleções de participantes. Para abrir, deve ter ao menos um grupo ativo, um parâmetro ativo em cada grupo ativo e um par válido, selecionado manualmente ou gerado a partir dos times. No modo TIMES, cada time selecionado por vínculo ativo deve ter pelo menos dois integrantes elegíveis. Uma avaliação pode não ter respostas em rascunho; no envio, deve ter uma resposta ativa para cada parâmetro ativo publicado.
 
-`COLETA.modo_selecao` admite PARES ou TIMES. COLETA_TIME registra os times escolhidos no modo TIMES e COLETA_PAR registra os pares manuais no modo PARES. Apenas os vínculos ativos do modo vigente compõem a seleção. Vínculos antigos permanecem armazenados e inativos. As avaliações são criadas somente na abertura e preservam os integrantes efetivos e seus contextos; a lotação atual dos usuários não deve ser usada para reconstruir participantes históricos.
+`COLETA.modalidade` admite RECIPROCA, AVALIACAO_360 ou AUTOAVALIACAO. Na modalidade RECIPROCA, `COLETA.modo_selecao` é obrigatório e admite PARES ou TIMES; nas demais, fica vazio e a seleção é feita em COLETA_PARTICIPANTE. COLETA_TIME registra os times escolhidos no modo TIMES e COLETA_PAR registra os pares manuais no modo PARES. Apenas os vínculos ativos do modo vigente compõem a seleção. Vínculos antigos permanecem armazenados e inativos. As avaliações são criadas somente na abertura e preservam os integrantes efetivos e seus contextos; a lotação atual dos usuários não deve ser usada para reconstruir participantes históricos.
+
+## Feedback contextual e planos de ação
+
+O diagrama-fonte está em [mer-feedback-desenvolvimento.mmd](mer-feedback-desenvolvimento.mmd).
+
+```mermaid
+erDiagram
+    USUARIO ||--o{ REGISTRO_FEEDBACK : emite
+    USUARIO ||--o{ REGISTRO_FEEDBACK : recebe
+    AVALIACAO |o--o| REGISTRO_FEEDBACK : contextualiza
+    REGISTRO_FEEDBACK ||--o{ PLANO_ACAO : motiva
+    REGISTRO_FEEDBACK |o--o{ PLANO_ACAO : avalia_resultado
+    USUARIO ||--o{ PLANO_ACAO : colaborador
+    USUARIO ||--o{ PLANO_ACAO : responsavel
+    PLANO_ACAO ||--|{ ACAO_PLANO : contem
+    USUARIO ||--o{ ACAO_PLANO : executa
+    ACAO_PLANO ||--o{ ACOMPANHAMENTO_ACAO : registra
+    USUARIO ||--o{ ACOMPANHAMENTO_ACAO : registrado_por
+
+    REGISTRO_FEEDBACK {
+        uuid id PK
+        uuid id_emissor FK
+        uuid id_receptor FK
+        uuid id_avaliacao FK "opcional; UQ"
+        enum formalidade
+        enum natureza
+        date ocorrido_em
+        string fato
+        string impacto
+        string conteudo
+        enum status
+        datetime enviado_em
+    }
+    PLANO_ACAO {
+        uuid id PK
+        uuid id_colaborador FK
+        uuid id_responsavel FK
+        uuid id_registro_origem FK
+        uuid id_registro_resultado FK "opcional"
+        string objetivo
+        enum status
+        datetime concluido_em
+        datetime cancelado_em
+        string motivo_cancelamento
+    }
+    ACAO_PLANO {
+        uuid id PK
+        uuid id_plano FK
+        uuid id_responsavel_execucao FK
+        string meta
+        string descricao
+        date prazo
+        string ponto_verificacao
+        enum status
+    }
+    ACOMPANHAMENTO_ACAO {
+        uuid id PK
+        uuid id_acao FK
+        uuid id_registrado_por FK
+        enum tipo
+        string descricao
+        int percentual "opcional, 0 a 100"
+        datetime registrado_em
+    }
+```
+
+Cada avaliação enviada de uma coleta gera no máximo um REGISTRO_FEEDBACK formal, ligado por `id_avaliacao`, que guarda o contexto e a natureza informada pelo avaliador. Um feedback informal é um REGISTRO_FEEDBACK sem avaliação. Um plano de ação nasce de um registro (`id_registro_origem`) e pode apontar o registro posterior que avalia seus resultados (`id_registro_resultado`).
 
 ## Entidades e responsabilidades
 
@@ -178,8 +257,13 @@ No armazenamento, uma coleta em preparação pode não ter grupos nem seleções
 - `COLETA_PAR`: seleção manual de pares da coleta, no modo PARES, preservada mesmo quando desativada.
 - `COLETA_GRUPO`: grupo selecionado e cópia de seu contexto.
 - `COLETA_PARAM`: pergunta selecionada e cópia da sua escala.
-- `AVALIACAO`: atribuição em um sentido, autoria e estado do questionário.
+- `COLETA_PARTICIPANTE`: seleção de avaliado, avaliador e papel no 360° e na autoavaliação.
+- `AVALIACAO`: atribuição em um sentido, autoria, papel do avaliador e estado do questionário.
 - `FEEDBACK`: valor e comentário de uma pergunta.
+- `REGISTRO_FEEDBACK`: contexto e classificação de um feedback formal ou informal.
+- `PLANO_ACAO`: plano de desenvolvimento ligado ao feedback que o motivou.
+- `ACAO_PLANO`: meta, ação, responsável, prazo e ponto de verificação.
+- `ACOMPANHAMENTO_ACAO`: progresso e verificações de cada ação.
 - `EVENTO_AUDITORIA`: registro das operações administrativas e transições relevantes.
 
 ## Chaves e restrições
@@ -209,10 +293,14 @@ No armazenamento, uma coleta em preparação pode não ter grupos nem seleções
 
 ### Atribuição e respostas
 
-- `AVALIACAO.id_avaliador != AVALIACAO.id_receptor`.
+- `AVALIACAO.id_avaliador != AVALIACAO.id_receptor`, exceto quando `papel_avaliador = AUTO`, que exige avaliador igual ao receptor e só ocorre nas modalidades AUTOAVALIACAO e AVALIACAO_360.
+- `AVALIACAO.papel_avaliador`: PAR na modalidade RECIPROCA; GESTOR, COLEGA, SUBORDINADO ou AUTO no 360°; AUTO na autoavaliação.
+- `COLETA_PARTICIPANTE`: PK composta por `(id_coleta, id_avaliado, id_avaliador)`; papel AUTO exige avaliado igual ao avaliador. Só tem vínculos ativos nas modalidades AVALIACAO_360 e AUTOAVALIACAO. A abertura gera uma avaliação por vínculo ativo, sem reciprocidade.
+- `REGISTRO_FEEDBACK`: `formalidade = INFORMAL` exige `id_avaliacao` vazio; `id_avaliacao` preenchido exige `formalidade = FORMAL`, unicidade por avaliação e emissor e receptor iguais aos da avaliação. Fato, impacto, natureza e conteúdo são obrigatórios no envio.
+- `PLANO_ACAO.id_registro_origem` aponta para um registro enviado cujo receptor é o colaborador do plano; o plano exige ao menos uma ação. Planos e ações são concluídos ou cancelados, nunca excluídos.
 - UQ de `AVALIACAO(id_coleta, id_avaliador, id_receptor)`.
 - No modo PARES, COLETA_PAR registra as seleções manuais na preparação; a abertura revalida usuários, times e relação de trabalho e gera as duas avaliações de cada par ativo. No modo TIMES, COLETA_TIME registra a seleção e a abertura resolve os usuários ativos lotados em cada time selecionado por vínculo ativo, sem exigir vínculos individuais em RELACAO_TRABALHO. A prévia dos participantes e das contagens deve ser atualizada e confirmada pelo RH se a composição mudar antes da abertura.
-- Para cada time selecionado com `n` integrantes elegíveis, a abertura gera todas as combinações internas: `n × (n − 1) / 2` pares e `n × (n − 1)` avaliações. Não gera combinações entre times distintos, nem autoavaliações. Cada time selecionado deve ter ao menos dois integrantes elegíveis.
+- Para cada time selecionado com `n` integrantes elegíveis, a abertura gera todas as combinações internas: `n × (n − 1) / 2` pares e `n × (n − 1)` avaliações. Não gera combinações entre times distintos, nem autoavaliações, que pertencem às modalidades próprias. Cada time selecionado deve ter ao menos dois integrantes elegíveis.
 - A abertura, as cópias do questionário e todas as avaliações devem ser persistidas em uma única transação, garantindo os dois sentidos de todo par de forma idempotente. Uma falha reverte a operação completa. Somente coleta aberta admite edição de respostas.
 - Mudanças de integrantes ou de lotação após a abertura não alteram os pares gerados. O conjunto histórico de participantes é obtido das avaliações preservadas, não dos membros atuais do time.
 - O par inverso deve existir; a criação é sempre recíproca e não há exclusão física. É uma invariável transacional do serviço de domínio; uma simples FK não garante sua existência recíproca.

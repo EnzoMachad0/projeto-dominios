@@ -9,6 +9,9 @@ erDiagram
     GRUPO_PARAM ||--o{ COLETA_GRUPO : origina
     COLETA_GRUPO ||--o{ COLETA_PARAM : contem
     PARAM ||--o{ COLETA_PARAM : origina
+    COLETA ||--o{ COLETA_PARTICIPANTE : seleciona_por_papel
+    USUARIO ||--o{ COLETA_PARTICIPANTE : avaliado
+    USUARIO ||--o{ COLETA_PARTICIPANTE : avaliador
     COLETA ||--o{ AVALIACAO : possui
     USUARIO ||--o{ AVALIACAO : avaliador
     USUARIO ||--o{ AVALIACAO : receptor
@@ -21,6 +24,7 @@ erDiagram
         uuid id PK
         uuid id_criador FK
         string titulo
+        enum modalidade
         enum modo_selecao
         datetime inicio_em
         datetime fim_em
@@ -38,6 +42,13 @@ erDiagram
         uuid id_coleta PK,FK
         uuid id_usuario_a PK,FK
         uuid id_usuario_b PK,FK
+        boolean ativo
+    }
+    COLETA_PARTICIPANTE {
+        uuid id_coleta PK,FK
+        uuid id_avaliado PK,FK
+        uuid id_avaliador PK,FK
+        enum papel
         boolean ativo
     }
     COLETA_GRUPO {
@@ -64,6 +75,7 @@ erDiagram
         uuid id_coleta FK
         uuid id_avaliador FK
         uuid id_receptor FK
+        enum papel_avaliador
         uuid id_time_avaliador_snapshot FK
         uuid id_time_receptor_snapshot FK
         string contexto_avaliador_snapshot
