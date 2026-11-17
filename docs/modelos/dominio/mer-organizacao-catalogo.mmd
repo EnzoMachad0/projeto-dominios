@@ -4,6 +4,7 @@ erDiagram
     USUARIO ||--o{ RELACAO_TRABALHO : usuario_a
     USUARIO ||--o{ RELACAO_TRABALHO : usuario_b
     GRUPO_PARAM ||--o{ PARAM : agrupa
+    USUARIO |o--o{ EVENTO_AUDITORIA : executa
 
     TIME {
         uuid id PK
@@ -38,4 +39,14 @@ erDiagram
         string pergunta
         enum score
         boolean ativo
+    }
+    EVENTO_AUDITORIA {
+        uuid id PK
+        uuid id_ator FK "opcional em operação automática"
+        string operacao
+        string entidade
+        uuid id_alvo "opcional se a PK do alvo é composta"
+        json chave_alvo
+        datetime ocorrido_em
+        json metadados
     }

@@ -59,14 +59,12 @@ Característica de relevância alta: protege feedbacks, resultados e identidade 
 
 | ID | Subcaracterística | Requisito | Condição | Verificação | Situação |
 | --- | --- | --- | --- | --- | --- |
-| RNF03 (RNF-DOC-13) | *Inclusivity*, *operability* | Fluxos de preenchimento operáveis por teclado, com rótulos e mensagens de erro textuais. Nível de acessibilidade de referência (por exemplo, WCAG 2.2 AA): a definir. | Telas de login, preenchimento e envio. | Roteiro de uso somente com teclado e verificação automática de acessibilidade. | Proposto |
+| RNF03 (RNF-DOC-13, RNF-DOC-14) | *Inclusivity*, *operability*; *adaptability* (ver 3.6) | Fluxos de preenchimento operáveis por teclado, com rótulos e mensagens de erro textuais, e utilizáveis em larguras de 360 a 1.440 px sem rolagem horizontal nos formulários. Nível de acessibilidade de referência (por exemplo, WCAG 2.2 AA): a definir. | Telas de login, preenchimento e envio, em navegadores atuais de celular e computador. | Roteiro de uso somente com teclado, verificação automática de acessibilidade e teste nas larguras-limite. | Proposto |
 | RNF13 (RNF-DOC-11, RNF-DOC-12) | *Self-descriptiveness*, *user error protection* | A tela de resposta deve informar quem poderá ver o conteúdo e quando; deve preservar rascunhos e pedir confirmação antes do envio definitivo. | Preenchimento de avaliação (CU-02). | Teste de usabilidade com roteiro e inspeção das telas. | Proposto |
 
 ### 3.6. *Flexibility* — flexibilidade
 
-| ID | Subcaracterística | Requisito | Condição | Verificação | Situação |
-| --- | --- | --- | --- | --- | --- |
-| RNF03 (RNF-DOC-14) | *Adaptability* | A interface web deve funcionar em larguras de 360 a 1.440 px sem rolagem horizontal nos formulários, preparando o uso futuro em dispositivos móveis. | Navegadores atuais em celular e computador. | Teste nas larguras-limite. | Proposto |
+A subcaracterística *adaptability* é atendida pelo RNF03, descrito na seção 3.5: a interface web deve funcionar em larguras de 360 a 1.440 px, preparando o uso futuro em dispositivos móveis. Como na [lista geral](lista-geral.md), o RNF03 consolida o RNF-DOC-13 e o RNF-DOC-14 em um único requisito.
 
 ### 3.7. *Maintainability* — manutenibilidade
 
