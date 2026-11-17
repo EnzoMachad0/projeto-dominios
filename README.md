@@ -25,6 +25,10 @@ Em fase de levantamento e especificação de requisitos.
 
 O planejamento e o acompanhamento das atividades estão no [quadro Kanban do GitHub Projects](https://github.com/users/EnzoMachad0/projects/1).
 
+## Protótipo
+
+As telas e os fluxos do sistema estão no [protótipo PulsarRH no Figma](https://www.figma.com/design/pD7rcKYlK7cQ0M5KidV1kL/PulsarRH?node-id=1-3&t=DMEMqjiEkqlY5LWK-1).
+
 ## Objetivo acadêmico
 
 Aplicar técnicas de Engenharia de Requisitos para identificar necessidades dos usuários, documentar requisitos e modelar uma solução alinhada às necessidades de gestão de competências e feedback.
