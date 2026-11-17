@@ -19,7 +19,7 @@ Projeto acadêmico desenvolvido para a disciplina de Domínios de Software, com 
 
 ## Status do projeto
 
-Primeira etapa (levantamento e especificação de requisitos) com 15 de 19 entregáveis do enunciado prontos. A consolidação dos artefatos, a apresentação e o roteiro estão em [docs/entregas](docs/entregas).
+Primeira etapa (levantamento e especificação de requisitos) com 15 de 19 entregáveis do enunciado prontos, 2 parciais (transcrições e BPMN a validar) e 2 pendentes (questionários e sua síntese). A consolidação dos artefatos, a apresentação e o roteiro estão em [docs/entregas](docs/entregas).
 
 ### O que ainda falta
 
@@ -28,8 +28,8 @@ Primeira etapa (levantamento e especificação de requisitos) com 15 de 19 entre
 | Receber e publicar as transcrições das entrevistas E01 e E02 | #41 |
 | Conferir a síntese das entrevistas com as transcrições | #6 |
 | Aplicar os dois questionários e sintetizar seus requisitos | #7, #8 |
-| Modelar o processo de negócio em BPMN | #10 |
-| Validar escopo, prioridades e conflitos C01 e C02 com o stakeholder | #25 |
+| Validar o BPMN do processo atual e do proposto ([docs/modelos/processo](docs/modelos/processo)) | #10 |
+| Validar escopo, prioridades e conflitos C01 e C02 com o stakeholder ([pauta](docs/validacao/pauta-validacao-stakeholder.md)) | #25 |
 | Regerar as imagens dos diagramas (MER, modelo de domínio e casos de uso) a partir dos `.mmd` | #40 |
 | Ligar cada tela do Figma aos requisitos na matriz de rastreabilidade | #22 |
 | Registrar revisão dos PRs #37 (CU-05) e #45 (Culture Amp), que não têm revisão humana | — |
