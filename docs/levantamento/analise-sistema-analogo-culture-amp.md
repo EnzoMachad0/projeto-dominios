@@ -325,3 +325,376 @@ A Culture Amp disponibiliza documentação contratual de tratamento de dados (*D
 | RNF-LGPD-08 | O sistema deverá proteger os dados durante transmissão e armazenamento. | Segurança |
 
 Esses requisitos são propostas para o sistema acadêmico, não afirmações de que todos estejam disponíveis exatamente da mesma maneira na Culture Amp.
+
+## 5. Segurança e aspectos técnicos
+
+A Culture Amp é comercializada como serviço SaaS. A empresa documenta medidas técnicas e organizacionais de segurança, incluindo controles de acesso, criptografia e práticas de segurança empresarial.
+
+Entre os aspectos a investigar na documentação oficial estão:
+
+- Certificações e auditorias de segurança, como ISO/IEC 27001 e SOC 2 Type II.
+- Criptografia de dados em trânsito e em repouso.
+- Autenticação e autorização.
+- Single Sign-On (SSO).
+- Integrações com provedores de identidade.
+- Hospedagem e infraestrutura em nuvem.
+- Gestão de permissões.
+- Procedimentos de proteção e tratamento de dados.
+
+A empresa também documenta integrações com ferramentas corporativas e sistemas de RH, incluindo opções de integração por API, SFTP e provedores de identidade. A disponibilidade de cada integração depende do contrato e da configuração.
+
+### 5.1 Plataforma web e dispositivos móveis
+
+A plataforma é acessível pela web e possui integrações com ferramentas utilizadas em dispositivos móveis, como Teams e Slack. A disponibilidade de cada funcionalidade em aplicativos ou interfaces móveis deve ser verificada individualmente.
+
+Para o projeto acadêmico, recomenda-se uma aplicação web responsiva, preparada para diferentes tamanhos de tela e com possibilidade de evolução para dispositivos móveis.
+
+## 6. Planos de pagamento e modelo comercial
+
+O Culture Amp utiliza um modelo comercial empresarial, com contratação SaaS e preços personalizados.
+
+O preço depende de fatores como:
+
+1. Quantidade de colaboradores.
+2. Produtos contratados.
+3. Nível de serviço.
+4. Necessidades de implementação e suporte.
+
+A contratação é apresentada em modelo anual e a empresa solicita contato comercial para elaborar uma proposta. Não há valores públicos suficientemente detalhados para informar um preço confiável em reais ou dólares.
+
+### 6.1 Produtos
+
+| Produto | Funcionalidades principais | Relação com o projeto |
+| --- | --- | --- |
+| Engage | Pesquisas, engajamento, clima e análise de comentários | Complementar |
+| Perform | Avaliações, feedback, metas e calibração | Essencial |
+| Develop | Desenvolvimento profissional e competências | Essencial |
+
+A oferta comercial também pode contemplar serviços especializados de consultoria em gestão de pessoas.
+
+### 6.2 Condições comerciais
+
+| Informação | Condição |
+| --- | --- |
+| Modalidade | SaaS |
+| Cobrança | Anual |
+| Valor por colaborador | Depende da proposta |
+| Contratação | Mediante contato comercial |
+| Produtos | Variam conforme a contratação |
+| Suporte | Conforme o plano e a oferta comercial |
+| Implementação | Varia conforme o porte e os serviços contratados |
+
+**Conclusão sobre preços:** no relatório acadêmico, deve-se registrar que o Culture Amp trabalha com preços personalizados, contratados anualmente e calculados conforme o porte da empresa e os módulos escolhidos. Não se devem inventar valores ou faixas de preço.
+
+Página oficial: <https://www.cultureamp.com/platform/plans-and-pricing>
+
+## 7. Atores e casos de uso relacionados ao projeto
+
+Os casos de uso a seguir são reconstruções conceituais baseadas nas funcionalidades documentadas e servem como referência para o sistema acadêmico.
+
+### 7.1 Atores
+
+| Ator | Responsabilidade |
+| --- | --- |
+| Administrador / RH | Configurar o sistema, cadastrar participantes, gerenciar ciclos e acompanhar avaliações |
+| Gestor | Avaliar colaboradores, acompanhar resultados e orientar o desenvolvimento |
+| Colaborador | Realizar autoavaliação, receber feedback e acompanhar metas |
+| Avaliador / Colega | Fornecer feedback sobre outros colaboradores |
+| RH / Comitê de calibração | Analisar avaliações consolidadas e apoiar a padronização dos resultados |
+
+### 7.2 Lista de casos de uso
+
+| ID | Caso de uso | Ator principal |
+| --- | --- | --- |
+| UC01 | Autenticar usuário | Todos |
+| UC02 | Gerenciar colaboradores | Administrador |
+| UC03 | Configurar ciclo de avaliação | Administrador |
+| UC04 | Definir avaliadores | Administrador / Gestor |
+| UC05 | Realizar autoavaliação | Colaborador |
+| UC06 | Avaliar colaborador | Gestor |
+| UC07 | Fornecer feedback a um colega | Avaliador |
+| UC08 | Fornecer feedback ao gestor | Colaborador |
+| UC09 | Solicitar feedback | Gestor / Colaborador |
+| UC10 | Consultar feedback recebido | Colaborador |
+| UC11 | Consolidar resultados | Sistema |
+| UC12 | Calibrar avaliações | RH / Gestor |
+| UC13 | Compartilhar resultado | Gestor |
+| UC14 | Registrar feedback contínuo | Usuários autorizados |
+| UC15 | Definir metas de desenvolvimento | Gestor / Colaborador |
+| UC16 | Acompanhar plano de desenvolvimento | Gestor / Colaborador |
+| UC17 | Consultar histórico de avaliações | Usuários autorizados |
+| UC18 | Gerar relatórios | RH / Administrador |
+| UC19 | Gerenciar permissões | Administrador |
+
+### 7.3 Caso de uso completo — UC07: Fornecer feedback a um colega
+
+| Campo | Descrição |
+| --- | --- |
+| Ator principal | Avaliador / Colega |
+| Objetivo | Registrar uma avaliação sobre o desempenho de outro colaborador |
+| Pré-condição | Avaliador autenticado e autorizado a responder à solicitação |
+| Pós-condição | Feedback registrado e associado ao ciclo de avaliação |
+
+**Fluxo principal:**
+
+1. O avaliador acessa o sistema.
+2. O sistema apresenta suas tarefas pendentes.
+3. O avaliador seleciona uma solicitação de feedback.
+4. O sistema apresenta o questionário.
+5. O avaliador responde às perguntas.
+6. O avaliador registra comentários e exemplos.
+7. O avaliador revisa suas respostas.
+8. O avaliador envia o formulário.
+9. O sistema valida as informações.
+10. O sistema registra o feedback.
+11. O sistema atualiza o status da solicitação.
+
+**Fluxos alternativos:**
+
+- 5a. O avaliador deixa uma questão obrigatória sem resposta. O sistema informa a pendência.
+- 8a. O avaliador decide salvar o formulário sem enviá-lo, caso esse recurso esteja habilitado.
+- 9a. O ciclo está encerrado. O sistema impede o envio.
+- 10a. Ocorre uma falha de comunicação. O sistema informa que o envio não foi confirmado e preserva o conteúdo, quando possível.
+
+**Regras de negócio propostas:**
+
+- RN01: somente avaliadores autorizados podem responder à solicitação.
+- RN02: o feedback deve pertencer a um ciclo ou solicitação válida.
+- RN03: as respostas devem respeitar as regras de confidencialidade.
+- RN04: o sistema deve registrar a data e o status do envio.
+- RN05: um feedback enviado não deve ser alterado sem regra explícita de correção e auditoria.
+
+## 8. Processo de negócio — avaliação 360°
+
+O processo abaixo é uma proposta de modelagem para o projeto, baseada no fluxo geral de avaliação da plataforma.
+
+```mermaid
+flowchart TD
+    A([Início]) --> B[RH configura ciclo de avaliação]
+    B --> C[Seleciona colaboradores]
+    C --> D[Define avaliadores]
+    D --> E[Envia solicitações]
+    E --> F[Colaborador realiza autoavaliação]
+    E --> G[Gestor realiza avaliação]
+    E --> H[Colegas fornecem feedback]
+    E --> I[Subordinados avaliam gestor]
+    F --> J[Consolidação dos resultados]
+    G --> J
+    H --> J
+    I --> J
+    J --> K[RH e gestores analisam resultados]
+    K --> L{Necessita calibração?}
+    L -->|Sim| M[Realizar calibração]
+    M --> N[Compartilhar avaliação]
+    L -->|Não| N
+    N --> O[Definir plano de desenvolvimento]
+    O --> P[Acompanhar metas e progresso]
+    P --> Q([Fim do ciclo])
+```
+
+O processo demonstra que a avaliação envolve diferentes participantes, consolidação de respostas, possível calibração, compartilhamento dos resultados e acompanhamento de ações de desenvolvimento.
+
+Essa representação pode ser convertida para BPMN 2.0 em ferramentas como Bizagi Modeler ou Camunda Modeler. O diagrama acima é um fluxograma conceitual, não uma representação BPMN formal.
+
+## 9. Comparação com os requisitos da atividade
+
+| Requisito da atividade | Funcionalidade análoga | Atendimento |
+| --- | --- | --- |
+| Feedback chefe-colaborador | Manager Reviews | Sim |
+| Feedback entre pares | Peer Feedback | Sim |
+| Feedback 360° | Ciclos de avaliação com múltiplas fontes | Sim |
+| Feedback formal | Performance Reviews | Sim |
+| Feedback informal | Continuous Feedback | Sim |
+| Feedback positivo | Shoutouts e reconhecimento | Sim |
+| Feedback construtivo | Feedback e sugestões de melhoria | Sim |
+| Questionários | Formulários de avaliação | Sim |
+| Múltiplas fontes | Gestores, pares, subordinados e autoavaliação | Sim |
+| Análises e indicadores | Relatórios e recursos analíticos | Sim |
+| Anonimato | Regras de confidencialidade configuráveis | Parcial; depende da configuração e do número de respostas |
+| Histórico | Histórico de ciclos e avaliações | Sim |
+| Planos de desenvolvimento | Recursos de desenvolvimento profissional | Sim |
+| Acompanhamento de metas | Goal Management | Sim |
+| Plataforma web | Plataforma SaaS | Sim |
+| Dispositivos móveis | Acesso web e integrações móveis | Deve ser validado por funcionalidade |
+| LGPD | Recursos de privacidade e segurança; adequação brasileira depende do contexto | Exige validação |
+
+A tabela representa a correspondência entre funcionalidades documentadas e objetivos da atividade. Não é resultado de auditoria independente da plataforma.
+
+## 10. Pontos fortes, limitações e oportunidades
+
+### 10.1 Pontos fortes
+
+- Integra diferentes modalidades de feedback.
+- Permite avaliações em ciclos configuráveis.
+- Relaciona feedback, metas e desenvolvimento.
+- Oferece recursos de análise e calibração.
+- Possui controles de permissões.
+- Disponibiliza documentação de suporte.
+- Oferece recursos de inteligência artificial em determinadas funcionalidades.
+
+### 10.2 Limitações e pontos de atenção
+
+- Preços não transparentes e personalizados.
+- Modelo comercial voltado principalmente a organizações.
+- Anonimato sujeito ao tamanho e à composição dos grupos.
+- Grande quantidade de funcionalidades pode aumentar a complexidade.
+- Dependência de conectividade por ser SaaS.
+- Necessidade de avaliar a adequação à LGPD e eventuais transferências internacionais.
+
+## 11. Requisitos de qualidade — ISO/IEC 25010
+
+A análise do Culture Amp pode orientar a definição dos requisitos não funcionais do projeto.
+
+| Característica de qualidade | Requisito proposto |
+| --- | --- |
+| Adequação funcional | O sistema deverá oferecer mecanismos para registrar e consultar diferentes tipos de feedback. |
+| Eficiência de desempenho | O sistema deverá apresentar resultados das avaliações sem atrasos perceptíveis em condições normais de uso. |
+| Compatibilidade | O sistema deverá permitir integração futura com ferramentas externas. |
+| Usabilidade | A interface deverá facilitar o preenchimento dos questionários e a consulta aos resultados. |
+| Confiabilidade | O sistema deverá preservar os feedbacks registrados, evitando perda de informações. |
+| Segurança | O sistema deverá implementar autenticação, autorização e proteção dos dados. |
+| Manutenibilidade | O sistema deverá permitir a evolução dos questionários e regras de avaliação sem grandes alterações estruturais. |
+| Portabilidade | A aplicação deverá funcionar em navegadores modernos e adaptar-se a diferentes tamanhos de tela. |
+
+A ISO/IEC 25010:2023 apresenta um modelo de qualidade de produto com nove características. O grupo deve utilizar a edição e a terminologia indicadas pela professora e elaborar requisitos verificáveis, em vez de apenas listar nomes de características.
+
+Exemplo:
+
+> RNF-SEG-01: O sistema deverá impedir que um colaborador consulte avaliações individuais de outros colaboradores sem autorização explícita.
+
+## 12. Funcionalidades recomendadas para o sistema acadêmico
+
+Não é recomendável reproduzir toda a plataforma Culture Amp. Para atender ao escopo da disciplina, sugere-se priorizar os recursos de gestão de competências e feedback.
+
+### 12.1 Nível essencial
+
+- Cadastro de usuários e colaboradores.
+- Gerenciamento de cargos e equipes.
+- Definição de competências.
+- Criação de ciclos de avaliação.
+- Questionários personalizados.
+- Autoavaliação.
+- Avaliação chefe-colaborador.
+- Avaliação entre pares.
+- Feedback 360°.
+- Registro de feedback positivo e construtivo.
+- Consolidação de resultados.
+- Controle de confidencialidade.
+- Histórico de avaliações.
+
+### 12.2 Nível complementar
+
+- Metas individuais.
+- Planos de desenvolvimento individual.
+- Acompanhamento de competências.
+- Gráficos de evolução.
+- Feedback contínuo.
+- Notificações de avaliações pendentes.
+- Relatórios para gestores.
+- Reconhecimento de colaboradores.
+
+### 12.3 Possibilidades futuras
+
+- Inteligência artificial para apoio à análise de feedbacks.
+- Integração com sistemas de RH.
+- Aplicativo móvel.
+- SSO.
+- Análise preditiva de desempenho.
+- Comparação de resultados entre departamentos.
+- Integrações com Teams e Slack.
+- Recomendações de desenvolvimento.
+
+### 12.4 Diferencial recomendado: evolução por competência
+
+Uma funcionalidade interessante seria apresentar a evolução de cada competência ao longo dos ciclos, e não somente uma nota geral do colaborador.
+
+Exemplo fictício:
+
+| Competência | Ciclo anterior | Ciclo atual |
+| --- | ---: | ---: |
+| Comunicação | 2,5 | 4,0 |
+| Trabalho em equipe | 3,0 | 4,2 |
+| Liderança | 2,0 | 3,5 |
+| Organização | 3,5 | 4,0 |
+| Resolução de problemas | 2,5 | 3,8 |
+
+Essa funcionalidade conecta feedback, competências e evolução ao longo do tempo.
+
+## 13. Modelo de dados conceitual
+
+As seguintes entidades podem servir de referência para o Modelo Entidade-Relacionamento e o Modelo de Domínio do projeto:
+
+| Entidade | Dados principais |
+| --- | --- |
+| Usuário | Identificação, e-mail, credenciais e status |
+| Colaborador | Cargo, equipe e gestor |
+| Ciclo de avaliação | Período, status e prazos |
+| Competência | Nome, descrição e critérios |
+| Questionário | Identificação, finalidade e estrutura |
+| Pergunta | Enunciado, tipo de resposta e obrigatoriedade |
+| Avaliação | Avaliador, avaliado, ciclo, modalidade e status |
+| Resposta | Nota, comentário e data |
+| Plano de ação | Objetivo, prazo e progresso |
+| Histórico | Registros de avaliações e alterações |
+| Auditoria | Acessos e operações relevantes |
+
+Na implementação, algumas relações exigirão entidades associativas, como avaliador-avaliado, perguntas-respostas e competência-avaliação.
+
+**Decisão importante de modelagem:** não se deve implementar anonimato simplesmente removendo o nome do avaliador de todas as tabelas. O sistema precisa controlar a participação, impedir avaliações duplicadas e proteger a identidade na apresentação dos resultados. Para isso, recomenda-se separar os dados de participação dos dados de resposta apresentados ao avaliado.
+
+## 14. Síntese acadêmica para o documento de requisitos
+
+O Culture Amp é uma plataforma de gestão de pessoas que oferece funcionalidades voltadas à avaliação de desempenho, feedback contínuo, desenvolvimento profissional e engajamento de colaboradores.
+
+A plataforma foi selecionada como sistema análogo por apresentar funcionalidades diretamente relacionadas ao escopo do projeto de Gestão de Competências, especialmente no que diz respeito à coleta de feedbacks de diferentes fontes e ao acompanhamento da evolução profissional dos colaboradores.
+
+Entre suas principais funcionalidades estão a realização de avaliações de desempenho, autoavaliações, feedback entre pares, avaliações de gestores, feedback ascendente, questionários personalizados, gestão de metas, planos de desenvolvimento individual, reuniões individuais e geração de relatórios.
+
+O sistema possibilita a organização de ciclos de avaliação, nos quais diferentes participantes contribuem com informações sobre o desempenho de um colaborador. Os resultados são consolidados e podem ser submetidos a processos de calibração, permitindo maior consistência nas avaliações realizadas pela organização.
+
+Outro recurso relevante é o feedback contínuo, que permite registrar reconhecimentos, observações e oportunidades de melhoria fora dos ciclos formais de avaliação. Dessa maneira, o acompanhamento do desempenho deixa de ser limitado a períodos específicos e passa a fazer parte da rotina organizacional.
+
+Em relação à gestão de competências, a plataforma oferece mecanismos de desenvolvimento profissional, estabelecimento de metas e acompanhamento de planos de ação. Esses recursos permitem transformar os resultados das avaliações em iniciativas concretas de melhoria.
+
+No aspecto de segurança e privacidade, o Culture Amp apresenta controles de acesso por perfil, permissões administrativas, criptografia e documentação sobre tratamento e transferência de dados pessoais. Entretanto, o anonimato dos feedbacks depende das configurações adotadas e da quantidade de respostas disponíveis, não sendo garantido em todas as situações.
+
+A plataforma utiliza um modelo comercial SaaS, com cobrança anual e preços personalizados conforme a quantidade de colaboradores, produtos contratados e nível de serviço. Os valores não são apresentados de maneira pública na página oficial.
+
+A análise permite concluir que o Culture Amp é uma referência adequada para o desenvolvimento do projeto proposto, principalmente por integrar diferentes modalidades de feedback, consolidar avaliações de múltiplas fontes e relacionar os resultados ao desenvolvimento profissional. Suas funcionalidades podem orientar a definição dos requisitos funcionais, requisitos não funcionais, regras de negócio, casos de uso e modelos de dados do sistema acadêmico.
+
+## 15. Referências e fontes oficiais
+
+As fontes abaixo devem ser consultadas para confirmar funcionalidades, condições comerciais e informações técnicas vigentes. A documentação e as ofertas podem ser atualizadas pela empresa.
+
+1. Culture Amp — Plataforma: <https://www.cultureamp.com/platform>
+2. Culture Amp — Feedback 360°: <https://www.cultureamp.com/p/360-feedback-platform>
+3. Culture Amp — Planos e preços: <https://www.cultureamp.com/platform/plans-and-pricing>
+4. Culture Amp Support — Lançar ciclo de avaliação: <https://support.cultureamp.com/en/articles/10398426-launch-a-unified-performance-review-cycle>
+5. Culture Amp Support — Acompanhar ciclo de avaliação: <https://support.cultureamp.com/en/articles/10422848-admin-guide-tracking-and-managing-a-performance-review-cycle>
+6. Culture Amp Support — FAQ sobre confidencialidade do feedback 360°: <https://support.cultureamp.com/en/articles/7048501-effectiveness-360-faq-for-employees>
+7. Culture Amp — Política de privacidade: <https://www.cultureamp.com/company/legal/privacy-policy>
+8. Culture Amp — Data Processing Addendum: <https://www.cultureamp.com/company/legal/data-processing-addendum>
+9. Culture Amp — Medidas técnicas e organizacionais: <https://www.cultureamp.com/company/legal/technical-and-organisational-measures>
+10. Culture Amp Support — Papéis e permissões: <https://support.cultureamp.com/en/articles/9972270-role-permissions-breakdown>
+11. Culture Amp Support — Integrações e API: <https://support.cultureamp.com/en/collections/3674722-integrations-api>
+
+## 16. Conclusão e recomendação para o grupo
+
+O Culture Amp é uma referência adequada para o projeto porque contempla os principais elementos solicitados pela atividade: feedback de diferentes fontes, questionários, avaliações estruturadas, análise de resultados, confidencialidade, histórico e desenvolvimento profissional.
+
+Recomenda-se utilizar a plataforma como referência principalmente para:
+
+1. **Processo de negócio:** modelar o ciclo de avaliação, desde a configuração até o acompanhamento do plano de desenvolvimento.
+2. **Requisitos e casos de uso:** utilizar as modalidades de feedback como base para os casos de uso essenciais.
+3. **Protótipos no Figma:** elaborar telas de avaliações, questionários, tarefas pendentes, relatórios e planos de desenvolvimento.
+
+O principal diferencial sugerido para o sistema acadêmico é não apenas coletar feedbacks, mas transformar os resultados em um acompanhamento mensurável da evolução profissional de cada colaborador.
+
+O sistema deve ajudar a responder a quatro perguntas:
+
+1. Como o colaborador está sendo avaliado?
+2. Quais competências precisam melhorar?
+3. Quais ações serão realizadas para melhorar?
+4. O colaborador evoluiu depois dessas ações?
+
+Essa abordagem conecta a coleta de feedback ao desenvolvimento de competências e fornece uma justificativa clara para os módulos do sistema.
