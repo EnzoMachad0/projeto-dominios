@@ -6,12 +6,12 @@ Registro das entrevistas do levantamento de requisitos. O roteiro está em [rote
 
 Atualize esta tabela somente depois que a entrevista tiver acontecido. Use a função de forma genérica, sem dados que identifiquem a pessoa.
 
-| Código | Data | Função do participante | Papel no projeto | Entrevistador | Forma | Transcrição | Registro restrito | Situação |
+| Código | Data | Função do participante | Papel no projeto | Entrevistador | Forma | Registro | Registro restrito | Situação |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| E01 | — | — | — | — | — | [Registro temporário — texto pendente](E01-transcricao.md) | — | Realizada — aguardando transcrição da professora |
-| E02 | — | — | — | — | — | [Registro temporário — texto pendente](E02-transcricao.md) | — | Realizada — aguardando recebimento da transcrição |
+| E01 | — | — | — | — | — | [Perguntas e resumo das respostas](E01-perguntas-e-resumo-das-respostas.md) | — | Realizada — resumo a validar; transcrição pendente |
+| E02 | — | — | — | — | — | [Perguntas e resumo das respostas](E02-perguntas-e-resumo-das-respostas.md) | — | Realizada — resumo a validar; transcrição pendente |
 
-As duas entrevistas foram realizadas. Os arquivos vinculados são registros temporários e ainda não contêm as transcrições. Os demais dados das coletas e a situação dos registros restritos permanecem a confirmar; os traços não indicam que as entrevistas deixaram de ocorrer.
+As duas entrevistas foram realizadas. Os arquivos vinculados apresentam perguntas e resumos de respostas para validação, não as transcrições. Os demais dados das coletas e a situação dos registros restritos permanecem a confirmar; os traços não indicam que as entrevistas deixaram de ocorrer.
 
 Na coluna **Registro restrito**, informe apenas se o registro de E01 ou E02 foi preenchido (`Sim` ou `Não`), sem copiar dados dele.
 
