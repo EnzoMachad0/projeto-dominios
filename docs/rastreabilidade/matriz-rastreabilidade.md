@@ -44,6 +44,7 @@ A [pesquisa documental](../levantamento/pesquisa-documental.md) (seção 2) usa 
 | RNF01 a RNF16 | [Especificação suplementar](../requisitos/especificacao-suplementar.md), seção 3 |
 | Casos de uso | [Índice e diagrama](../casos-de-uso/README.md), [CU-01](../casos-de-uso/CU-01-configurar-e-abrir-coleta.md), [CU-02](../casos-de-uso/CU-02-responder-e-enviar-avaliacao.md), [CU-03](../casos-de-uso/CU-03-encerrar-ou-cancelar-coleta.md), [CU-04](../casos-de-uso/CU-04-consultar-analise-de-resultados.md) e [CU-05](../casos-de-uso/CU-05-manter-catalogo-de-parametros.md) |
 | Entidades | [MER](../modelos/dominio/modelo-entidade-relacionamento.md) e [dicionário de dados](../dicionario-dados.md) |
+| Containers e componentes (C4) | [Visão arquitetural](../modelos/arquitetura/README.md), seções 4 e 5: cada componente da API lista os casos de uso, requisitos e entidades que atende |
 
 ## 2. Fontes e necessidades
 

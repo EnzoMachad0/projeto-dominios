@@ -1,0 +1,27 @@
+%% C4 — Nível 1: Diagrama de contexto do sistema
+%% Proposta para validação. Ver README.md desta pasta.
+flowchart TB
+    RH["<b>RH</b><br/>[Pessoa]<br/><br/>Administra usuários, times,<br/>catálogo e coletas de toda<br/>a organização"]
+    GESTOR["<b>Gestor</b><br/>[Pessoa]<br/><br/>Conduz coletas, 360° e planos<br/>de ação dos times sob sua<br/>responsabilidade"]
+    PROF["<b>Profissional</b><br/>[Pessoa]<br/><br/>Responde avaliações, faz<br/>autoavaliação, registra feedback<br/>e consulta seus resultados"]
+
+    SIS["<b>Sistema de gestão de<br/>competências e feedback</b><br/>[Sistema de software]<br/><br/>Aplicação web que organiza coletas<br/>de avaliação, feedbacks, planos de<br/>ação e indicadores de desempenho"]
+
+    EMAIL["<b>Serviço de e-mail</b><br/>[Sistema externo — a confirmar]<br/><br/>Envia convites, lembretes<br/>e recuperação de senha"]
+    IDP["<b>Provedor de identidade</b><br/>[Sistema externo — opcional]<br/><br/>Autenticação e segundo fator,<br/>se não for feita pelo próprio sistema"]
+    HRIS["<b>Sistemas de RH da organização</b><br/>[Sistema externo — fora da 1ª versão]<br/><br/>Folha, cadastro de pessoal"]
+
+    RH -- "Mantém cadastros, catálogo e<br/>coletas; acompanha resultados<br/>[HTTPS]" --> SIS
+    GESTOR -- "Configura coletas e 360°;<br/>acompanha planos e resultados<br/>dos seus times [HTTPS]" --> SIS
+    PROF -- "Responde avaliações, registra<br/>feedback, consulta histórico<br/>[HTTPS]" --> SIS
+
+    SIS -. "Envia notificações<br/>[SMTP/API]" .-> EMAIL
+    SIS -. "Delega autenticação<br/>[OIDC]" .-> IDP
+    SIS -. "Importa usuários e times<br/>[formato documentado]" .-> HRIS
+
+    classDef person fill:#08427b,stroke:#052e56,color:#ffffff
+    classDef system fill:#1168bd,stroke:#0b4884,color:#ffffff
+    classDef external fill:#999999,stroke:#6b6b6b,color:#ffffff,stroke-dasharray:5 5
+    class RH,GESTOR,PROF person
+    class SIS system
+    class EMAIL,IDP,HRIS external
