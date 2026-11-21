@@ -17,6 +17,7 @@ Projeto acadêmico desenvolvido para a disciplina de Domínios de Software, com 
 - Git e GitHub — controle de versão e documentação.
 - BPMN e UML — modelagem de processos e casos de uso.
 - Modelo C4 — visão arquitetural de alto nível ([docs/modelos/arquitetura](docs/modelos/arquitetura)).
+- UML de projeto e padrões de projeto (GRASP, GoF) — estados, sequências e classes ([docs/modelos/projeto](docs/modelos/projeto)).
 
 ## Status do projeto
 

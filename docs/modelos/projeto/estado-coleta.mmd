@@ -1,0 +1,20 @@
+%% Máquina de estados da coleta — RN07, RF09, RF13 (CU-01, CU-03)
+stateDiagram-v2
+    [*] --> PREPARACAO : configurar coleta (RF08)
+    PREPARACAO --> PREPARACAO : editar questionário e participantes
+    PREPARACAO --> ABERTA : abrir [questionário válido e pares válidos] / publicar cópia, congelar participantes, gerar avaliações (RF09, RF10, RF17)
+    PREPARACAO --> CANCELADA : cancelar [justificativa]
+    ABERTA --> ENCERRADA : encerrar / cancelar avaliações em rascunho (RF13)
+    ABERTA --> CANCELADA : cancelar [justificativa] / cancelar avaliações em rascunho
+    ENCERRADA --> [*]
+    CANCELADA --> [*]
+
+    note right of ABERTA
+        Respostas aceitas só dentro do período
+        (início inclusivo, fim exclusivo).
+        Fim do período não encerra sozinho.
+    end note
+    note right of CANCELADA
+        Estados finais não reabrem (RN07).
+        Coleta cancelada não entra em análises.
+    end note

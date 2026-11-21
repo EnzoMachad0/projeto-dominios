@@ -1,0 +1,27 @@
+%% Sequência — Consultar resultados (CU-04, fluxo principal) — RF14, RF15, RN09, RN10, RN11, RN14, RNF01, RNF12
+sequenceDiagram
+    autonumber
+    actor U as Participante ou Gestor
+    participant Web as Aplicação web
+    participant Ctl as ControladorAnalise
+    participant Pol as PoliticaVisibilidade
+    participant Rep as RepositorioAvaliacoes
+    participant Calc as CalculadoraIndicadores
+
+    U->>Web: abre os resultados de uma pessoa
+    Web->>Ctl: indicadores(idUsuario, filtros)
+    Ctl->>Pol: pode ver os resultados desta pessoa? (RN14)
+    alt não autorizado
+        Pol-->>Ctl: não
+        Ctl-->>Web: 403 acesso negado (RNF01)
+    else autorizado
+        Ctl->>Rep: doReceptor(idUsuario, filtros)
+        Rep-->>Ctl: avaliações da pessoa
+        loop cada avaliação
+            Ctl->>Pol: resultadoLiberado(avaliacao)
+            Note right of Pol: Recíproca: par completo e coleta encerrada (RN09). Outras modalidades: RN15
+        end
+        Ctl->>Calc: mediaNormalizada e percentualSim(respostas liberadas)
+        Calc-->>Ctl: indicadores separados por versão da pergunta (RN10, RN11)
+        Ctl-->>Web: indicadores e histórico
+    end

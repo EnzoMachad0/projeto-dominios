@@ -1,0 +1,22 @@
+%% Máquinas de estado do plano de ação e de cada ação — RF18, RN13 (CU-11)
+stateDiagram-v2
+    state "Plano de ação" as PLANO {
+        [*] --> ATIVO : criar a partir de um feedback [ao menos uma ação com responsável e prazo]
+        ATIVO --> ATIVO : ajustar ações / registrar verificação
+        ATIVO --> CONCLUIDO : concluir / vincular o feedback seguinte (RN13)
+        ATIVO --> CANCELADO : cancelar [motivo]
+        CONCLUIDO --> [*]
+        CANCELADO --> [*]
+    }
+
+    state "Ação do plano" as ACAO {
+        [*] --> PENDENTE
+        PENDENTE --> EM_ANDAMENTO : registrar primeiro progresso
+        EM_ANDAMENTO --> EM_ANDAMENTO : registrar progresso (registros anteriores preservados)
+        PENDENTE --> CONCLUIDA : concluir
+        EM_ANDAMENTO --> CONCLUIDA : concluir
+        PENDENTE --> CANCELADA : cancelar [motivo]
+        EM_ANDAMENTO --> CANCELADA : cancelar [motivo]
+        CONCLUIDA --> [*]
+        CANCELADA --> [*]
+    }

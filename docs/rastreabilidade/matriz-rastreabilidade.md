@@ -5,7 +5,7 @@
 | Autoria | Danilo Sucupira Galvão |
 | Versão | 0.7 — 21 de novembro de 2026 |
 | Base inicial | `main` em 10/11/2026 (commit `0bd8dc9`), com os artefatos dos PRs #27 a #37 |
-| Atualização | CU-03 de Heitor Barbosa Souza em 15/11/2026; CU-01 de Brenner Rodrigues Sardinha e CU-04 de Enzo de Oliveira Machado em 17/11/2026; situação das entrevistas e correção das inconsistências I01 a I05 em 17/11/2026, sobre a `main` no commit `f7250bc`; consolidação da síntese das entrevistas e do sistema análogo (#40) por Luiz Augusto Vaz em 17/11/2026, sobre a `main` no commit `a6aabfa`; processo de negócio (BPMN) e visão arquitetural C4 por Luiz Augusto Vaz em 21/11/2026, sobre a `main` no commit `93c8446` |
+| Atualização | CU-03 de Heitor Barbosa Souza em 15/11/2026; CU-01 de Brenner Rodrigues Sardinha e CU-04 de Enzo de Oliveira Machado em 17/11/2026; situação das entrevistas e correção das inconsistências I01 a I05 em 17/11/2026, sobre a `main` no commit `f7250bc`; consolidação da síntese das entrevistas e do sistema análogo (#40) por Luiz Augusto Vaz em 17/11/2026, sobre a `main` no commit `a6aabfa`; processo de negócio (BPMN), visão arquitetural C4 e modelo de projeto por Luiz Augusto Vaz em 21/11/2026, sobre a `main` no commit `93c8446` |
 | Situação | Proposta para revisão |
 
 Relaciona as fontes, as necessidades e os requisitos aos artefatos que os detalham, modelam e verificam (rastreabilidade vertical), e os requisitos entre si (rastreabilidade horizontal). Atende à issue #24 e à seção 3 do [processo de requisitos](../PROCESSO_REQUISITOS.md).
@@ -14,7 +14,7 @@ Relaciona as fontes, as necessidades e os requisitos aos artefatos que os detalh
 
 ### 1.1. Rastreabilidade vertical e horizontal
 
-- **Vertical:** liga itens de níveis diferentes, na cadeia fonte → dor do processo → necessidade → requisito → caso de uso → entidade → elemento de arquitetura → tela → verificação. Cada linha das tabelas da seção 3 é lida nos dois sentidos: para trás, do requisito até a fonte que o originou; para frente, do requisito até os artefatos que o detalham e o verificam.
+- **Vertical:** liga itens de níveis diferentes, na cadeia fonte → dor do processo → necessidade → requisito → caso de uso → entidade → elemento de arquitetura → elemento de projeto → tela → verificação. Cada linha das tabelas da seção 3 é lida nos dois sentidos: para trás, do requisito até a fonte que o originou; para frente, do requisito até os artefatos que o detalham e o verificam.
 - **Horizontal:** liga itens do mesmo nível, ou seja, um requisito com outro: dependência, restrição por regra de negócio, complemento por requisito não funcional, consolidação, atendimento e conflito (seção 4).
 
 ### 1.2. Códigos de fonte
@@ -46,6 +46,8 @@ A [pesquisa documental](../levantamento/pesquisa-documental.md) (seção 2) usa 
 | Entidades | [MER](../modelos/dominio/modelo-entidade-relacionamento.md) e [dicionário de dados](../dicionario-dados.md) |
 | Dores D1 a D6 e etapas do processo | [Processo de negócio (BPMN)](../modelos/processo/README.md) |
 | Containers, componentes, decisões AD01 a AD05 e lacunas A01 a A05 (C4) | [Visão arquitetural](../modelos/arquitetura/README.md), seções 4 a 7 |
+| Diagramas de estado, contratos CO01 a CO04, diagramas de sequência e de classes de projeto | [Modelo de projeto](../modelos/projeto/README.md) |
+| Padrões de projeto PP01 a PP22 | [Padrões de projeto](../modelos/projeto/padroes-de-projeto.md) |
 
 ## 2. Fontes e necessidades
 
@@ -220,6 +222,30 @@ Sentido inverso das colunas "Arquitetura (C4)" das seções 3.1 a 3.3: de cada e
 | Política de visibilidade | 3 — Componente transversal | CU-02, CU-04, CU-10, CU-11 | RF01, RF14, RF15; RN09, RN14, RN15; RNF01, RNF14, RNF16 | — | Proposto — liberação pendente (PV03, PV04) |
 | Auditoria | 3 — Componente transversal | Todos os que alteram dados | RF16; RNF06, RNF16 | EVENTO_AUDITORIA | Proposto |
 
+### 3.6. Projeto (design)
+
+Liga os artefatos do [modelo de projeto](../modelos/projeto/README.md) e os [padrões de projeto](../modelos/projeto/padroes-de-projeto.md) aos requisitos, casos de uso e componentes C4.
+
+| Artefato | Tipo | Casos de uso | Requisitos | Componente (C4) | Padrões |
+| --- | --- | --- | --- | --- | --- |
+| Estados da coleta | Diagrama de estado | CU-01, CU-03 | RF09, RF13; RN07 | Coletas | PP10 |
+| Estados da avaliação | Diagrama de estado | CU-02, CU-03 | RF11, RF12; RN08 | Respostas | PP01 |
+| Estados do plano e da ação | Diagrama de estado | CU-11 | RF18; RN13 | Feedback e desenvolvimento | — |
+| CO01 `abrir` | Contrato de operação | CU-01, CU-09 | RF09, RF10, RF17, RF22; RN03, RN05, RN14, RN15; RNF02 | Coletas | PP02, PP12, PP17 |
+| CO02 `enviar` | Contrato de operação | CU-02 | RF12; RN06, RN08; RNF02 | Respostas | PP01, PP11, PP18 |
+| CO03 `encerrar` | Contrato de operação | CU-03 | RF13; RN07, RN08, RN09, RN12; RNF02 | Coletas | PP10, PP17, PP18 |
+| CO04 `criarPlano` | Contrato de operação | CU-11 | RF18; RN13, RN14; CA18 | Feedback e desenvolvimento | PP02, PP17 |
+| Abrir coleta | Diagrama de sequência | CU-01 | RF09, RF10, RF16, RF17; RN05, RN14; RNF02 | Coletas; Política de visibilidade; Auditoria | PP03, PP12, PP13, PP17 |
+| Enviar avaliação | Diagrama de sequência | CU-02 | RF12, RF16; RN06, RN08; RNF02, RNF13 | Respostas; Auditoria | PP01, PP11, PP18 |
+| Encerrar coleta | Diagrama de sequência | CU-03 | RF13, RF16; RN07, RN08, RN09, RN12; RNF02 | Coletas; Auditoria | PP10, PP17, PP18 |
+| Consultar resultados | Diagrama de sequência | CU-04 | RF14, RF15; RN09, RN10, RN11, RN14; RNF01, RNF12 | Análise e histórico; Política de visibilidade | PP07, PP11, PP19 |
+| Criar plano de ação | Diagrama de sequência | CU-11 | RF16, RF18; RN13, RN14 | Feedback e desenvolvimento; Auditoria | PP02, PP17 |
+| Classes de domínio | Diagrama de classes | CU-01 a CU-04, CU-09 a CU-11 | RF08 a RF22; RN01 a RN16 | Coletas; Respostas; Feedback e desenvolvimento | PP01, PP02, PP06, PP10 a PP12, PP14, PP21 |
+| Classes de aplicação | Diagrama de classes | CU-01 a CU-04, CU-10, CU-11 | RF01, RF14 a RF16; RN09, RN12, RN14; RNF01, RNF02, RNF06 | Todos os componentes | PP03, PP04, PP07, PP08, PP15 a PP20 |
+| Padrões GRASP | PP01 a PP09 | Todos | Ver a coluna "Motivo" de cada padrão | Todos | — |
+| Padrões GoF | PP10 a PP14 | CU-01 a CU-04, CU-09 | RN02, RN03, RN06, RN07, RN10, RN15; RF10, RF16, RF17, RF22 | Coletas; Respostas; Análise; Auditoria | — |
+| Padrões arquiteturais | PP15 a PP22 | Todos | RN05, RN09, RN12, RN14; RF07, RF09; RNF01, RNF02, RNF07, RNF14, RNF16 | Todos | — |
+
 ## 4. Matriz horizontal
 
 ### 4.1. Requisitos funcionais × regras de negócio
@@ -332,7 +358,7 @@ As decisões AD01 a AD05 estão na [visão arquitetural](../modelos/arquitetura/
 
 "Caso de uso descrito" inclui os casos completos (CU-01 a CU-05) e os resumidos no índice (CU-06 a CU-11). No RNF, "com verificação" considera os métodos da especificação suplementar. Em RN-DOC, dois dos três vínculos com a arquitetura (RN-DOC-02 e RN-DOC-03) só valem se o conflito C02 adotar o anonimato.
 
-Processo de negócio: as 6 dores (D1 a D6) estão ligadas a necessidades, e as 10 etapas do processo proposto a casos de uso, requisitos e componentes (seção 3.4). Arquitetura: os 9 componentes e os 5 containers estão ligados a requisitos (seção 3.5); o serviço de e-mail é o único elemento sem requisito (L08).
+Processo de negócio: as 6 dores (D1 a D6) estão ligadas a necessidades, e as 10 etapas do processo proposto a casos de uso, requisitos e componentes (seção 3.4). Arquitetura: os 9 componentes e os 5 containers estão ligados a requisitos (seção 3.5); o serviço de e-mail é o único elemento sem requisito (L08). Projeto: os 4 contratos, 5 diagramas de sequência, 3 diagramas de estado, 2 diagramas de classes e 22 padrões estão ligados a requisitos e componentes (seção 3.6); CU-05 a CU-08 não têm diagrama de sequência próprio (L10).
 
 ## 6. Lacunas e inconsistências
 
@@ -349,6 +375,7 @@ Processo de negócio: as 6 dores (D1 a D6) estão ligadas a necessidades, e as 1
 | L07 | Resolvida na #40: a autoavaliação passou a ser modalidade própria (RF22, RN15), e o RF10 a rejeita apenas na coleta recíproca. Registro original: o RF10 rejeita a autoavaliação, e o RF17 (360°) a inclui. A síntese das entrevistas (SIN-RF04 e SIN-RN04) põe o 360° e a autoavaliação na primeira versão, mas a lista geral e a especificação (seção 2.6: "Não há autoavaliação no núcleo") ainda a excluem. | A síntese foi seguida: a coleta recíproca mantém a restrição, e a autoavaliação segue a RN15. |
 | L08 | O serviço de e-mail aparece na visão arquitetural (convites, lembretes e recuperação de senha), mas nenhum requisito o exige (lacuna A01 da arquitetura). | Perguntar ao stakeholder na validação (#25). Se confirmado, criar o RF e ligá-lo aqui; se não, retirar o elemento dos diagramas C4. |
 | L09 | 10 dos 14 RF-DOC e 3 dos 6 RN-DOC não têm componente de arquitetura. | Mesma causa da L06: dependem das dúvidas D-01 a D-13 e dos conflitos C01 e C02. Quando forem decididos, atribuir o componente responsável. |
+| L10 | O modelo de projeto detalha só os fluxos principais de CU-01 a CU-04 e CU-11. CU-05 a CU-10 e os fluxos alternativos não têm diagrama de sequência. | CU-05 a CU-08 são cadastros que seguem o mesmo formato de controlador e repositório. Modelar os demais se a disciplina exigir. |
 
 ### 6.2. Inconsistências entre artefatos
 
@@ -365,6 +392,6 @@ Todas as inconsistências abaixo foram corrigidas em 17/11/2026. As linhas ficam
 ## 7. Manutenção
 
 - Ao criar ou alterar um requisito, caso de uso, entidade, tela ou critério de aceitação, atualizar a linha correspondente da seção 3 e as relações da seção 4.
-- Ao alterar o BPMN ou a visão arquitetural C4, atualizar as seções 3.4, 3.5 e 4.3 e a coluna "Arquitetura (C4)" das seções 3.1 a 3.3.
+- Ao alterar o BPMN, a visão arquitetural C4 ou o modelo de projeto, atualizar as seções 3.4, 3.5, 3.6 e 4.3 e a coluna "Arquitetura (C4)" das seções 3.1 a 3.3.
 - Identificadores removidos não são reutilizados (lista geral, seção 2).
 - Quando um caso de uso "a elaborar" for descrito, retirar a marcação e conferir os requisitos listados no arquivo do caso de uso.
