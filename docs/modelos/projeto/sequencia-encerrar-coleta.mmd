@@ -1,0 +1,32 @@
+%% Sequência — Encerrar coleta (CU-03, fluxo principal) — RF13, RN07, RN08, RN12, RNF02, RF16
+sequenceDiagram
+    autonumber
+    actor RH as RH ou Gestor
+    participant Web as Aplicação web
+    participant Ctl as ControladorColeta
+    participant Pol as PoliticaVisibilidade
+    participant UoW as UnidadeDeTrabalho
+    participant Rep as RepositorioColetas
+    participant Col as Coleta
+    participant Aud as Auditoria
+
+    RH->>Web: encerra a coleta
+    Web->>Ctl: encerrar(idColeta)
+    Ctl->>Pol: podeGerir(usuario, coleta)
+    Pol-->>Ctl: sim (RN14)
+    Ctl->>UoW: executarEmTransacao
+    activate UoW
+    UoW->>Rep: porId(idColeta) com bloqueio
+    Rep-->>UoW: coleta (ABERTA)
+    UoW->>Col: encerrar(agora, motivo)
+    Col->>Col: estado ABERTA permite encerrar? (RN07)
+    loop cada avaliação em RASCUNHO
+        Col->>Col: cancelar com motivo "coleta encerrada" (RN08)
+    end
+    Note over Col: Avaliações ENVIADAS são preservadas — nada é excluído (RN12)
+    Col->>Col: estado = ENCERRADA
+    UoW->>Rep: salvar(coleta)
+    UoW->>Aud: registrar(COLETA_ENCERRADA)
+    deactivate UoW
+    Note over UoW: Envios concorrentes esperam o bloqueio: ou entram antes, ou são recusados (RNF02)
+    Ctl-->>Web: coleta encerrada — resultados dos pares completos liberados (RN09)

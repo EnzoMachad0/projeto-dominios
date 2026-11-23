@@ -1,0 +1,34 @@
+%% C4 — Nível 2: Diagrama de containers
+%% Tecnologias ainda não definidas (especificação suplementar, seção 5). Ver README.md desta pasta.
+flowchart TB
+    USERS["<b>RH, Gestor e Profissional</b><br/>[Pessoas]<br/><br/>Usam o sistema pelo navegador,<br/>no computador ou no celular"]
+
+    subgraph SIS["Sistema de gestão de competências e feedback"]
+        direction TB
+        WEB["<b>Aplicação web</b><br/>[Container: interface no navegador<br/>— tecnologia a definir]<br/><br/>Telas em português, responsivas<br/>(360 a 1.440 px), operáveis por teclado;<br/>rascunho e confirmação de envio"]
+        API["<b>API da aplicação</b><br/>[Container: servidor de aplicação<br/>— tecnologia a definir]<br/><br/>Regras de negócio, autorização no<br/>servidor por perfil e escopo, transações,<br/>cálculo de indicadores e auditoria"]
+        DB[("<b>Banco de dados</b><br/>[Container: banco relacional]<br/><br/>Cadastros, catálogo, coletas,<br/>respostas, feedbacks, planos e<br/>eventos de auditoria — sem<br/>exclusão física; senhas com hash")]
+        LOG["<b>Logs técnicos</b><br/>[Container: armazenamento de logs]<br/><br/>Erros e operação, sem conteúdo<br/>de respostas ou comentários"]
+    end
+
+    BKP[("<b>Backup</b><br/>[Armazenamento externo separado]<br/><br/>Cópia diária completa,<br/>sem sincronização em tempo real")]
+    EMAIL["<b>Serviço de e-mail</b><br/>[Sistema externo — a confirmar]"]
+    IDP["<b>Provedor de identidade</b><br/>[Sistema externo — opcional]"]
+
+    USERS -- "Acessa<br/>[HTTPS]" --> WEB
+    WEB -- "Chama operações<br/>[JSON/HTTPS]" --> API
+    API -- "Lê e grava em transação<br/>[SQL]" --> DB
+    API -- "Registra eventos técnicos" --> LOG
+    DB -- "Cópia diária" --> BKP
+    API -. "Envia notificações" .-> EMAIL
+    API -. "Valida identidade [OIDC]" .-> IDP
+
+    classDef person fill:#08427b,stroke:#052e56,color:#ffffff
+    classDef container fill:#438dd5,stroke:#2e6295,color:#ffffff
+    classDef external fill:#999999,stroke:#6b6b6b,color:#ffffff,stroke-dasharray:5 5
+    classDef infra fill:#999999,stroke:#6b6b6b,color:#ffffff
+    class USERS person
+    class WEB,API,DB,LOG container
+    class EMAIL,IDP external
+    class BKP infra
+    style SIS fill:none,stroke:#0b4884,stroke-width:2px,stroke-dasharray:8 4,color:#0b4884

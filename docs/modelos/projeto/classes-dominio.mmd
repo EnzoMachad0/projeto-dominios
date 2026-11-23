@@ -1,0 +1,127 @@
+%% Diagrama de classes de projeto — camada de domínio
+%% Evolui o modelo de domínio conceitual: acrescenta operações, visibilidade e os padrões da seção 4 do README.
+classDiagram
+    direction TB
+
+    class Coleta {
+        -id
+        -titulo
+        -modalidade : Modalidade
+        -periodo : Periodo
+        -estado : EstadoColeta
+        +adicionarGrupo(grupo GrupoParametro)
+        +selecionarParticipantes(selecao)
+        +abrir(agora) List~Avaliacao~
+        +encerrar(agora, motivo)
+        +cancelar(agora, justificativa)
+        +aceitaRespostas(agora) bool
+    }
+
+    class EstadoColeta {
+        <<interface>>
+        +abrir(coleta)
+        +encerrar(coleta)
+        +cancelar(coleta)
+        +aceitaRespostas() bool
+    }
+    class EmPreparacao
+    class Aberta
+    class Encerrada
+    class Cancelada
+    EstadoColeta <|.. EmPreparacao
+    EstadoColeta <|.. Aberta
+    EstadoColeta <|.. Encerrada
+    EstadoColeta <|.. Cancelada
+    Coleta --> EstadoColeta : estado atual
+
+    class GeradorAvaliacoes {
+        <<interface>>
+        +gerar(coleta) List~Avaliacao~
+    }
+    class GeradorReciprocoPares
+    class GeradorReciprocoTimes
+    class Gerador360
+    class GeradorAutoavaliacao
+    GeradorAvaliacoes <|.. GeradorReciprocoPares
+    GeradorAvaliacoes <|.. GeradorReciprocoTimes
+    GeradorAvaliacoes <|.. Gerador360
+    GeradorAvaliacoes <|.. GeradorAutoavaliacao
+    class FabricaGeradores {
+        +para(modalidade) GeradorAvaliacoes
+    }
+    FabricaGeradores ..> GeradorAvaliacoes : cria
+    Coleta ..> FabricaGeradores : usa ao abrir
+
+    class QuestionarioPublicado {
+        <<imutável>>
+        +grupos : List~GrupoDaColeta~
+        +parametros() List~ParametroDaColeta~
+    }
+    class ParametroDaColeta {
+        <<imutável>>
+        -pergunta
+        -escala : Escala
+        -ordem
+    }
+    Coleta "1" *-- "1" QuestionarioPublicado : publica ao abrir
+    QuestionarioPublicado "1" *-- "1..*" ParametroDaColeta
+
+    class Escala {
+        <<interface>>
+        +validar(valor) bool
+        +normalizar(valor) decimal
+    }
+    class Escala0a10
+    class Escala0a5
+    class EscalaBooleana
+    Escala <|.. Escala0a10
+    Escala <|.. Escala0a5
+    Escala <|.. EscalaBooleana
+    ParametroDaColeta --> Escala
+
+    class Avaliacao {
+        -avaliador : Usuario
+        -receptor : Usuario
+        -papel
+        -status : StatusAvaliacao
+        +salvarRascunho(respostas, agora)
+        +enviar(agora)
+        +cancelar(motivo, agora)
+        +estaCompleta() bool
+    }
+    class Feedback {
+        -valor
+        -comentario
+        +validarCom(escala) bool
+    }
+    Coleta "1" *-- "0..*" Avaliacao : atribui
+    Avaliacao "1" *-- "0..*" Feedback : reúne
+    Feedback --> ParametroDaColeta : responde
+
+    class RegistroFeedback {
+        -fato
+        -impacto
+        -formalidade
+        -tom
+        +classificar(formalidade, tom)
+    }
+    class PlanoAcao {
+        -status
+        +adicionarAcao(descricao, responsavel, prazo)
+        +registrarVerificacao(texto, agora)
+        +concluir(feedbackSeguinte)
+        +cancelar(motivo)
+    }
+    class AcaoPlano {
+        -status
+        +registrarProgresso(texto, agora)
+    }
+    RegistroFeedback "1" -- "0..*" PlanoAcao : motiva
+    PlanoAcao "1" *-- "1..*" AcaoPlano
+
+    class Usuario {
+        -perfil : Perfil
+        -ativo : bool
+        +podeGerir(time) bool
+    }
+    Avaliacao --> Usuario : avaliador e receptor

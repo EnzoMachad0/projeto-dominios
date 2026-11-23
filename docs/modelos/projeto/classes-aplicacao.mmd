@@ -1,0 +1,79 @@
+%% Diagrama de classes de projeto — camada de aplicação e infraestrutura
+%% Um controlador por caso de uso (GRASP Controller); acesso a dados por repositórios; regras de acesso na política.
+classDiagram
+    direction LR
+
+    class ControladorColeta {
+        +configurar(dados)
+        +abrir(idColeta)
+        +encerrar(idColeta)
+        +cancelar(idColeta, justificativa)
+    }
+    class ControladorResposta {
+        +salvarRascunho(idAvaliacao, respostas)
+        +enviar(idAvaliacao)
+    }
+    class ControladorAnalise {
+        +historico(idUsuario, filtros)
+        +indicadores(idUsuario, filtros)
+    }
+    class ControladorFeedback {
+        +registrarInformal(dados)
+        +criarPlano(idFeedback, dados)
+        +registrarProgresso(idAcao, texto)
+    }
+
+    class PoliticaVisibilidade {
+        <<serviço>>
+        +podeVerResultado(usuario, avaliacao) bool
+        +podeGerir(usuario, coleta) bool
+        +resultadoLiberado(avaliacao) bool
+    }
+    class CalculadoraIndicadores {
+        <<serviço>>
+        +mediaNormalizada(respostas) decimal
+        +percentualSim(respostas) decimal
+        +percentualConclusao(coleta) decimal
+    }
+    class UnidadeDeTrabalho {
+        <<interface>>
+        +executarEmTransacao(operacao)
+    }
+    class Auditoria {
+        <<interface>>
+        +registrar(evento)
+    }
+    class RegistroAuditoriaBanco
+    Auditoria <|.. RegistroAuditoriaBanco
+
+    class RepositorioColetas {
+        <<interface>>
+        +porId(id) Coleta
+        +salvar(coleta)
+    }
+    class RepositorioAvaliacoes {
+        <<interface>>
+        +porId(id) Avaliacao
+        +doReceptor(idUsuario, filtros) List~Avaliacao~
+        +salvar(avaliacao)
+    }
+    class RepositorioFeedbacks {
+        <<interface>>
+        +salvarRegistro(registro)
+        +salvarPlano(plano)
+    }
+
+    ControladorColeta --> PoliticaVisibilidade
+    ControladorColeta --> RepositorioColetas
+    ControladorColeta --> UnidadeDeTrabalho
+    ControladorColeta --> Auditoria
+    ControladorResposta --> PoliticaVisibilidade
+    ControladorResposta --> RepositorioAvaliacoes
+    ControladorResposta --> UnidadeDeTrabalho
+    ControladorResposta --> Auditoria
+    ControladorAnalise --> PoliticaVisibilidade
+    ControladorAnalise --> RepositorioAvaliacoes
+    ControladorAnalise --> CalculadoraIndicadores
+    ControladorFeedback --> PoliticaVisibilidade
+    ControladorFeedback --> RepositorioFeedbacks
+    ControladorFeedback --> Auditoria
