@@ -56,8 +56,8 @@ A [pesquisa documental](../levantamento/pesquisa-documental.md) (seção 2) usa 
 
 | Código | Fonte | Situação | Registro no repositório |
 | --- | --- | --- | --- |
-| E01 | Entrevista com o stakeholder e esclarecimentos posteriores | Realizada | Transcrição pendente (#41, lacuna L01); [síntese preliminar](../levantamento/sintese-entrevistas.md) |
-| E02 | Segunda entrevista | Realizada | Transcrição pendente (#41, lacuna L01); síntese junto com a E01, incorporada à lista geral (seção 9.1) |
+| E01 | Entrevista com o stakeholder e esclarecimentos posteriores | Realizada | [Resumo anotado](../levantamento/entrevistas/E01-perguntas-e-resumo-das-respostas.md) (oral, sem gravação; L01); [síntese](../levantamento/sintese-entrevistas.md) |
+| E02 | Segunda entrevista | Realizada | [Resumo anotado](../levantamento/entrevistas/E02-perguntas-e-resumo-das-respostas.md) (oral, sem gravação; L01); síntese junto com a E01, incorporada à lista geral (seção 9.1) |
 | Q01, Q02 | Questionários de levantamento | Pendentes | — (lacuna L02) |
 | SA | Análise do sistema análogo Culture Amp | Realizada | [analise-sistema-analogo-culture-amp.md](../levantamento/analise-sistema-analogo-culture-amp.md); correspondência na lista geral, seção 9.2 |
 | DOC | Pesquisa documental sobre LGPD e ISO/IEC 25010 | Realizada | [pesquisa-documental.md](../levantamento/pesquisa-documental.md) |
@@ -367,7 +367,7 @@ Processo de negócio: as 6 dores (D1 a D6) estão ligadas a necessidades, e as 1
 
 | ID | Lacuna | Justificativa ou encaminhamento |
 | --- | --- | --- |
-| L01 | As duas entrevistas foram realizadas, mas as transcrições ainda não estão no repositório: `E01-transcricao.md` e `E02-transcricao.md` são registros temporários ([README das entrevistas](../levantamento/entrevistas/README.md)). Por isso, os requisitos com fonte E01 e a [síntese das entrevistas](../levantamento/sintese-entrevistas.md) não citam trechos das respostas (`E0X-Rxx`). | Receber e revisar as transcrições (#41) e conferir a síntese com elas (#6). |
+| L01 | Resolvida: as duas entrevistas foram orais e não foram gravadas, por isso não há transcrição. O registro de cada uma é o resumo anotado das respostas ([README das entrevistas](../levantamento/entrevistas/README.md)), e os requisitos com fonte E01 e E02 citam a [síntese das entrevistas](../levantamento/sintese-entrevistas.md), não falas literais. | Resumos anotados adotados como registro (#41). O conteúdo segue para a validação com o stakeholder (#25). |
 | L02 | Parcialmente resolvida: a síntese das entrevistas (E01 e E02) e o sistema análogo foram incorporados à lista geral na #40 (seção 9). Nenhum requisito tem origem em Q01 ou Q02. | Questionários ainda pendentes (#7, #8); os requisitos que vierem deles devem seguir a regra de identificadores da lista geral. |
 | L03 | O protótipo foi produzido no Figma (#22), mas as telas ainda não foram relacionadas aos requisitos. | Identificar a tela de cada requisito e substituir "A conferir" pelo nome da tela. |
 | L04 | Resolvida: RF08 a RF10, RF14, RF15, RN03 e RN10 têm casos de uso completos. | CU-01 descrito na issue #14 e CU-04 na issue #16; CU-03 já havia sido descrito na issue #17. |

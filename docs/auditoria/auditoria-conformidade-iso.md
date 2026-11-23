@@ -81,7 +81,7 @@ A especificação segue a IEEE 830-1998, como pede o enunciado da disciplina. Es
 - **AC02 (Menor).** Requisitos não singulares: RF13 (acompanhar, encerrar e cancelar), RF18 (criar, acompanhar e concluir plano), RNF03 (teclado e larguras de tela) e RNF11 (limite de login e vulnerabilidades). **Recomendação:** desdobrar em itens com sufixo (RF13a, RF13b…) ou justificar o agrupamento na lista geral.
 - **AC03 (Maior).** RNF sem critério mensurável acordado: RNF03, RNF04, RNF05 e RNF11 (PV07, D-12). **Recomendação:** levar valores propostos à reunião de validação (#25) e registrar a decisão.
 - **AC04 (Maior).** O conjunto de requisitos ainda não foi validado com o stakeholder (#25). **Recomendação:** realizar a reunião com a [pauta](../validacao/pauta-validacao-stakeholder.md) e mudar a situação de cada requisito confirmado para "Validado".
-- **AC05 (Observação).** As fontes E01 e E02 estão como "conteúdo a validar com participantes reais", sem transcrição (L01, #41). A origem dos requisitos fica sem evidência primária.
+- **AC05 (Observação).** As entrevistas E01 e E02 foram orais e não foram gravadas, por isso não há transcrição: o registro de cada uma é o resumo anotado das respostas (L01, #41). A evidência primária é o próprio resumo, cuja fidelidade só pode ser confirmada pelo stakeholder. **Recomendação:** confirmar os resumos na reunião de validação (#25) e, em entrevistas futuras, gravar com autorização ou registrar a concordância do entrevistado com o resumo.
 
 ## 4. ISO/IEC 25010:2023 — qualidade do produto
 
@@ -218,7 +218,7 @@ Esta norma trata da prestação de serviços de avaliação de pessoas em organi
 
 | Processo | Evidência | Resultado |
 | --- | --- | --- |
-| Definição de necessidades e requisitos dos stakeholders | [Processo de requisitos](../PROCESSO_REQUISITOS.md); entrevistas; síntese | CP (transcrições pendentes, AC05) |
+| Definição de necessidades e requisitos dos stakeholders | [Processo de requisitos](../PROCESSO_REQUISITOS.md); entrevistas; síntese | CP (entrevistas registradas como resumo anotado, sem gravação, AC05) |
 | Análise e definição da arquitetura e do projeto | Visão C4; modelo de projeto | C |
 | Gestão de configuração | Git, uma branch por issue, PRs, versões nos documentos | C |
 | Verificação por revisão | Revisão por PR, mas o #37 (CU-05) e o #45 (Culture Amp) foram integrados sem revisão humana registrada | **CP — AC25** |
@@ -250,7 +250,7 @@ Esta norma trata da prestação de serviços de avaliação de pessoas em organi
 | AC23 | Menor | 10667 | Finalidade da coleta não informada | Campo de finalidade no RF08 | RF08, RNF13 | #40 |
 | AC24 | Menor | 10667 | Sem orientação aos avaliadores | Texto de orientação por coleta | RF08, RN16 | #25 |
 | AC25 | Menor | 12207 | PRs sem revisão registrada | Registrar revisões | PRs #37, #45, #51, #52 | — |
-| AC05 | Observação | 29148 | Fontes sem transcrição | Receber as transcrições | E01, E02 | #41 |
+| AC05 | Observação | 29148 | Entrevistas sem gravação nem transcrição | Confirmar os resumos anotados na validação | E01, E02 | #25 |
 | AC08 | Observação | 25023, 25040 | Sem medidas nem plano de avaliação | Fase de implementação | RNF | — |
 | AC09 | Observação | 25019 | Qualidade em uso não tratada | Meta de conclusão das coletas | RN10 | #40 |
 | AC13 | Observação | 19510 | BPMN não validado | Validar | Processo | #10 |

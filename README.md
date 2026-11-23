@@ -21,23 +21,23 @@ Projeto acadêmico desenvolvido para a disciplina de Domínios de Software, com 
 
 ## Status do projeto
 
-Primeira etapa (levantamento e especificação de requisitos) com 15 de 19 entregáveis do enunciado prontos, 2 parciais (transcrições e BPMN a validar) e 2 pendentes (questionários e sua síntese). A consolidação dos artefatos, a apresentação e o roteiro estão em [docs/entregas](docs/entregas).
+Primeira etapa (levantamento e especificação de requisitos) com 16 de 19 entregáveis do enunciado prontos, 1 parcial (BPMN a validar) e 2 pendentes (questionários e sua síntese). A [documentação mestre e o roteiro da apresentação na v1.2](docs/entregas) já incluem a visão arquitetural C4, o modelo e os padrões de projeto e a [auditoria de conformidade com normas ISO](docs/auditoria/auditoria-conformidade-iso.md).
+
+As entrevistas E01 e E02 foram feitas oralmente e não foram gravadas. Por isso, em vez de transcrições, o registro de cada uma é o resumo anotado das respostas, em [docs/levantamento/entrevistas](docs/levantamento/entrevistas), e os requisitos identificados estão na [síntese das entrevistas](docs/levantamento/sintese-entrevistas.md).
 
 ### O que ainda falta
 
 | Pendência | Issue |
 | --- | --- |
-| Receber e publicar as transcrições das entrevistas E01 e E02 | #41 |
-| Conferir a síntese das entrevistas com as transcrições | #6 |
+| Atualizar o roteiro da apresentação e os slides 14 e 26, que ainda tratam as transcrições como pendentes | #41 |
 | Aplicar os dois questionários e sintetizar seus requisitos | #7, #8 |
 | Validar o BPMN do processo atual e do proposto ([docs/modelos/processo](docs/modelos/processo)) | #10 |
-| Validar escopo, prioridades e conflitos C01 e C02 com o stakeholder ([pauta](docs/validacao/pauta-validacao-stakeholder.md)) | #25 |
-| Regerar as imagens dos diagramas (MER, modelo de domínio e casos de uso) a partir dos `.mmd` | #40 |
-| Revisar a visão arquitetural C4 e confirmar com o stakeholder a necessidade de notificação por e-mail (lacuna A01) | #25 |
+| Validar escopo, prioridades, pendências PV e conflitos C01 e C02 com o stakeholder ([pauta](docs/validacao/pauta-validacao-stakeholder.md)) | #25 |
+| Revisar a visão arquitetural C4 e o modelo de projeto, e confirmar com o stakeholder a necessidade de notificação por e-mail (lacuna A01) | #25 |
 | Tratar os 5 achados maiores da [auditoria de normas ISO](docs/auditoria/auditoria-conformidade-iso.md): metas de RNF, validação, disponibilidade, retenção (C01) e RIPD | #25, #40 |
-| Ligar cada tela do Figma aos requisitos na matriz de rastreabilidade | #22 |
-| Registrar revisão dos PRs #37 (CU-05) e #45 (Culture Amp), que não têm revisão humana | — |
-| Colar os prompts de IA no Apêndice A da documentação mestre e capturas do Figma no slide 22 | — |
+| Regerar as imagens dos diagramas a partir dos `.mmd` (MER, modelo de domínio e casos de uso) e exportar o MER de feedback e desenvolvimento, que ainda não tem imagem | #40 |
+| Ligar cada tela do [protótipo no Figma](#protótipo) aos requisitos na matriz de rastreabilidade (lacuna L03) e testar o protótipo com usuários (achado AC21) | — |
+| Adicionar ao repositório a versão em PowerPoint da apresentação, depois da revisão | — |
 
 ## Planejamento das atividades
 

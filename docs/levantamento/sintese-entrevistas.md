@@ -4,14 +4,14 @@
 | --- | --- |
 | Elaboração | Heitor Barbosa Souza |
 | Versão | 0.1 — 15 de novembro de 2026 |
-| Situação | Preliminar, aguardando conferência com as transcrições |
-| Acompanhamento | Issue #6; transcrições na #41; consolidação dos requisitos na #40 |
+| Situação | Elaborada a partir dos resumos anotados das entrevistas; interpretações a validar com o stakeholder (#25) |
+| Acompanhamento | Issue #6; registros das entrevistas na #41; consolidação dos requisitos na #40 |
 
 ## 1. Objetivo e fontes
 
 Esta síntese reúne as necessidades, os requisitos e as regras de negócio das duas entrevistas de levantamento de requisitos, E01 e E02, com base nas entrevistas e nas anotações elaboradas a partir delas. As anotações da primeira entrevista orientam o entendimento das modalidades, da estrutura do feedback e do acompanhamento por planos de ação.
 
-As transcrições de [E01](entrevistas/E01-transcricao.md) e [E02](entrevistas/E02-transcricao.md) ainda são aguardadas. A síntese será conferida quando forem recebidas, complementando as referências às perguntas e respostas. As formulações são uma interpretação dos registros disponíveis, não uma transcrição literal das falas.
+As entrevistas foram feitas oralmente e não foram gravadas, por isso não há transcrição. O registro de [E01](entrevistas/E01-perguntas-e-resumo-das-respostas.md) e [E02](entrevistas/E02-perguntas-e-resumo-das-respostas.md) é o resumo anotado das respostas. As formulações desta síntese são uma interpretação desses registros, não uma reprodução literal das falas.
 
 | Fonte | Conteúdo utilizado |
 | --- | --- |
@@ -66,7 +66,7 @@ Como distribuição de responsabilidades proposta, o gestor cria e acompanha os 
 | Acompanhar os resultados | Consultar histórico, indicadores e evolução dos planos |
 | Preservar os registros | Utilizar desativação e cancelamento no uso operacional, sem apagar o histórico |
 
-A descrição de dores concretas e do processo atual da organização será complementada com as transcrições. As necessidades acima não são apresentadas como relatos de incidentes específicos.
+A descrição de dores concretas e do processo atual da organização será complementada na validação com o stakeholder (#25). As necessidades acima não são apresentadas como relatos de incidentes específicos.
 
 ## 3. Requisitos funcionais sintetizados
 
@@ -125,9 +125,9 @@ Os IDs existentes serão preservados sempre que representarem o mesmo requisito.
 
 | Próximo passo | Issue |
 | --- | --- |
-| Receber, revisar e disponibilizar as duas transcrições e os dados de identificação das coletas | #41 |
-| Conferir a síntese com as transcrições, complementar omissões e vincular os requisitos às perguntas e respostas efetivas | #6 |
+| Registrar as duas entrevistas como resumo anotado das respostas (concluído; entrevistas orais, sem gravação) | #41 |
+| Vincular os requisitos às perguntas e respostas dos resumos anotados, quando útil | #6 |
 | Incorporar os requisitos e atualizar prioridades, vínculos e demais artefatos | #40 |
 | Validar interpretações e propostas operacionais e técnicas com o stakeholder | #25 |
 
-Quando as transcrições chegarem, acrescentar referências como `E01-Rxx` e `E02-Rxx` somente onde houver respostas reais e registrar a validação das propostas. A síntese não substitui os entregáveis de transcrição.
+Referências como `E01-Rxx` e `E02-Rxx` apontam para as respostas dos resumos anotados e só devem ser usadas onde houver resposta registrada. A validação das propostas deve ser registrada depois da reunião com o stakeholder.

@@ -111,4 +111,4 @@ A avaliação 360°, a autoavaliação, o feedback informal, a classificação e
 | PV03, PV04 | Obrigatoriedade da reciprocidade e matriz de acesso aos resultados. |
 | PV05 | Política de privacidade e retenção. |
 | PV08 | Resolvida pela síntese das entrevistas: as modalidades e os planos do enunciado integram a primeira versão, ainda como proposta. |
-| Fontes | Transcrições das entrevistas (#41) ainda não recebidas e questionários (#7, #8) ainda não aplicados. |
+| Fontes | Questionários (#7, #8) ainda não aplicados. As entrevistas foram orais, sem gravação, e estão registradas como resumo anotado. |
