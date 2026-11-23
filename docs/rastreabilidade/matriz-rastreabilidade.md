@@ -48,6 +48,7 @@ A [pesquisa documental](../levantamento/pesquisa-documental.md) (seção 2) usa 
 | Containers, componentes, decisões AD01 a AD05 e lacunas A01 a A05 (C4) | [Visão arquitetural](../modelos/arquitetura/README.md), seções 4 a 7 |
 | Diagramas de estado, contratos CO01 a CO04, diagramas de sequência e de classes de projeto | [Modelo de projeto](../modelos/projeto/README.md) |
 | Padrões de projeto PP01 a PP22 | [Padrões de projeto](../modelos/projeto/padroes-de-projeto.md) |
+| Achados AC01 a AC25 da auditoria de normas ISO | [Auditoria de conformidade](../auditoria/auditoria-conformidade-iso.md), seção 12: cada achado lista os requisitos afetados |
 
 ## 2. Fontes e necessidades
 
@@ -376,6 +377,7 @@ Processo de negócio: as 6 dores (D1 a D6) estão ligadas a necessidades, e as 1
 | L08 | O serviço de e-mail aparece na visão arquitetural (convites, lembretes e recuperação de senha), mas nenhum requisito o exige (lacuna A01 da arquitetura). | Perguntar ao stakeholder na validação (#25). Se confirmado, criar o RF e ligá-lo aqui; se não, retirar o elemento dos diagramas C4. |
 | L09 | 10 dos 14 RF-DOC e 3 dos 6 RN-DOC não têm componente de arquitetura. | Mesma causa da L06: dependem das dúvidas D-01 a D-13 e dos conflitos C01 e C02. Quando forem decididos, atribuir o componente responsável. |
 | L10 | O modelo de projeto detalha só os fluxos principais de CU-01 a CU-04 e CU-11. CU-05 a CU-10 e os fluxos alternativos não têm diagrama de sequência. | CU-05 a CU-08 são cadastros que seguem o mesmo formato de controlador e repositório. Modelar os demais se a disciplina exigir. |
+| L11 | A auditoria de normas ISO encontrou cinco achados maiores ainda abertos: metas de RNF não acordadas (AC03), requisitos não validados (AC04), disponibilidade sem requisito (AC06), retenção e eliminação sem decisão (AC14, conflito C01) e falta de avaliação de impacto à privacidade (AC19). | Seguir a ordem da seção 12.1 da [auditoria](../auditoria/auditoria-conformidade-iso.md). Ao criar um requisito por causa de um achado, citar o AC de origem na coluna "Fonte". |
 
 ### 6.2. Inconsistências entre artefatos
 
