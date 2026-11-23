@@ -1,6 +1,8 @@
 # Entrevistas
 
-Registro das entrevistas do levantamento de requisitos. O roteiro está em [roteiro-entrevista-stakeholder.md](../../roteiro-entrevista-stakeholder.md), e as transcrições seguem o [modelo](modelo-transcricao.md).
+Registro das entrevistas do levantamento de requisitos. O roteiro está em [roteiro-entrevista-stakeholder.md](../../roteiro-entrevista-stakeholder.md).
+
+As entrevistas E01 e E02 foram feitas oralmente e não foram gravadas. Por isso não há transcrição: o registro de cada entrevista é o resumo anotado das respostas, feito pela equipe a partir do que foi dito. O [modelo de transcrição](modelo-transcricao.md) fica disponível para entrevistas futuras que forem gravadas.
 
 ## Situação das entrevistas
 
@@ -8,23 +10,23 @@ Atualize esta tabela somente depois que a entrevista tiver acontecido. Use a fun
 
 | Código | Data | Função do participante | Papel no projeto | Entrevistador | Forma | Registro | Registro restrito | Situação |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| E01 | — | — | — | — | — | [Perguntas e resumo das respostas](E01-perguntas-e-resumo-das-respostas.md) | — | Realizada — resumo a validar; transcrição pendente |
-| E02 | — | — | — | — | — | [Perguntas e resumo das respostas](E02-perguntas-e-resumo-das-respostas.md) | — | Realizada — resumo a validar; transcrição pendente |
+| E01 | — | — | — | — | Oral, sem gravação | [Perguntas e resumo das respostas](E01-perguntas-e-resumo-das-respostas.md) | — | Realizada — registrada como resumo anotado |
+| E02 | — | — | — | — | Oral, sem gravação | [Perguntas e resumo das respostas](E02-perguntas-e-resumo-das-respostas.md) | — | Realizada — registrada como resumo anotado |
 
-As duas entrevistas foram realizadas. Os arquivos vinculados apresentam perguntas e resumos de respostas para validação, não as transcrições. Os demais dados das coletas e a situação dos registros restritos permanecem a confirmar; os traços não indicam que as entrevistas deixaram de ocorrer.
+As duas entrevistas foram realizadas. Os arquivos vinculados são o registro delas: as perguntas feitas e o resumo anotado das respostas, não uma transcrição literal. Os demais dados das coletas e a situação dos registros restritos permanecem a confirmar; os traços não indicam que as entrevistas deixaram de ocorrer.
 
 Na coluna **Registro restrito**, informe apenas se o registro de E01 ou E02 foi preenchido (`Sim` ou `Não`), sem copiar dados dele.
 
 ## Síntese dos requisitos
 
-A [síntese dos requisitos das entrevistas](../sintese-entrevistas.md) reúne os entendimentos de E01 e E02, com base nas entrevistas e nas anotações elaboradas a partir delas. Sua conferência com as transcrições permanece pendente na issue #6. O recebimento e a revisão das transcrições são acompanhados na #41.
+A [síntese dos requisitos das entrevistas](../sintese-entrevistas.md) reúne os entendimentos de E01 e E02, com base nos resumos anotados. As interpretações e propostas da síntese ainda serão validadas com o stakeholder (#25).
 
 ## Regras de acesso
 
 | Informação | Onde fica | Quem acessa |
 | --- | --- | --- |
 | Código, data, função genérica, forma da entrevista e entrevistador | Repositório | Público |
-| Transcrição revisada, sem nomes e sem dados de terceiros | Repositório | Público |
+| Resumo anotado das respostas (ou transcrição revisada, se houver gravação), sem nomes e sem dados de terceiros | Repositório | Público |
 | Nome, telefone e demais dados exigidos pela disciplina, com o respectivo código | Registro restrito | Equipe e professor |
 | Autorização para participação e gravação | Registro restrito | Equipe e professor |
 | Áudio, vídeo e anotações originais | Pasta restrita | Equipe e professor |
@@ -37,7 +39,7 @@ A [síntese dos requisitos das entrevistas](../sintese-entrevistas.md) reúne os
 - Não usar link aberto a "qualquer pessoa com o link".
 - Eliminação: [definir — sugestão: apagar áudios e telefones após a avaliação final da disciplina de 2026/2].
 
-**Antes de enviar uma transcrição ao repositório, confira se:**
+**Antes de enviar um registro de entrevista ao repositório, confira se:**
 
 - não há nome, telefone, e-mail ou outro contato do participante;
 - nomes de colegas e detalhes que identifiquem alguém foram substituídos por marcações como `[colega]` ou `[gestor]`;

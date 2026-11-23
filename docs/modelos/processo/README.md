@@ -11,7 +11,7 @@ Os diagramas seguem a notação BPMN 2.0 (OMG). Os arquivos `.bpmn` abrem e pode
 
 ## Limites deste modelo
 
-As transcrições das entrevistas ainda não foram recebidas (#41) e a síntese descreve o processo desejado, não o processo atual de uma organização específica. Por isso, o processo atual foi modelado em nível geral, a partir do problema registrado no [documento de visão](../../visao.md) (seção 2.1) e dos problemas organizacionais levantados na [análise do Culture Amp](../../levantamento/analise-sistema-analogo-culture-amp.md) (seção 2.3). Cada etapa e cada dor deve ser confirmada ou corrigida na validação com o stakeholder; nada aqui é relato de uma situação real observada.
+As entrevistas foram orais, sem gravação, e estão registradas como resumo anotado das respostas; a síntese descreve o processo desejado, não o processo atual de uma organização específica. Por isso, o processo atual foi modelado em nível geral, a partir do problema registrado no [documento de visão](../../visao.md) (seção 2.1) e dos problemas organizacionais levantados na [análise do Culture Amp](../../levantamento/analise-sistema-analogo-culture-amp.md) (seção 2.3). Cada etapa e cada dor deve ser confirmada ou corrigida na validação com o stakeholder; nada aqui é relato de uma situação real observada.
 
 ## Processo atual (como é)
 

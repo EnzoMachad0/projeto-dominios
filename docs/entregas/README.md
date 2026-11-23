@@ -11,5 +11,5 @@ A apresentação em slides (31 slides, com notas) está num link privado de Luiz
 
 - Colar no Apêndice A da documentação os prompts completos usados com a IA, como exige a regra da disciplina.
 - Inserir capturas das telas do Figma no slide 24.
-- Atualizar os documentos se as transcrições (#41), os questionários (#7, #8) ou o BPMN (#10) forem concluídos.
+- Atualizar os documentos se os questionários (#7, #8) ou o BPMN (#10) forem concluídos.
 - Atualizar a documentação se os PRs #51 a #53 mudarem na revisão, e tratar os achados maiores da auditoria (seção 10.1).

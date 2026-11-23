@@ -9,8 +9,9 @@
 | Data, horário e duração                           | Não informado                                          |
 | Integrantes do grupo responsáveis pelas perguntas | Não informado                                          |
 | Método de apresentação                            | Perguntas seguidas de síntese das respostas            |
+| Forma de registro                                 | Entrevista oral, sem gravação; resumo anotado das respostas, sem transcrição literal |
 | Fonte                                             | Material de referência para levantamento de requisitos |
-| Situação                                          | Conteúdo a validar com participantes reais             |
+| Situação                                          | Registro da entrevista; interpretações a validar com o stakeholder (#25) |
 
 ## Perguntas e síntese das respostas
 

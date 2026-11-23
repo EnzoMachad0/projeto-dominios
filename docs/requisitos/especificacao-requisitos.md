@@ -29,7 +29,7 @@ Os identificadores `RF` representam requisitos funcionais, `RNF` requisitos não
 Os códigos de fonte (E01, E02, SA, ENU e DOC) são os mesmos da [lista geral](lista-geral.md), seção 1.
 
 - E01 — Entrevista com o stakeholder e esclarecimentos posteriores: entidades, campos, perfis, seleção por pares ou times, PROF como profissional, ausência de exclusão física e score como tipo de avaliação.
-- E02 — Segunda entrevista. Seus entendimentos estão reunidos com os da E01 na [síntese das entrevistas](../levantamento/sintese-entrevistas.md); a transcrição ainda não foi recebida (#41).
+- E02 — Segunda entrevista. Seus entendimentos estão reunidos com os da E01 na [síntese das entrevistas](../levantamento/sintese-entrevistas.md); as duas entrevistas foram orais, sem gravação, e estão registradas como resumo anotado das respostas.
 - SA — [Análise do sistema análogo Culture Amp](../levantamento/analise-sistema-analogo-culture-amp.md): modalidades de feedback, planos de ação e controles de privacidade.
 - ENU — `trabalho_da_disciplina_de_domnio.pdf`, páginas 1 e 2: contexto de gestão de competências, plataforma web e objetivos complementares; página 3: artefatos de requisitos e modelagem solicitados pela disciplina.
 - IEEE 830 — [norma de 1998](https://standards.ieee.org/ieee/830/1222/): referência para a organização da especificação, e não fonte de requisitos.
@@ -241,7 +241,7 @@ O modelo deve manter usuários, times, relações de trabalho, grupos e parâmet
 
 O enunciado cita feedback chefe-colaborador, por pares e 360°; classificações formal, informal, positivo e construtivo; anonimato; recursos visuais de evolução; planos de ação e metas de desenvolvimento. Com a síntese das entrevistas, esses itens passaram a integrar esta especificação (RF17 a RF22 e RN13 a RN16), exceto o anonimato, que depende do conflito C02, e os recursos visuais de evolução, que serão detalhados com os protótipos.
 
-As transcrições das entrevistas, os questionários e o BPMN ainda exigem trabalhos próprios (#41, #7, #8 e #10). Esta especificação consolida o que foi levantado até aqui e não substitui as demais fontes de elicitação previstas no processo de requisitos.
+Os questionários e o BPMN ainda exigem trabalhos próprios (#7, #8 e #10). Esta especificação consolida o que foi levantado até aqui e não substitui as demais fontes de elicitação previstas no processo de requisitos.
 
 ## 5 Rastreabilidade
 

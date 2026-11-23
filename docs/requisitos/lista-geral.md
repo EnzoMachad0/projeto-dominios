@@ -6,14 +6,14 @@ Versão 0.2 — 17 de novembro de 2026. Lista única de requisitos funcionais (R
 
 | Código | Fonte | Situação |
 | --- | --- | --- |
-| E01 | Entrevista com o stakeholder e esclarecimentos posteriores. | Realizada |
-| E02 | Segunda entrevista, reunida com a E01 na [síntese das entrevistas](../levantamento/sintese-entrevistas.md). | Realizada — transcrição pendente (#41) |
+| E01 | Entrevista com o stakeholder e esclarecimentos posteriores. | Realizada — oral, sem gravação; registro em resumo anotado |
+| E02 | Segunda entrevista, reunida com a E01 na [síntese das entrevistas](../levantamento/sintese-entrevistas.md). | Realizada — oral, sem gravação; registro em resumo anotado |
 | Q01, Q02 | Questionários de levantamento. | **Pendentes** |
 | SA | [Análise do sistema análogo Culture Amp](../levantamento/analise-sistema-analogo-culture-amp.md). | Realizada |
 | DOC | [Pesquisa documental sobre LGPD e ISO/IEC 25010](../levantamento/pesquisa-documental.md). | Realizada |
 | ENU | Enunciado da disciplina (`trabalho_da_disciplina_de_domnio.pdf`). | Consultado |
 
-A versão 0.2 incorpora a [síntese das entrevistas](../levantamento/sintese-entrevistas.md) (identificadores locais `SIN-*`) e a análise do sistema análogo (SA). Como as transcrições ainda não foram recebidas (#41), os itens com origem nas entrevistas citam a síntese e permanecem **Propostos** até a conferência com as transcrições (#6) e a validação com o stakeholder (#25). A seção 9 registra a correspondência entre os identificadores locais e os desta lista. Quando Q01 e Q02 forem concluídos, seus requisitos devem ser incorporados com os mesmos identificadores, quando confirmarem um item existente, ou com novos identificadores na sequência.
+A versão 0.2 incorpora a [síntese das entrevistas](../levantamento/sintese-entrevistas.md) (identificadores locais `SIN-*`) e a análise do sistema análogo (SA). Como as entrevistas foram orais e não foram gravadas, não há transcrição: os itens com origem nas entrevistas citam a síntese, elaborada a partir dos resumos anotados, e permanecem **Propostos** até a validação com o stakeholder (#25). A seção 9 registra a correspondência entre os identificadores locais e os desta lista. Quando Q01 e Q02 forem concluídos, seus requisitos devem ser incorporados com os mesmos identificadores, quando confirmarem um item existente, ou com novos identificadores na sequência.
 
 ## 2. Convenções
 
@@ -187,6 +187,6 @@ Calibração, reuniões individuais, reconhecimento e pesquisas de engajamento (
 
 ## 10. Próximos passos
 
-1. Conferir a síntese com as transcrições quando forem recebidas (#41, #6) e incorporar os questionários (#7, #8).
+1. Incorporar os questionários (#7, #8).
 2. Discutir as prioridades, a liberação por modalidade (PV04) e os conflitos C01 e C02 com o stakeholder (#25).
 3. Atualizar a situação dos itens validados e refletir as mudanças na especificação e na matriz de rastreabilidade.
