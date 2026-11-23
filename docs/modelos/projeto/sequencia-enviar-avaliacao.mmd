@@ -1,0 +1,39 @@
+%% Sequência — Enviar avaliação (CU-02, fluxo principal) — RF12, RN06, RN08, RNF02, RNF13, RF16
+sequenceDiagram
+    autonumber
+    actor Av as Avaliador
+    participant Web as Aplicação web
+    participant Ctl as ControladorResposta
+    participant Pol as PoliticaVisibilidade
+    participant UoW as UnidadeDeTrabalho
+    participant Rep as RepositorioAvaliacoes
+    participant A as Avaliacao
+    participant E as Escala
+    participant Aud as Auditoria
+
+    Av->>Web: revisa respostas e confirma o envio (RNF13)
+    Web->>Ctl: enviar(idAvaliacao)
+    Ctl->>Pol: é o avaliador desta avaliação?
+    Pol-->>Ctl: sim
+    Ctl->>UoW: executarEmTransacao
+    activate UoW
+    UoW->>Rep: porId(idAvaliacao) com bloqueio
+    Rep-->>UoW: avaliação (RASCUNHO)
+    UoW->>A: enviar(agora)
+    A->>A: coleta aceita respostas? (ABERTA e dentro do período)
+    loop cada parâmetro da coleta
+        A->>E: validar(valor)
+        E-->>A: válido ou inválido (RN06)
+    end
+    alt alguma resposta ausente ou inválida
+        A-->>UoW: erro de validação
+        UoW-->>Ctl: desfaz
+        Ctl-->>Web: indica as perguntas pendentes
+    else completa
+        A->>A: status = ENVIADA, respostas imutáveis (RN08)
+        UoW->>Rep: salvar(avaliacao)
+        UoW->>Aud: registrar(AVALIACAO_ENVIADA)
+        Ctl-->>Web: envio confirmado
+    end
+    deactivate UoW
+    Note over A: Enviar A sobre B não preenche nem envia B sobre A (RF12)

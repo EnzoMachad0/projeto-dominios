@@ -1,0 +1,17 @@
+%% Máquina de estados da avaliação — RN08, RF11, RF12 (CU-02, CU-03)
+stateDiagram-v2
+    [*] --> RASCUNHO : coleta aberta gera a avaliação (RF10, RF17, RF22)
+    RASCUNHO --> RASCUNHO : salvar respostas [coleta ABERTA e dentro do período] (RF11)
+    RASCUNHO --> ENVIADA : enviar [todas as respostas válidas] / registrar enviada_em (RF12)
+    RASCUNHO --> CANCELADA : coleta encerrada ou cancelada / registrar motivo (RF13)
+    ENVIADA --> [*]
+    CANCELADA --> [*]
+
+    note right of ENVIADA
+        Respostas imutáveis (RF12).
+        Não há retorno a rascunho (RN08).
+        O feedback herda este estado.
+        Se a coleta for cancelada, a avaliação
+        enviada sai das análises pelo estado
+        da coleta, sem mudar de estado.
+    end note

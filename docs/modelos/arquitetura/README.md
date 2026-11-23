@@ -13,7 +13,7 @@ O [modelo C4](https://c4model.com) descreve a arquitetura em quatro níveis de z
 | 1 | [Contexto](#3-nível-1--contexto-do-sistema) | Quem usa o sistema e com quais sistemas externos ele conversa? | Stakeholder, professor, equipe |
 | 2 | [Containers](#4-nível-2--containers) | Em quais partes executáveis e de armazenamento o sistema se divide? | Equipe |
 | 3 | [Componentes da API](#5-nível-3--componentes-da-api) | Como a lógica do servidor se divide e qual parte atende cada caso de uso? | Equipe |
-| 4 | Código | — | Não se aplica: a primeira etapa é de requisitos e não há código. |
+| 4 | Código | — | Não há código. O detalhamento abaixo do nível 3 (classes, sequências, estados e padrões) está no [modelo de projeto](../projeto/README.md). |
 
 Legenda das cores, seguindo a convenção do C4: azul escuro para pessoas, azul para o sistema e seus containers, azul claro para componentes, cinza para sistemas externos. **Linha tracejada** indica elemento ou relação **ainda não confirmada** (opcional, a confirmar ou fora da primeira versão).
 

@@ -17,6 +17,7 @@ Projeto acadêmico desenvolvido para a disciplina de Domínios de Software, com 
 - Git e GitHub — controle de versão e documentação.
 - BPMN e UML — modelagem de processos e casos de uso.
 - Modelo C4 — visão arquitetural de alto nível ([docs/modelos/arquitetura](docs/modelos/arquitetura)).
+- UML de projeto e padrões de projeto (GRASP, GoF) — estados, sequências e classes ([docs/modelos/projeto](docs/modelos/projeto)).
 
 ## Status do projeto
 
@@ -33,6 +34,7 @@ Primeira etapa (levantamento e especificação de requisitos) com 15 de 19 entre
 | Validar escopo, prioridades e conflitos C01 e C02 com o stakeholder ([pauta](docs/validacao/pauta-validacao-stakeholder.md)) | #25 |
 | Regerar as imagens dos diagramas (MER, modelo de domínio e casos de uso) a partir dos `.mmd` | #40 |
 | Revisar a visão arquitetural C4 e confirmar com o stakeholder a necessidade de notificação por e-mail (lacuna A01) | #25 |
+| Tratar os 5 achados maiores da [auditoria de normas ISO](docs/auditoria/auditoria-conformidade-iso.md): metas de RNF, validação, disponibilidade, retenção (C01) e RIPD | #25, #40 |
 | Ligar cada tela do Figma aos requisitos na matriz de rastreabilidade | #22 |
 | Registrar revisão dos PRs #37 (CU-05) e #45 (Culture Amp), que não têm revisão humana | — |
 | Colar os prompts de IA no Apêndice A da documentação mestre e capturas do Figma no slide 22 | — |

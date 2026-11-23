@@ -1,0 +1,28 @@
+%% Sequência — Criar plano de ação (CU-11, fluxo principal) — RF18, RN13, RN14, RF16
+sequenceDiagram
+    autonumber
+    actor G as Gestor ou RH
+    participant Web as Aplicação web
+    participant Ctl as ControladorFeedback
+    participant Pol as PoliticaVisibilidade
+    participant UoW as UnidadeDeTrabalho
+    participant Rep as RepositorioFeedbacks
+    participant P as PlanoAcao
+    participant Aud as Auditoria
+
+    G->>Web: cria plano a partir de um feedback recebido pelo colaborador
+    Web->>Ctl: criarPlano(idFeedback, metas e ações)
+    Ctl->>Pol: o colaborador está no escopo de quem cria? (RN14)
+    Pol-->>Ctl: sim
+    Ctl->>UoW: executarEmTransacao
+    activate UoW
+    UoW->>P: novo PlanoAcao(feedback de origem) (RN13)
+    loop cada ação acordada
+        UoW->>P: adicionarAcao(descricao, responsavel, prazo)
+    end
+    P->>P: ao menos uma ação com responsável e prazo? (CA18)
+    P->>P: status = ATIVO
+    UoW->>Rep: salvarPlano(plano)
+    UoW->>Aud: registrar(PLANO_CRIADO)
+    deactivate UoW
+    Ctl-->>Web: plano criado — colaborador vê suas ações
