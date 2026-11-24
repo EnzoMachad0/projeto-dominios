@@ -51,7 +51,7 @@ Os identificadores de requisitos seguem a [lista geral](../../requisitos/lista-g
 
 ## Dúvidas registradas
 
-- Os requisitos documentais de eliminação e anonimização (RF-DOC-07 e RF-DOC-08) conflitam com a regra de não haver exclusão física (RN12). O modelo segue a RN12 até a decisão da PV05.
-- O 360°, a autoavaliação, o feedback informal, a classificação e os planos de ação (RF17 a RF22) foram modelados na consolidação da issue #40. O anonimato continua sem atributos, pois depende do conflito C02.
-- As imagens em `exportacoes/` ainda refletem a versão anterior e precisam ser regeradas a partir das fontes `.mmd` com o comando acima.
-- Multiplicidade de perfis por conta, gestor único por time e grupo único por parâmetro são decisões propostas (PV01 e PV06).
+- Os requisitos documentais de eliminação e anonimização (RF-DOC-07 e RF-DOC-08) seguem a decisão da PV05 (conflito C01 resolvido): sem exclusão física no uso operacional e anonimização irreversível ao fim do prazo de retenção (RN12).
+- O 360°, a autoavaliação, o feedback informal, a classificação e os planos de ação (RF17 a RF22) foram modelados na consolidação da issue #40. O anonimato segue a identificação por modalidade (RN-DOC-02, conflito C02 resolvido).
+- As imagens em `exportacoes/` foram regeradas a partir das fontes `.mmd` em 23/11/2026, incluindo o MER de feedback e desenvolvimento.
+- Multiplicidade de perfis por conta, gestor único por time e grupo único por parâmetro foram validados (PV01 e PV06; E01, E02).

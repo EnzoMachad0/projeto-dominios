@@ -11,7 +11,7 @@
 | Método de apresentação                            | Perguntas seguidas de síntese das respostas            |
 | Forma de registro                                 | Entrevista oral, sem gravação; resumo anotado das respostas, sem transcrição literal |
 | Fonte                                             | Material de referência para levantamento de requisitos |
-| Situação                                          | Registro da entrevista; interpretações a validar com o stakeholder (#25) |
+| Situação                                          | Registro da entrevista; conteúdo confirmado nas entrevistas E01 e E02 (registro da equipe em 23/11/2026) |
 
 ## Perguntas e síntese das respostas
 
@@ -155,21 +155,20 @@
 
 ## Pontos que exigem esclarecimento
 
-As questões abaixo permanecem abertas e não devem ser tratadas como regras aprovadas.
+As questões abaixo foram levantadas nesta entrevista e resolvidas na validação dos requisitos (E01, E02).
 
 | ID      | Dúvida                                                        | Origem  | Dirigida a                    | Responsável | Situação |
 | ------- | ------------------------------------------------------------- | ------- | ----------------------------- | ----------- | -------- |
-| E01-D01 | Modelo de anonimato/confidencialidade de avaliações por pares | E01-R11 | RH, liderança e jurídico      | A definir   | Aberta   |
-| E01-D02 | Prazo de retenção e atendimento a direitos dos titulares      | E01-R12 | Jurídico/encarregado de dados | A definir   | Aberta   |
-| E01-D03 | Encerramento automático ou manual de coletas                  | E01-R09 | RH                            | A definir   | Aberta   |
-| E01-D04 | Fluxo e autoridade para contestação                           | E01-R16 | RH e jurídico                 | A definir   | Aberta   |
-| E01-D05 | Critérios de moderação de comentários                         | E01-R17 | RH e jurídico                 | A definir   | Aberta   |
-| E01-D06 | Número mínimo de respostas para agregação                     | E01-R19 | RH e jurídico                 | A definir   | Aberta   |
-| E01-D07 | Aprovação das prioridades da primeira versão                  | E01-R20 | Patrocinador e RH             | A definir   | Aberta   |
-
-## Principais necessidades para validação
+| E01-D01 | Modelo de anonimato/confidencialidade de avaliações por pares | E01-R11 | RH, liderança e jurídico      | A definir   | Resolvida na validação (E01, E02) — RN-DOC-02 |
+| E01-D02 | Prazo de retenção e atendimento a direitos dos titulares      | E01-R12 | Jurídico/encarregado de dados | A definir   | Resolvida na validação (E01, E02) — RN12, RF-DOC-08 |
+| E01-D03 | Encerramento automático ou manual de coletas                  | E01-R09 | RH                            | A definir   | Resolvida na validação (E01, E02) — RF13 |
+| E01-D04 | Fluxo e autoridade para contestação                           | E01-R16 | RH e jurídico                 | A definir   | Resolvida na validação (E01, E02) — RF-DOC-06 |
+| E01-D05 | Critérios de moderação de comentários                         | E01-R17 | RH e jurídico                 | A definir   | Resolvida na validação (E01, E02) — RF-DOC-14 |
+| E01-D06 | Número mínimo de respostas para agregação                     | E01-R19 | RH e jurídico                 | A definir   | Resolvida na validação (E01, E02) — RN-DOC-03 |
+| E01-D07 | Aprovação das prioridades da primeira versão                  | E01-R20 | Patrocinador e RH             | A definir   | Resolvida na validação (E01, E02) — lista geral v0.3 |
+## Principais necessidades (validadas)
 
 - Centralizar a execução e o acompanhamento das avaliações, evitando planilhas paralelas (E01-R01, E01-R02).
 - Definir responsabilidades e acesso por perfil antes da implementação (E01-R03, E01-R04).
 - Priorizar cadastros, questionários, rascunhos, envios e pendências em uma versão inicial (E01-R15).
-- Definir posteriormente, com responsáveis competentes, anonimato, retenção, moderação e contestação (E01-R11, E01-R12, E01-R16, E01-R17).
+- Anonimato, retenção, moderação e contestação, definidos na validação (E01-R11, E01-R12, E01-R16, E01-R17; RN-DOC-02, RN12, RF-DOC-14 e RF-DOC-06).

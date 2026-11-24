@@ -272,3 +272,19 @@ Esta norma trata da prestação de serviços de avaliação de pessoas em organi
 - Requisitos de LGPD levantados a partir de fontes primárias (lei e resoluções da ANPD).
 - Decisões de arquitetura com justificativa e alternativa descartada.
 - Gestão de configuração disciplinada: uma branch e um PR por tarefa, documentos versionados.
+
+## 14. Acompanhamento dos achados (23/11/2026)
+
+O diagnóstico acima reflete o estado de 21/11/2026. Depois dele, os requisitos foram validados nas entrevistas E01 e E02 (registro da equipe em 23/11/2026; [lista geral](../requisitos/lista-geral.md), versão 0.3), e os PRs #51 a #53 foram aprovados.
+
+| Achado | Situação em 23/11/2026 |
+| --- | --- |
+| AC03 | Tratado: as metas de RNF03, RNF04, RNF05 e RNF11 da especificação suplementar foram validadas (PV07, D-12). |
+| AC04 | Tratado: todos os requisitos da lista geral estão validados (E01, E02). |
+| AC05 | Tratado: a E01 está registrada como resumo anotado das respostas e a E02, com a professora, sem anotação das respostas; o conteúdo foi confirmado pelas duas entrevistas. |
+| AC14 | Tratado: conflito C01 resolvido, com anonimização irreversível ao fim do prazo de retenção (RN12, RF-DOC-07, RF-DOC-08). Com isso, a não conformidade pontual das seções 7 e 8 deixa de existir. |
+| AC20 | Parcial: RF-DOC-03, RF-DOC-06 e RF-DOC-09 foram validados; o caso de uso resumido ainda não foi escrito. |
+| AC25 | Parcial: os PRs #51 a #53 foram aprovados; #37 e #45 seguem sem revisão registrada. |
+| AC12 | Tratado: as imagens de todos os diagramas foram regeradas a partir das fontes `.mmd`, inclusive C4 e modelo de projeto. |
+| AC06, AC19 | Abertos: falta o RNF de disponibilidade e a avaliação de impacto à privacidade (RIPD). |
+| Demais | Sem mudança desde 21/11/2026. |

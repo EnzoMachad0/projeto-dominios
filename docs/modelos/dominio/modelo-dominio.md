@@ -6,7 +6,7 @@ O domínio é a avaliação e o acompanhamento de pessoas por meio de feedbacks 
 
 **Usuário** é uma pessoa cadastrada, vinculada a um time, com nome, cargo e perfil de acesso. Uma mesma pessoa pode atuar como avaliador em uma avaliação e receptor em outra. Esses papéis são circunstanciais e não novos valores do ENUM de acesso.
 
-**Profissional** é o significado do perfil `PROF`, que identifica o participante comum. Os demais perfis são RH e GESTOR. Permanece proposta a utilização de um único perfil por conta.
+**Profissional** é o significado do perfil `PROF`, que identifica o participante comum. Os demais perfis são RH e GESTOR. Cada conta tem um único perfil (PV01, validada).
 
 **Time** é uma unidade organizacional com nome e setor. Na proposta, possui um gestor responsável e reúne usuários. A responsabilidade de gestão pode abranger vários times, independentemente do time de lotação do próprio gestor.
 
@@ -79,7 +79,7 @@ Não há exclusão física de dados, mesmo de cadastros sem dependências ou ras
 3. O RH escolhe o modo de seleção por pares ou por times. No primeiro, seleciona os pares elegíveis; no segundo, seleciona os times e o sistema combina todos os integrantes elegíveis de cada time entre si. Antes de publicar, o RH visualiza os participantes e a quantidade de avaliações. A abertura preserva as cópias do questionário, congela os participantes e gera os dois sentidos de avaliação para cada par, sem autoavaliações nem duplicatas.
 4. Cada avaliador salva seus rascunhos e envia o questionário completo dentro do período.
 5. O RH encerra a coleta e o sistema cancela as pendências, preservando envios.
-6. Os resultados elegíveis são liberados e passam a compor o histórico e a análise, conforme as permissões propostas.
+6. O gestor ou o RH libera os resultados ao avaliado, e eles passam a compor o histórico e a análise (RN09).
 7. A partir de um feedback recebido, o gestor ou o RH pode criar um plano de ação com o colaborador; o progresso é acompanhado até o feedback seguinte.
 
 No 360°, o RH ou o gestor escolhe o avaliado e os participantes por papel, e a abertura gera uma avaliação por participante, sem reciprocidade. O feedback informal não passa por coleta: o emissor registra o contexto e envia diretamente ao receptor.
@@ -88,7 +88,7 @@ No 360°, o RH ou o gestor escolhe o avaliado e os participantes por papel, e a 
 
 Ana e Bruno trabalham juntos. Em uma coleta com três perguntas, o sistema cria uma avaliação de Ana sobre Bruno e outra de Bruno sobre Ana. Cada uma pode conter até três respostas em rascunho e exatamente três no envio. A coleta produzirá seis respostas se ambos concluírem.
 
-Na política proposta, Ana não vê o conteúdo recebido antes de enviar sua avaliação. A liberação ocorre após ambos concluírem e a coleta ser encerrada. A identidade dos participantes é conhecida; reciprocidade entre duas pessoas não implica anonimato.
+Ana não vê o conteúdo recebido antes de enviar sua avaliação. A liberação ao avaliado é feita pelo gestor ou pelo RH (RN09). Na coleta recíproca, o avaliador não é identificado ao avaliado (RN-DOC-02).
 
 ## Exemplo de seleção por time
 

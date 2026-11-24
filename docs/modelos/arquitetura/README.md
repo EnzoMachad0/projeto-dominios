@@ -120,7 +120,7 @@ flowchart TB
 | API da aplicação | Executa todas as regras de negócio e verifica autenticação, perfil e escopo em cada requisição. | Não guarda estado de sessão que impeça mais de uma instância (proposta). | RF01 a RF22; RN01 a RN16; RNF01, RNF02, RNF06, RNF12 |
 | Banco de dados | Persiste o [MER](../dominio/modelo-entidade-relacionamento.md), incluindo `EVENTO_AUDITORIA`. Desativação lógica e cancelamento em vez de exclusão. | Não é acessado diretamente pela aplicação web nem por usuários. | RN05, RN12; RNF06, RNF10; restrição "banco relacional" |
 | Logs técnicos | Guarda erros e métricas de operação. | Não registra notas, comentários nem o conteúdo de feedbacks. | RNF07 |
-| Backup | Cópia diária completa em local separado. Meta proposta: perda máxima de 24 h e restauração em até 4 h. | Não é réplica em tempo real. | RNF05; PV07 |
+| Backup | Cópia diária completa em local separado. Meta: perda máxima de 24 h e restauração em até 4 h. | Não é réplica em tempo real. | RNF05 |
 
 ## 5. Nível 3 — Componentes da API
 
@@ -196,8 +196,8 @@ Registradas no formato curto de *Architecture Decision Record*. Todas estão **p
 | A01 | Nenhum requisito pede notificação por e-mail (convite para responder, lembrete de prazo) nem recuperação de senha, mas os fluxos de coleta e o RNF09 sugerem essa necessidade. | Perguntar ao stakeholder na validação (#25); se confirmado, criar RF e manter o serviço de e-mail no diagrama. |
 | A02 | Autenticação própria ou provedor de identidade externo. | Depende da escolha de tecnologia e do RNF09 (segundo fator do RH). |
 | A03 | Integração com sistemas de RH. | Fora da primeira versão (visão 5.2); depende da D-01 e do RNF15. |
-| A04 | Anonimato das respostas. | Se adotado (conflito C02), a Política de visibilidade e a Auditoria precisam esconder o autor (RNF16) — pode exigir separar o vínculo resposta–autor no banco. |
-| A05 | Metas de desempenho e recuperação. | Metas do RNF04 e do RNF05 dependem da PV07. |
+| A04 | Anonimato das respostas. | Resolvido (C02): identificação por modalidade (RN-DOC-02). A Política de visibilidade e a Auditoria escondem o autor nas coletas recíprocas e no 360° (RNF16); pode exigir separar o vínculo resposta–autor no banco. |
+| A05 | Metas de desempenho e recuperação. | Resolvido (PV07): metas do RNF04 e do RNF05 validadas (E01, E02). |
 
 ## 8. Arquivos
 

@@ -36,12 +36,14 @@ As entrevistas foram orais, sem gravação, e estão registradas como resumo ano
 | Publicar questionário e gerar avaliações | Sistema | RF09, RF10, RF17; RN05 | D1 |
 | Responder e enviar avaliações, inclusive autoavaliação | Avaliadores | CU-02; RF11, RF12, RF22 | D6 |
 | Acompanhar e encerrar a coleta | RH ou gestor | CU-03; RF13 | — |
-| Liberar resultados e calcular indicadores | Sistema | RF15; RN09, RN10, RN15 | D3 |
+| Liberar resultados e calcular indicadores | Sistema (no diagrama); gestor ou RH liberam os resultados (RN09) | CU-04; RF15; RN09, RN10, RN15 | D3 |
 | Consultar resultados e histórico | Colaborador avaliado | CU-04; RF14, RF15 | D3 |
 | Criar plano de ação com o colaborador | RH ou gestor | CU-11; RF18; RN13 | D4 |
 | Executar ações e registrar progresso | Colaborador avaliado | CU-11; RF18 | D4 |
 | Registrar verificações e novo feedback | RH ou gestor | CU-11; RN13 | D4 |
 | Registrar feedback informal com fato e impacto | Qualquer participante | CU-10; RF19 a RF21; RN16 | D2 |
+
+Na validação dos requisitos (E01, E02), a liberação dos resultados passou a ser feita pelo gestor ou pelo RH (RN09). O diagrama ainda mostra essa etapa na raia do sistema e deve ser ajustado na validação do BPMN (#10).
 
 O controle de acesso por perfil e escopo (RF01, RN14, RNF01, RNF07) e a auditoria (RF16) atravessam todas as etapas e tratam a dor D5.
 

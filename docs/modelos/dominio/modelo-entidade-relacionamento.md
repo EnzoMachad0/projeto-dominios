@@ -271,7 +271,7 @@ Cada avaliação enviada de uma coleta gera no máximo um REGISTRO_FEEDBACK form
 ### Organização
 
 - `USUARIO.email`: único após remoção de espaços externos e conversão para minúsculas.
-- `USUARIO.role`: somente `RH`, `PROF` ou `GESTOR`; PROF significa profissional. Um perfil por conta continua como proposta.
+- `USUARIO.role`: somente `RH`, `PROF` ou `GESTOR`; PROF significa profissional. Um perfil por conta (PV01, validada).
 - `RELACAO_TRABALHO`: PK composta por `(id_usuario_a, id_usuario_b)`, com A menor que B. Reativação reutiliza o vínculo existente.
 - `PARAM.score`: ENUM `ESCALA_0_10 | ESCALA_0_5 | BOOLEANO`, obrigatório, define o tipo de avaliação; `PARAM.id_grupo_param` obrigatório.
 - `TIME.id_gestor`: opcional, mas quando preenchido deve apontar para usuário ativo com role `GESTOR`. Troca de perfil ou desativação exige encerrar ou substituir suas responsabilidades na mesma operação, preservando a alteração em auditoria.

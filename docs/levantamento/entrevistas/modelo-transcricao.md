@@ -1,6 +1,6 @@
 # Transcrição — E0X
 
-> Modelo. Copie este arquivo como `E01-transcricao.md` ou `E02-transcricao.md` e remova este aviso. Preencha somente com o que aconteceu na entrevista.
+> Modelo. Copie este arquivo como `E03-transcricao.md` (próximo código livre) e remova este aviso. Preencha somente com o que aconteceu na entrevista.
 
 ## Identificação
 

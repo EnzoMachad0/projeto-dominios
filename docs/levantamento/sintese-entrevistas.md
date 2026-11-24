@@ -4,26 +4,26 @@
 | --- | --- |
 | Elaboração | Heitor Barbosa Souza |
 | Versão | 0.1 — 15 de novembro de 2026 |
-| Situação | Elaborada a partir dos resumos anotados das entrevistas; interpretações a validar com o stakeholder (#25) |
+| Situação | Elaborada a partir do resumo anotado da E01; interpretações e propostas confirmadas nas entrevistas E01 e E02 (registro da equipe em 23/11/2026) |
 | Acompanhamento | Issue #6; registros das entrevistas na #41; consolidação dos requisitos na #40 |
 
 ## 1. Objetivo e fontes
 
-Esta síntese reúne as necessidades, os requisitos e as regras de negócio das duas entrevistas de levantamento de requisitos, E01 e E02, com base nas entrevistas e nas anotações elaboradas a partir delas. As anotações da primeira entrevista orientam o entendimento das modalidades, da estrutura do feedback e do acompanhamento por planos de ação.
+Esta síntese reúne as necessidades, os requisitos e as regras de negócio levantados nas entrevistas, com base na E01 e nas anotações elaboradas a partir dela. A E02, com a professora da disciplina, confirmou o conteúdo, mas não tem anotação das respostas. As anotações da primeira entrevista orientam o entendimento das modalidades, da estrutura do feedback e do acompanhamento por planos de ação.
 
-As entrevistas foram feitas oralmente e não foram gravadas, por isso não há transcrição. O registro de [E01](entrevistas/E01-perguntas-e-resumo-das-respostas.md) e [E02](entrevistas/E02-perguntas-e-resumo-das-respostas.md) é o resumo anotado das respostas. As formulações desta síntese são uma interpretação desses registros, não uma reprodução literal das falas.
+As entrevistas foram feitas oralmente e não foram gravadas, por isso não há transcrição. O registro da [E01](entrevistas/E01-perguntas-e-resumo-das-respostas.md) é o resumo anotado das respostas; o da [E02](entrevistas/E02-entrevista-professora.md) traz a identificação e o resultado da entrevista. As formulações desta síntese são uma interpretação desses registros, não uma reprodução literal das falas.
 
 | Fonte | Conteúdo utilizado |
 | --- | --- |
 | E01 e suas anotações | Feedback baseado em fatos, classificações, modalidades, participação do gestor e do RH, planos de ação e preservação dos feedbacks |
-| E01 e E02 e as anotações elaboradas a partir delas | Organização de coletas, questionários, perfis, respostas, histórico e acompanhamento dos resultados |
+| E01 e as anotações elaboradas a partir dela | Organização de coletas, questionários, perfis, respostas, histórico e acompanhamento dos resultados |
 
 As correspondências com o projeto atual seguem a [lista geral](../requisitos/lista-geral.md), a [especificação de requisitos](../requisitos/especificacao-requisitos.md), a [especificação suplementar](../requisitos/especificacao-suplementar.md) e o [dicionário de dados](../dicionario-dados.md).
 
 ### Convenções
 
 - `SIN-RFxx`, `SIN-RNxx` e `SIN-RNFxx` são identificadores locais desta síntese, separados dos IDs oficiais RF, RN e RNF.
-- Os requisitos sintetizados são candidatos à consolidação na #40 e à validação na #25. A correspondência com um requisito existente pode ser parcial e não indica que todos os detalhes já estão especificados ou modelados.
+- Os requisitos sintetizados foram consolidados na #40 e confirmados nas entrevistas E01 e E02. A correspondência com um requisito existente pode ser parcial e não indica que todos os detalhes já estão especificados ou modelados.
 - As regras operacionais inferidas para detalhar participantes, permissões e acompanhamento são identificadas como propostas. Não representam confirmações literais dos entrevistados.
 
 ## 2. Entendimento do sistema e do processo
@@ -66,7 +66,7 @@ Como distribuição de responsabilidades proposta, o gestor cria e acompanha os 
 | Acompanhar os resultados | Consultar histórico, indicadores e evolução dos planos |
 | Preservar os registros | Utilizar desativação e cancelamento no uso operacional, sem apagar o histórico |
 
-A descrição de dores concretas e do processo atual da organização será complementada na validação com o stakeholder (#25). As necessidades acima não são apresentadas como relatos de incidentes específicos.
+A descrição de dores concretas e do processo atual da organização não foi detalhada nas entrevistas. As necessidades acima não são apresentadas como relatos de incidentes específicos.
 
 ## 3. Requisitos funcionais sintetizados
 
@@ -95,24 +95,24 @@ A descrição de dores concretas e do processo atual da organização será comp
 
 | ID local | Regra | Origem | Correspondência para consolidação na #40 |
 | --- | --- | --- | --- |
-| SIN-RN01 | Preservar os dados no uso operacional, usando desativação de cadastros e cancelamento de coletas ou avaliações, sem exclusão física. | E01 e anotações para feedbacks; abrangência operacional da RN12 existente | RN12; a política de retenção continua vinculada a PV05/C01 |
+| SIN-RN01 | Preservar os dados no uso operacional, usando desativação de cadastros e cancelamento de coletas ou avaliações, sem exclusão física. | E01 e anotações para feedbacks; abrangência operacional da RN12 existente | RN12; retenção decidida em PV05/C01: anonimização irreversível ao fim do prazo |
 | SIN-RN02 | O feedback deve se apoiar em fatos e impactos registrados, sem pressupor verificação automática da veracidade pelo sistema. | E01 e anotações | Estrutura de SIN-RF01 |
 | SIN-RN03 | O plano sucede o feedback inicial e antecede o feedback de avaliação dos resultados; é opcional quando não houver ação de desenvolvimento acordada. | E01 e anotações; ciclo de acompanhamento proposto | RF18 |
 | SIN-RN04 | Avaliações entre pessoas distintas não admitem atribuições duplicadas; pares recíprocos geram dois sentidos independentes. A autoavaliação é tratada separadamente, com emissor igual ao receptor, e o 360° gera atribuições conforme os papéis selecionados. | Entrevistas e anotações; detalhamento por modalidade proposto | RN01 a RN03, RF10 e RF17 |
-| SIN-RN05 | A abertura preserva o questionário e os participantes; os envios são imutáveis. No modo de pares recíprocos, a liberação segue o par completo e a coleta encerrada. Essa condição não é aplicada automaticamente a feedback informal, autoavaliação ou 360°; o acesso deve ser definido por modalidade. | Entrevistas e anotações; separação das modalidades proposta | RN04 a RN09; detalhar o acesso por modalidade na #40 |
+| SIN-RN05 | A abertura preserva o questionário e os participantes; os envios são imutáveis. Em todas as modalidades, o resultado só é liberado ao avaliado pelo gestor ou pelo RH (decisão de PV04). | Entrevistas e anotações; separação das modalidades proposta | RN04 a RN09; detalhar o acesso por modalidade na #40 |
 | SIN-RN06 | Os indicadores separam escalas numéricas de respostas booleanas e comparam versões equivalentes de perguntas e tipos de resposta. | Proposta de cálculo já registrada no projeto | RN10 e RN11 |
 | SIN-RN07 | O gestor administra avaliações e planos dos times sob sua responsabilidade; o RH atua no âmbito organizacional. Seleção de participantes e consulta de resultados devem respeitar o escopo autorizado. | Detalhamento operacional proposto | RF01, RF08, RF17, RF18 e política de acesso |
 
 ## 5. Requisitos não funcionais relacionados
 
-Os requisitos abaixo são propostas técnicas já registradas no projeto e relacionadas ao funcionamento descrito nesta síntese. Não são apresentados como metas numéricas confirmadas nas entrevistas. O detalhamento e a validação permanecem na especificação suplementar.
+Os requisitos abaixo são propostas técnicas já registradas no projeto e relacionadas ao funcionamento descrito nesta síntese. O detalhamento está na especificação suplementar, e as metas foram confirmadas nas entrevistas E01 e E02.
 
 | ID local | Requisito proposto | Correspondência atual |
 | --- | --- | --- |
 | SIN-RNF01 | Verificar autenticação e autorização no servidor e restringir o acesso ao conteúdo e aos logs. | RNF01 e RNF07 |
 | SIN-RNF02 | Garantir atomicidade e impedir duplicações sob concorrência nas operações críticas. | RNF02 |
 | SIN-RNF03 | Oferecer uso por teclado, mensagens textuais e formulários adequados a telas de computador e celular. | RNF03 |
-| SIN-RNF04 | Definir metas verificáveis de desempenho, backup e restauração. Os valores atuais da especificação suplementar permanecem propostas sujeitas à validação. | RNF04, RNF05 e PV07 |
+| SIN-RNF04 | Definir metas verificáveis de desempenho, backup e restauração. Os valores da especificação suplementar foram mantidos na validação (PV07). | RNF04, RNF05 e PV07 |
 | SIN-RNF05 | Proteger a auditoria contra alteração e preservar a identificação das operações administrativas. | RNF06 |
 
 ## 6. Encaminhamento para os demais artefatos
@@ -125,9 +125,10 @@ Os IDs existentes serão preservados sempre que representarem o mesmo requisito.
 
 | Próximo passo | Issue |
 | --- | --- |
-| Registrar as duas entrevistas como resumo anotado das respostas (concluído; entrevistas orais, sem gravação) | #41 |
-| Vincular os requisitos às perguntas e respostas dos resumos anotados, quando útil | #6 |
-| Incorporar os requisitos e atualizar prioridades, vínculos e demais artefatos | #40 |
-| Validar interpretações e propostas operacionais e técnicas com o stakeholder | #25 |
+| Etapa | Issue | Situação |
+| --- | --- | --- |
+| Registrar as entrevistas (E01 como resumo anotado; E02 sem anotação das respostas) | #41 | Concluída |
+| Incorporar os requisitos e atualizar prioridades, vínculos e demais artefatos | #40 | Concluída |
+| Validar interpretações e propostas operacionais e técnicas | #25 | Concluída: confirmadas nas entrevistas E01 e E02 |
 
-Referências como `E01-Rxx` e `E02-Rxx` apontam para as respostas dos resumos anotados e só devem ser usadas onde houver resposta registrada. A validação das propostas deve ser registrada depois da reunião com o stakeholder.
+Referências como `E01-Rxx` apontam para as respostas do resumo anotado da E01. A E02 não tem respostas registradas e, por isso, não é citada nesse formato.

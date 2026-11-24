@@ -3,9 +3,9 @@
 | Campo | Informação |
 | --- | --- |
 | Autoria | Danilo Sucupira Galvão |
-| Versão | 0.1 — 9 de novembro de 2026 |
+| Versão | 0.2 — 23 de novembro de 2026 |
 | Formato | Completo, estilo essencial (Larman, cap. 6) |
-| Situação | Proposto para validação |
+| Situação | Validado (E01, E02) |
 
 ## Escopo
 
@@ -76,7 +76,7 @@ O RH precisa preparar uma nova coleta ou revisar o catálogo de competências.
 **3a. O RH altera a pergunta ou o tipo de avaliação de um parâmetro ativo.**
 
 1. O RH escolhe o parâmetro e informa os novos valores.
-2. Se o parâmetro já foi publicado em alguma coleta, o sistema avisa duas coisas: as coletas publicadas mantêm a versão anterior, e os resultados da nova versão não serão comparados automaticamente com os anteriores (RN05, RN11; aviso proposto, ver questões em aberto).
+2. Se o parâmetro já foi publicado em alguma coleta, o sistema avisa duas coisas: as coletas publicadas mantêm a versão anterior, e os resultados da nova versão não serão comparados automaticamente com os anteriores (RN05, RN11).
 3. O RH confirma a alteração.
 4. O sistema valida como no passo 6 e registra, de forma atômica, a alteração e o evento de auditoria, sem alterar cópias de coletas publicadas (RF05, RF16, RNF02). O fluxo continua no passo 8.
 
@@ -97,7 +97,7 @@ O RH precisa preparar uma nova coleta ou revisar o catálogo de competências.
    - cadastra um grupo, informando o título (até 120 caracteres) e, se quiser, uma descrição (até 1.000 caracteres);
    - escolhe um grupo existente para alterar esses dados ou desativá-lo (RF06).
 2. O sistema valida e registra a operação e o evento de auditoria. O grupo nunca é excluído fisicamente, e as coletas publicadas mantêm o título e a descrição copiados (RF06, RF16, RN05, RN12).
-3. Se o grupo a desativar ainda tiver parâmetros ativos, o sistema impede a desativação e lista os parâmetros que precisam ser remanejados ou desativados antes (regra proposta, ver questões em aberto). O fluxo continua no passo 8.
+3. Se o grupo a desativar ainda tiver parâmetros ativos, o sistema impede a desativação e lista os parâmetros que precisam ser remanejados ou desativados antes (regra validada). O fluxo continua no passo 8.
 
 **6a. Pergunta vazia, pergunta acima de 1.000 caracteres ou tipo de avaliação não aceito.**
 
@@ -118,7 +118,7 @@ O RH precisa preparar uma nova coleta ou revisar o catálogo de competências.
 - Autorização e validações sempre no servidor, inclusive em chamadas diretas à API (RNF01).
 - Cadastro, alteração, remanejamento e desativação são atômicos. Duas pessoas do RH alterando o mesmo item ao mesmo tempo não geram duplicatas nem um parâmetro com dois grupos (RNF02).
 - Uso por teclado, com rótulos e mensagens de erro em texto, em telas de 360 a 1.440 px (RNF03).
-- A consulta ao catálogo (passo 2) segue a meta de desempenho das consultas: 95% em até 2 s com 50 usuários simultâneos (RNF04, pendente na PV07).
+- A consulta ao catálogo (passo 2) segue a meta de desempenho das consultas: 95% em até 2 s com 50 usuários simultâneos (RNF04).
 - Os eventos de auditoria do catálogo ficam protegidos contra alteração (RNF06).
 
 ## Lista de variantes tecnológicas e de dados
@@ -133,13 +133,13 @@ O RH precisa preparar uma nova coleta ou revisar o catálogo de competências.
 
 Baixa, concentrada na preparação de coletas e em revisões periódicas do catálogo. O stakeholder não informou estimativa de volume.
 
-## Questões em aberto
+## Decisões e questões
 
 - **Competências por cargo e por pessoa:** nas anotações da E01, a cliente citou competências fixas, competências por cargo e competências particulares de uma pessoa. O modelo atual não relaciona grupo com cargo nem com usuário. Falta decidir se a associação entra neste caso de uso ou em outro (pergunta feita no PR #29).
-- **PV06:** o grupo único por parâmetro (primeira parte do RN04) ainda é uma proposta de modelagem, pendente de validação.
-- **Aviso de comparabilidade (3a.2):** o sistema deve avisar que alterar a pergunta ou o tipo de um parâmetro já publicado separa a série histórica (RN11)? A regra foi proposta neste caso de uso.
+- **PV06 (resolvida, E01, E02):** cada parâmetro pertence a um único grupo (primeira parte do RN04).
+- **Aviso de comparabilidade (3a.2):** o sistema deve avisar que alterar a pergunta ou o tipo de um parâmetro já publicado separa a série histórica (RN11)? A regra foi validada (E01, E02).
 - **Coletas em preparação:** o que acontece com uma coleta em preparação que contém um parâmetro alterado (3a) ou desativado (3b)? O RF07 trata só do remanejamento.
-- **Bloqueio de desativação de grupo (3d.3):** um grupo com parâmetros ativos não pode ser desativado? A regra foi proposta neste caso de uso.
+- **Bloqueio de desativação de grupo (3d.3):** um grupo com parâmetros ativos não pode ser desativado. A regra foi validada (E01, E02).
 - **Reativação:** parâmetros e grupos desativados podem ser reativados?
 - **Perguntas repetidas:** pode haver duas perguntas com o mesmo texto no mesmo grupo?
 

@@ -124,7 +124,7 @@ Para as operações que mudam vários objetos de uma vez. Formato de Larman: pr�
 | Caso de uso | CU-03 |
 | Referências | RF13, RN07, RN08, RN09, RN12, RNF02 |
 | Pré-condições | Coleta ABERTA; usuário é RH ou gestor com a coleta no seu escopo. |
-| Pós-condições | A coleta passou a ENCERRADA, com `encerrada_em` registrado; cada avaliação em RASCUNHO passou a CANCELADA com motivo; avaliações ENVIADAS foram preservadas; os resultados dos pares completos ficaram disponíveis para liberação; foi criado um evento de auditoria. |
+| Pós-condições | A coleta passou a ENCERRADA, com `encerrada_em` registrado; cada avaliação em RASCUNHO passou a CANCELADA com motivo; avaliações ENVIADAS foram preservadas; as avaliações enviadas ficaram disponíveis para o gestor ou o RH liberar (RN09); foi criado um evento de auditoria. |
 
 ### CO04 — `criarPlano(idFeedback, dados)`
 
@@ -264,7 +264,7 @@ sequenceDiagram
     UoW->>Aud: registrar(COLETA_ENCERRADA)
     deactivate UoW
     Note over UoW: Envios concorrentes esperam o bloqueio: ou entram antes, ou são recusados (RNF02)
-    Ctl-->>Web: coleta encerrada — resultados dos pares completos liberados (RN09)
+    Ctl-->>Web: coleta encerrada — avaliações enviadas disponíveis para liberação (RN09)
 ```
 
 ### 4.4. Consultar resultados (CU-04)
@@ -292,7 +292,7 @@ sequenceDiagram
         Rep-->>Ctl: avaliações da pessoa
         loop cada avaliação
             Ctl->>Pol: resultadoLiberado(avaliacao)
-            Note right of Pol: Recíproca: par completo e coleta encerrada (RN09). Outras modalidades: RN15
+            Note right of Pol: Todas as modalidades: liberado pelo gestor ou pelo RH (RN09)
         end
         Ctl->>Calc: mediaNormalizada e percentualSim(respostas liberadas)
         Calc-->>Ctl: indicadores separados por versão da pergunta (RN10, RN11)
@@ -567,7 +567,7 @@ Os componentes Organização (CU-06, CU-07), Catálogo (CU-05) e Autenticação 
 
 - Os diagramas descrevem os fluxos principais. Os alternativos estão nos casos de uso e devem ser modelados se a disciplina pedir.
 - CU-06 a CU-11 têm só descrição resumida; o CU-11 foi modelado aqui a partir do RF18, da RN13 e do CA18.
-- A regra de liberação do 360° e da autoavaliação (PV04) e o anonimato (C02) estão em aberto; ambos ficam isolados na `PoliticaVisibilidade`.
+- A regra de liberação (PV04: pelo gestor ou pelo RH) e a identificação por modalidade (C02, RN-DOC-02) ficam isoladas na `PoliticaVisibilidade`.
 - Nada aqui escolhe linguagem, framework ou banco específico.
 
 ## 7. Exportar imagens
