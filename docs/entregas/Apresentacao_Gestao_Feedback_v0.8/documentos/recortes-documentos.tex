@@ -1,0 +1,39 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[paperwidth=11cm,paperheight=6.4cm,margin=.55cm]{geometry}
+\usepackage[sfdefault]{roboto}
+\usepackage{xcolor,booktabs,tabularx}
+\definecolor{UFGBlue}{HTML}{0072B9}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\begin{document}
+{\small\color{UFGBlue} TRECHO DO ARQUIVO DO PROJETO}\par
+{\large\bfseries Especificação de requisitos}\par
+\textbf{RF21 Registrar o contexto do feedback — essencial, E01.} O registro de feedback deve conter o fato motivador, os impactos observados, a data, o emissor, o receptor, a classificação (RF19) e o conteúdo, podendo associar um questionário. O sistema não verifica a veracidade dos fatos (RN16). O formulário deve orientar o emissor a não incluir dados sensíveis (RF-DOC-14).
+\vfill
+{\scriptsize especificacao-requisitos.md | seção 3.2}
+\newpage
+{\small\color{UFGBlue} TRECHO DO ARQUIVO DO PROJETO}\par
+\begingroup
+\fontsize{9}{10.5}\selectfont
+\setlength{\parskip}{1.5pt}
+{\large\bfseries CU-02 | Responder e enviar avaliação}\par
+\textbf{Autoria:} Luiz Augusto Vaz.\par
+\textbf{Ator principal:} Participante no papel de avaliador.\par
+\textbf{Fluxo principal de sucesso}\par
+1. O participante solicita ver suas avaliações pendentes.\par
+2. O sistema apresenta as avaliações em rascunho das coletas abertas, com receptor, coleta, prazo e progresso de preenchimento.\par
+3. O participante escolhe uma avaliação.\par
+\vfill{\scriptsize CU-02-responder-e-enviar-avaliacao.md | recorte do fluxo}
+\endgroup
+\newpage
+{\small\color{UFGBlue} TRECHO DO ARQUIVO DO PROJETO}\par
+{\large\bfseries Matriz de rastreabilidade}\par
+{\small Colunas selecionadas da matriz vertical.}\par
+\small\renewcommand{\arraystretch}{1.4}\begin{tabularx}{\linewidth}{@{}llXll@{}}\toprule ID & Fonte & Caso & Aceitação & Situação\\\midrule
+RF11 & E01 & CU-02 & CA01, CA07 & Proposto\\
+RF12 & E01 & CU-02 & CA08 & Proposto\\
+\bottomrule\end{tabularx}\par\vfill{\scriptsize matriz-rastreabilidade.md | seção 3.1}
+\end{document}

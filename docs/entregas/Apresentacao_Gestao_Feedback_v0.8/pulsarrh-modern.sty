@@ -1,0 +1,76 @@
+% Camada visual PulsarRH: mantém o tema e as marcas UFG, sem fundos cheios.
+\ProvidesPackage{pulsarrh-modern}[2026/11/23 Hierarquia visual PulsarRH]
+\definecolor{PulsarInk}{HTML}{344256}
+\definecolor{PulsarMuted}{HTML}{6B7788}
+\definecolor{PulsarRule}{HTML}{D7E0E8}
+\definecolor{PulsarBlue}{HTML}{0072B9}
+\definecolor{Navy}{HTML}{172D43}
+\setbeamersize{text margin left=7mm,text margin right=7mm}
+\setbeamerfont{normal text}{size=\fontsize{11}{14}\selectfont}
+\setbeamerfont{frametitle}{size=\fontsize{20}{23}\selectfont,series=\bfseries}
+\setbeamerfont{section in head/foot}{size=\fontsize{7.5}{9}\selectfont,series=\bfseries}
+\setbeamerfont{page number in head/foot}{size=\fontsize{7.5}{9}\selectfont,series=\mdseries}
+\setbeamercolor{normal text}{fg=PulsarInk,bg=white}
+\setbeamercolor{frametitle}{fg=Navy,bg=white}
+\setbeamercolor{section in head/foot}{fg=PulsarBlue,bg=white}
+\setbeamercolor{footline}{fg=PulsarMuted,bg=white}
+\newif\ifsectionopening
+\sectionopeningfalse
+\setbeamertemplate{headline}{%
+  \hbox{\hspace*{7mm}%
+    \begin{beamercolorbox}[wd=\dimexpr\paperwidth-14mm\relax,ht=8mm,dp=1mm]{section in head/foot}%
+      \ifsectionopening\else
+        {\fontsize{12}{14}\selectfont\bfseries\color{PulsarBlue}%
+        \insertsectionnumber.\insertsubsectionnumber\enspace\insertsubsectionhead\par}%
+      \fi
+    \end{beamercolorbox}}%
+}
+\defbeamertemplate{frametitle}{pulsar-modern}{%
+  \nointerlineskip
+  \begin{beamercolorbox}[wd=\textwidth,sep=0pt,leftskip=0pt,rightskip=0pt]{frametitle}%
+    \usebeamerfont{frametitle}\strut\ifsectionopening\insertsectionnumber\enspace|\enspace\fi\insertframetitle\strut\par
+  \end{beamercolorbox}%
+  \vspace*{2.5mm}%
+}
+\setbeamertemplate{footline}{%
+  \hbox{\hspace*{7mm}%
+    \begin{beamercolorbox}[wd=\dimexpr\paperwidth-14mm\relax,ht=7mm,dp=2mm]{footline}%
+      \includegraphics[height=4.5mm]{lib/logos/INF-compact-black.png}%
+      \hspace*{3mm}%
+      \includegraphics[height=4mm]{lib/logos/ufg_black.pdf}%
+      \hspace*{4mm}%
+      {\fontsize{7}{9}\selectfont\color{PulsarMuted}Gestão e feedback\enspace\textbullet\enspace Domínios de Software}%
+      \hfill{\usebeamerfont{page number in head/foot}\insertframenumber\,/\,\inserttotalframenumber}%
+    \end{beamercolorbox}%
+  }%
+}
+% A seleção de layout não deve restaurar as cores e os fundos antigos.
+\newcommand{\pulsarModernLayout}{%
+  \usebackgroundtemplate{}%
+  \color{PulsarInk}%
+  \setbeamercolor{background canvas}{bg=white}%
+  \setbeamercolor{normal text}{fg=PulsarInk,bg=white}%
+  \setbeamercolor{frametitle}{fg=Navy,bg=white}%
+  \setbeamercolor{structure}{fg=PulsarBlue}%
+  \setbeamercolor{itemize item}{fg=PulsarBlue}%
+  \setbeamertemplate{frametitle}[pulsar-modern]%
+}
+\renewcommand{\horizontal}{\pulsarModernLayout}
+\renewcommand{\vertical}{\pulsarModernLayout}
+\renewcommand{\blank}{\pulsarModernLayout}
+\renewcommand{\head}[1]{\textcolor{Navy}{\textbf{#1}}}
+\renewcommand{\kicker}[1]{%
+  {\fontsize{8}{10}\selectfont\bfseries\color{PulsarBlue}\MakeUppercase{#1}\par}%
+  \vspace{.18cm}%
+}
+\renewcommand{\aside}[1]{%
+  {\fontsize{7.5}{9.5}\selectfont\color{PulsarMuted}#1\par}%
+}
+\renewcommand{\num}[1]{%
+  {\fontsize{34}{37}\selectfont\bfseries\color{PulsarBlue}#1}%
+}
+\arrayrulecolor{PulsarRule}
+\setlength{\heavyrulewidth}{.5pt}
+\setlength{\lightrulewidth}{.3pt}
+\renewcommand{\arraystretch}{1.20}
+\pulsarModernLayout

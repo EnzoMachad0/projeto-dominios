@@ -1,0 +1,632 @@
+{
+  "data_consulta": "2026-11-23",
+  "projeto": "https://github.com/users/EnzoMachad0/projects/1",
+  "kanban": [
+    {
+      "coluna": "A Fazer",
+      "total": 5,
+      "itens": [
+        {
+          "numero": 8,
+          "tipo": "Issue",
+          "titulo": "Sintetizar os requisitos identificados nos questionários",
+          "responsaveis": []
+        },
+        {
+          "numero": 40,
+          "tipo": "Issue",
+          "titulo": "Atualizar e consolidar a lista geral de requisitos após concluir o levantamento",
+          "responsaveis": []
+        },
+        {
+          "numero": 10,
+          "tipo": "Issue",
+          "titulo": "Modelar o processo de negócio de avaliação e feedback em BPMN",
+          "responsaveis": []
+        },
+        {
+          "numero": 25,
+          "tipo": "Issue",
+          "titulo": "Revisar e validar os requisitos e os principais artefatos com o stakeholder",
+          "responsaveis": []
+        },
+        {
+          "numero": 26,
+          "tipo": "Issue",
+          "titulo": "Conferir a primeira entrega e preparar a apresentação de 10/11/2026",
+          "responsaveis": []
+        }
+      ]
+    },
+    {
+      "coluna": "Em Progresso",
+      "total": 1,
+      "itens": [
+        {
+          "numero": 7,
+          "tipo": "Issue",
+          "titulo": "Preparar e aplicar dois questionários de levantamento de requisitos",
+          "responsaveis": []
+        }
+      ]
+    },
+    {
+      "coluna": "Em Revisão",
+      "total": 1,
+      "itens": [
+        {
+          "numero": 41,
+          "tipo": "Issue",
+          "titulo": "Realizar e transcrever duas entrevistas de levantamento de requisitos",
+          "responsaveis": [
+            "EnzoMachad0"
+          ]
+        }
+      ]
+    },
+    {
+      "coluna": "Feito",
+      "total": 25,
+      "itens": [
+        {
+          "numero": 22,
+          "tipo": "Issue",
+          "titulo": "Criar os protótipos das telas e fluxos no Figma",
+          "responsaveis": [
+            "Brennerodrigues"
+          ]
+        },
+        {
+          "numero": 48,
+          "tipo": "PullRequest",
+          "titulo": "docs: adiciona link do protótipo no Figma ao README",
+          "responsaveis": [
+            "Brennerodrigues"
+          ]
+        },
+        {
+          "numero": 14,
+          "tipo": "Issue",
+          "titulo": "Descrever um caso de uso essencial completo — Brenner Rodrigues Sardinha",
+          "responsaveis": [
+            "Brennerodrigues"
+          ]
+        },
+        {
+          "numero": 43,
+          "tipo": "PullRequest",
+          "titulo": "docs: descreve o caso de uso CU-01 Configurar e abrir coleta (#14)",
+          "responsaveis": [
+            "Brennerodrigues"
+          ]
+        },
+        {
+          "numero": 9,
+          "tipo": "Issue",
+          "titulo": "Analisar um sistema análogo e sintetizar seus requisitos",
+          "responsaveis": [
+            "Brennerodrigues",
+            "EnzoMachad0"
+          ]
+        },
+        {
+          "numero": 16,
+          "tipo": "Issue",
+          "titulo": "Descrever um caso de uso essencial completo — Enzo de Oliveira Machado",
+          "responsaveis": [
+            "EnzoMachad0"
+          ]
+        },
+        {
+          "numero": 4,
+          "tipo": "Issue",
+          "titulo": "Organizar e registrar o planejamento da primeira entrega no Kanban",
+          "responsaveis": [
+            "heitor-barbosa"
+          ]
+        },
+        {
+          "numero": 5,
+          "tipo": "Issue",
+          "titulo": "Preparar a realização das entrevistas de levantamento de requisitos",
+          "responsaveis": []
+        },
+        {
+          "numero": 28,
+          "tipo": "PullRequest",
+          "titulo": "docs: prepara roteiro e registros das entrevistas",
+          "responsaveis": [
+            "Brennerodrigues"
+          ]
+        },
+        {
+          "numero": 2,
+          "tipo": "Issue",
+          "titulo": "Definir o processo de requisitos e preparar a entrevista",
+          "responsaveis": [
+            "heitor-barbosa"
+          ]
+        },
+        {
+          "numero": 17,
+          "tipo": "Issue",
+          "titulo": "Descrever um caso de uso essencial completo — Heitor Barbosa Souza",
+          "responsaveis": [
+            "heitor-barbosa"
+          ]
+        },
+        {
+          "numero": 6,
+          "tipo": "Issue",
+          "titulo": "Sintetizar os requisitos identificados nas entrevistas",
+          "responsaveis": [
+            "heitor-barbosa"
+          ]
+        },
+        {
+          "numero": 12,
+          "tipo": "Issue",
+          "titulo": "Elaborar o documento de visão do sistema",
+          "responsaveis": [
+            "luizaugusto01"
+          ]
+        },
+        {
+          "numero": 13,
+          "tipo": "Issue",
+          "titulo": "Modelar o diagrama de casos de uso do sistema",
+          "responsaveis": [
+            "luizaugusto01"
+          ]
+        },
+        {
+          "numero": 18,
+          "tipo": "Issue",
+          "titulo": "Descrever um caso de uso essencial completo — Luiz Augusto Vaz",
+          "responsaveis": [
+            "luizaugusto01"
+          ]
+        },
+        {
+          "numero": 19,
+          "tipo": "Issue",
+          "titulo": "Elaborar a especificação suplementar dos requisitos não funcionais",
+          "responsaveis": [
+            "luizaugusto01"
+          ]
+        },
+        {
+          "numero": 20,
+          "tipo": "Issue",
+          "titulo": "Elaborar o modelo entidade-relacionamento e/ou modelo de domínio",
+          "responsaveis": [
+            "luizaugusto01"
+          ]
+        },
+        {
+          "numero": 21,
+          "tipo": "Issue",
+          "titulo": "Produzir o dicionário de dados e o glossário do domínio",
+          "responsaveis": [
+            "luizaugusto01"
+          ]
+        },
+        {
+          "numero": 23,
+          "tipo": "Issue",
+          "titulo": "Elaborar a especificação de requisitos conforme IEEE 830 e/ou EOR",
+          "responsaveis": [
+            "luizaugusto01"
+          ]
+        },
+        {
+          "numero": 3,
+          "tipo": "Issue",
+          "titulo": "Pesquisa de legislação e normas",
+          "responsaveis": [
+            "Brennerodrigues"
+          ]
+        },
+        {
+          "numero": 11,
+          "tipo": "Issue",
+          "titulo": "Consolidar e priorizar a lista geral de requisitos",
+          "responsaveis": [
+            "luizaugusto01"
+          ]
+        },
+        {
+          "numero": 15,
+          "tipo": "Issue",
+          "titulo": "Descrever um caso de uso essencial completo — Danilo Sucupira Galvão",
+          "responsaveis": [
+            "danilo-sgalvao"
+          ]
+        },
+        {
+          "numero": 24,
+          "tipo": "Issue",
+          "titulo": "Construir a matriz de rastreabilidade horizontal e vertical",
+          "responsaveis": [
+            "danilo-sgalvao"
+          ]
+        },
+        {
+          "numero": 27,
+          "tipo": "PullRequest",
+          "titulo": "docs: adiciona pesquisa documental sobre LGPD e ISO/IEC 25010",
+          "responsaveis": [
+            "Brennerodrigues"
+          ]
+        },
+        {
+          "numero": 46,
+          "tipo": "Issue",
+          "titulo": "Corrigir inconsistências entre artefatos e atualizar a matriz de rastreabilidade",
+          "responsaveis": [
+            "danilo-sgalvao"
+          ]
+        }
+      ]
+    }
+  ],
+  "pull_requests": [
+    {
+      "numero": 55,
+      "titulo": "docs: registra as entrevistas como resumo anotado das respostas",
+      "autor": "Brennerodrigues",
+      "branch": "docs/entrevistas-resumo-anotado",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/55",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 54,
+      "titulo": "docs: atualiza a documentação mestre e o roteiro para a v1.2",
+      "autor": "luizaugusto01",
+      "branch": "docs/documentacao-mestre-v1.2",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/54",
+      "reviews": [
+        {
+          "autor": "Brennerodrigues",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 53,
+      "titulo": "docs: auditoria de conformidade com normas ISO",
+      "autor": "luizaugusto01",
+      "branch": "docs/auditoria-iso",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/53",
+      "reviews": [
+        {
+          "autor": "Brennerodrigues",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 52,
+      "titulo": "docs: modelo de projeto e padrões de projeto",
+      "autor": "luizaugusto01",
+      "branch": "docs/projeto-design",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/52",
+      "reviews": [
+        {
+          "autor": "Brennerodrigues",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 51,
+      "titulo": "docs: visão arquitetural C4 e rastreabilidade do BPMN e da arquitetura",
+      "autor": "luizaugusto01",
+      "branch": "docs/arquitetura-c4",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/51",
+      "reviews": [
+        {
+          "autor": "Brennerodrigues",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 50,
+      "titulo": "docs: modela o processo de negócio em BPMN e prepara a validação",
+      "autor": "luizaugusto01",
+      "branch": "docs/bpmn-e-validacao",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/50",
+      "reviews": [
+        {
+          "autor": "danilo-sgalvao",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 49,
+      "titulo": "docs: consolida a síntese das entrevistas e o sistema análogo nos requisitos",
+      "autor": "luizaugusto01",
+      "branch": "docs/consolidacao-requisitos",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/49",
+      "reviews": [
+        {
+          "autor": "danilo-sgalvao",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 48,
+      "titulo": "docs: adiciona link do protótipo no Figma ao README",
+      "autor": "Brennerodrigues",
+      "branch": "docs/link-prototipo-figma",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/48",
+      "reviews": [
+        {
+          "autor": "copilot-pull-request-reviewer",
+          "estado": "COMMENTED"
+        },
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 47,
+      "titulo": "docs: corrige inconsistências entre artefatos e atualiza a matriz (#46)",
+      "autor": "danilo-sgalvao",
+      "branch": "docs/consistencia-artefatos",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/47",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        },
+        {
+          "autor": "Brennerodrigues",
+          "estado": "COMMENTED"
+        }
+      ]
+    },
+    {
+      "numero": 45,
+      "titulo": "docs: adiciona análise do sistema análogo Culture Amp",
+      "autor": "Brennerodrigues",
+      "branch": "docs/analise-sistema-analogo-culture-amp",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/45",
+      "reviews": [
+        {
+          "autor": "copilot-pull-request-reviewer",
+          "estado": "COMMENTED"
+        }
+      ]
+    },
+    {
+      "numero": 44,
+      "titulo": "docs: descreve CU-04 — Consultar análise de resultados",
+      "autor": "EnzoMachad0",
+      "branch": "docs/cu04-enzo-issue16",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/44",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        },
+        {
+          "autor": "Brennerodrigues",
+          "estado": "COMMENTED"
+        }
+      ]
+    },
+    {
+      "numero": 43,
+      "titulo": "docs: descreve o caso de uso CU-01 Configurar e abrir coleta (#14)",
+      "autor": "Brennerodrigues",
+      "branch": "docs/caso-de-uso-brenner",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/43",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 42,
+      "titulo": "docs: elabora a síntese dos requisitos das entrevistas",
+      "autor": "heitor-barbosa",
+      "branch": "docs/sintese-entrevistas",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/42",
+      "reviews": [
+        {
+          "autor": "Brennerodrigues",
+          "estado": "COMMENTED"
+        }
+      ]
+    },
+    {
+      "numero": 39,
+      "titulo": "docs: descreve o caso de uso CU-03 Encerrar ou cancelar coleta",
+      "autor": "heitor-barbosa",
+      "branch": "docs/caso-de-uso-heitor",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/39",
+      "reviews": [
+        {
+          "autor": "Brennerodrigues",
+          "estado": "COMMENTED"
+        }
+      ]
+    },
+    {
+      "numero": 38,
+      "titulo": "docs: constrói a matriz de rastreabilidade horizontal e vertical",
+      "autor": "danilo-sgalvao",
+      "branch": "docs/matriz-rastreabilidade",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/38",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 37,
+      "titulo": "docs: descreve o caso de uso CU-05 Manter catálogo de parâmetros",
+      "autor": "danilo-sgalvao",
+      "branch": "docs/caso-de-uso-danilo",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/37",
+      "reviews": []
+    },
+    {
+      "numero": 36,
+      "titulo": "docs: elabora a especificação de requisitos IEEE 830",
+      "autor": "luizaugusto01",
+      "branch": "docs/especificacao-requisitos",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/36",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "COMMENTED"
+        },
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 35,
+      "titulo": "docs: adiciona dicionário de dados e glossário",
+      "autor": "luizaugusto01",
+      "branch": "docs/dicionario-glossario",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/35",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 34,
+      "titulo": "docs: adiciona modelo de domínio e MER",
+      "autor": "luizaugusto01",
+      "branch": "docs/modelo-dominio",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/34",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 33,
+      "titulo": "docs: elabora a especificação suplementar segundo a ISO/IEC 25010",
+      "autor": "luizaugusto01",
+      "branch": "docs/especificacao-suplementar",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/33",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "COMMENTED"
+        },
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 32,
+      "titulo": "docs: descreve o caso de uso CU-02 Responder e enviar avaliação",
+      "autor": "luizaugusto01",
+      "branch": "docs/caso-de-uso-luiz",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/32",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 31,
+      "titulo": "docs: modela o diagrama e o índice de casos de uso",
+      "autor": "luizaugusto01",
+      "branch": "docs/diagrama-casos-de-uso",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/31",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 30,
+      "titulo": "docs: elabora o documento de visão do sistema",
+      "autor": "luizaugusto01",
+      "branch": "docs/documento-visao",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/30",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 29,
+      "titulo": "docs: consolida e prioriza a lista geral de requisitos",
+      "autor": "luizaugusto01",
+      "branch": "docs/lista-geral-requisitos",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/29",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        },
+        {
+          "autor": "danilo-sgalvao",
+          "estado": "COMMENTED"
+        }
+      ]
+    },
+    {
+      "numero": 28,
+      "titulo": "docs: prepara roteiro e registros das entrevistas",
+      "autor": "Brennerodrigues",
+      "branch": "docs/entrevistas",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/28",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    },
+    {
+      "numero": 27,
+      "titulo": "docs: adiciona pesquisa documental sobre LGPD e ISO/IEC 25010",
+      "autor": "Brennerodrigues",
+      "branch": "docs/pesquisa-documental",
+      "url": "https://github.com/EnzoMachad0/projeto-dominios/pull/27",
+      "reviews": [
+        {
+          "autor": "heitor-barbosa",
+          "estado": "APPROVED"
+        }
+      ]
+    }
+  ]
+}
