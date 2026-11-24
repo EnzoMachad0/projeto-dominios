@@ -285,5 +285,6 @@ O diagnóstico acima reflete o estado de 21/11/2026. Depois dele, os requisitos 
 | AC14 | Tratado: conflito C01 resolvido, com anonimização irreversível ao fim do prazo de retenção (RN12, RF-DOC-07, RF-DOC-08). Com isso, a não conformidade pontual das seções 7 e 8 deixa de existir. |
 | AC20 | Parcial: RF-DOC-03, RF-DOC-06 e RF-DOC-09 foram validados; o caso de uso resumido ainda não foi escrito. |
 | AC25 | Parcial: os PRs #51 a #53 foram aprovados; #37 e #45 seguem sem revisão registrada. |
+| AC12 | Tratado: as imagens de todos os diagramas foram regeradas a partir das fontes `.mmd`, inclusive C4 e modelo de projeto. |
 | AC06, AC19 | Abertos: falta o RNF de disponibilidade e a avaliação de impacto à privacidade (RIPD). |
 | Demais | Sem mudança desde 21/11/2026. |

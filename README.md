@@ -35,7 +35,6 @@ As entrevistas E01 e E02 foram feitas oralmente e não foram gravadas. A E01 est
 | Decidir a necessidade de notificação por e-mail (lacuna A01 da arquitetura) | — |
 | Tratar os 2 achados maiores ainda abertos da [auditoria de normas ISO](docs/auditoria/auditoria-conformidade-iso.md): disponibilidade (AC06) e RIPD (AC19) | #40 |
 | Acrescentar ao dicionário e ao MER os atributos de liberação dos resultados, prazo de retenção e anonimização | #40 |
-| Regerar as imagens dos diagramas a partir dos `.mmd` (MER, modelo de domínio e casos de uso) e exportar o MER de feedback e desenvolvimento, que ainda não tem imagem | #40 |
 | Ligar cada tela do [protótipo no Figma](#protótipo) aos requisitos na matriz de rastreabilidade (lacuna L03) e testar o protótipo com usuários (achado AC21) | — |
 | Adicionar ao repositório a versão em PowerPoint da apresentação, depois da revisão | — |
 

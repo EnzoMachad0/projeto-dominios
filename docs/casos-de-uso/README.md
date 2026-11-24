@@ -49,7 +49,7 @@ CU-01 a CU-05 têm autoria registrada nos respectivos documentos. O CU-01 foi de
 
 - **Generalização de atores:** RH, Gestor e Profissional herdam os casos de uso do Participante.
 - **Inclusão e extensão:** não foram usadas. Larman recomenda evitar `<<include>>` e `<<extend>>` quando não há reuso real. A autenticação (CU-08) é tratada como pré-condição dos demais.
-- **Dependência de dados:** CU-02 só pode ocorrer depois de CU-01 ou CU-09, que geram as avaliações; CU-04 depende de CU-03, que libera os resultados; CU-11 parte de um feedback recebido em CU-02 ou CU-10.
+- **Dependência de dados:** CU-02 só pode ocorrer depois de CU-01 ou CU-09, que geram as avaliações; CU-04 depende de CU-03, que encerra a coleta, e da liberação dos resultados pelo gestor ou pelo RH, feita no próprio CU-04 (RN09); CU-11 parte de um feedback recebido em CU-02 ou CU-10.
 - **Autoavaliação:** é respondida pelo CU-02, com avaliador igual ao receptor (RF22). Não exige caso de uso próprio.
 
 ## Casos de uso resumidos
