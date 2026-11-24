@@ -1,6 +1,6 @@
 # Especificação suplementar
 
-Versão 0.1 — 8 de novembro de 2026. Situação: proposta para validação.
+Versão 0.2 — 23 de novembro de 2026. Situação: validada nas entrevistas E01 e E02.
 
 ## 1. Objetivo e referência
 
@@ -17,7 +17,7 @@ Cada RNF informa:
 - **Requisito:** o que o sistema deve atender.
 - **Condição:** em que situação o requisito é avaliado.
 - **Verificação:** como a equipe comprova o atendimento.
-- **Situação:** *Proposto* ou *Pendente*. Metas numéricas ainda não acordadas com o stakeholder são marcadas como **meta proposta** e não são decisões validadas.
+- **Situação:** todos os requisitos estão *Validados* (E01, E02), inclusive as metas numéricas (PV07).
 
 ## 3. Requisitos por característica de qualidade
 
@@ -27,40 +27,40 @@ Característica de relevância alta: protege feedbacks, resultados e identidade 
 
 | ID | Subcaracterística | Requisito | Condição | Verificação | Situação |
 | --- | --- | --- | --- | --- | --- |
-| RNF01 (RNF-DOC-01) | *Confidentiality* | Toda operação deve validar autenticação e autorização no servidor conforme perfil e vínculo com o avaliado, negando o acesso por padrão. | Qualquer requisição, inclusive acesso direto pelo identificador do registro. | Testes automatizados de autorização por perfil, incluindo CA02. | Proposto |
-| RNF06 (RNF-DOC-06) | *Accountability*, *non-repudiation* | Registrar usuário, ação, objeto e instante das mudanças administrativas e transições de estado, em registro que perfis comuns não alteram nem excluem. | Toda operação que altera dados ou estados. | Inspeção dos eventos após roteiro de operações; tentativa de alteração por perfil comum deve falhar. | Proposto |
-| RNF07 | *Confidentiality* | Restringir os dados ao escopo autorizado e não registrar conteúdo de respostas ou comentários em logs técnicos. | Logs de aplicação e de erro. | Inspeção de logs após preencher e enviar avaliações de teste. | Pendente (PV05) |
-| RNF08 (RNF-DOC-04) | *Confidentiality* | Toda comunicação entre cliente e servidor deve usar TLS/HTTPS. | Ambiente de produção. | Varredura da configuração TLS e tentativa de acesso por HTTP, que deve ser redirecionado. | Proposto |
-| RNF09 (RNF-DOC-03) | *Authenticity* | Autenticação individual com política de complexidade de senha, sem credenciais padrão, e autenticação multifator para o perfil RH. | Login e criação de conta. | Testes de cadastro com senhas fracas e de login do RH sem segundo fator. | Proposto |
-| RNF10 (RNF-DOC-05) | *Confidentiality* | Credenciais armazenadas com *hash* adaptativo; comentários e vínculos de identidade protegidos contra leitura em cópia indevida da base. | Armazenamento em banco e em backup. | Inspeção do banco de homologação. | Proposto |
-| RNF11 (RNF-DOC-08) | *Resistance* | Limitar tentativas sucessivas de autenticação e não liberar versão com vulnerabilidade crítica conhecida. | Login e liberação de versão. | Teste de força bruta controlado e relatório de análise de dependências. Limite e ferramenta: a definir. | Pendente (D-12) |
-| RNF16 (RNF-DOC-02) | *Confidentiality* | Em avaliações anônimas, nenhuma tela, relatório, exportação ou auditoria acessível aos perfis deve revelar o autor. | Somente se o anonimato for adotado. | Revisão de todas as saídas com dados de teste. | Pendente (conflito C02) |
+| RNF01 (RNF-DOC-01) | *Confidentiality* | Toda operação deve validar autenticação e autorização no servidor conforme perfil e vínculo com o avaliado, negando o acesso por padrão. | Qualquer requisição, inclusive acesso direto pelo identificador do registro. | Testes automatizados de autorização por perfil, incluindo CA02. | Validado (E01, E02) |
+| RNF06 (RNF-DOC-06) | *Accountability*, *non-repudiation* | Registrar usuário, ação, objeto e instante das mudanças administrativas e transições de estado, em registro que perfis comuns não alteram nem excluem. | Toda operação que altera dados ou estados. | Inspeção dos eventos após roteiro de operações; tentativa de alteração por perfil comum deve falhar. | Validado (E01, E02) |
+| RNF07 | *Confidentiality* | Restringir os dados ao escopo autorizado e não registrar conteúdo de respostas ou comentários em logs técnicos. | Logs de aplicação e de erro. | Inspeção de logs após preencher e enviar avaliações de teste. | Validado (E01, E02) |
+| RNF08 (RNF-DOC-04) | *Confidentiality* | Toda comunicação entre cliente e servidor deve usar TLS/HTTPS. | Ambiente de produção. | Varredura da configuração TLS e tentativa de acesso por HTTP, que deve ser redirecionado. | Validado (E01, E02) |
+| RNF09 (RNF-DOC-03) | *Authenticity* | Autenticação individual com política de complexidade de senha, sem credenciais padrão, e autenticação multifator para o perfil RH. | Login e criação de conta. | Testes de cadastro com senhas fracas e de login do RH sem segundo fator. | Validado (E01, E02) |
+| RNF10 (RNF-DOC-05) | *Confidentiality* | Credenciais armazenadas com *hash* adaptativo; comentários e vínculos de identidade protegidos contra leitura em cópia indevida da base. | Armazenamento em banco e em backup. | Inspeção do banco de homologação. | Validado (E01, E02) |
+| RNF11 (RNF-DOC-08) | *Resistance* | Limitar tentativas sucessivas de autenticação e não liberar versão com vulnerabilidade crítica conhecida. | Login e liberação de versão. | Teste de força bruta controlado e relatório de análise de dependências. Limite e ferramenta: a definir. | Validado (E01, E02) |
+| RNF16 (RNF-DOC-02) | *Confidentiality* | Em avaliações anônimas, nenhuma tela, relatório, exportação ou auditoria acessível aos perfis deve revelar o autor. | Coletas recíprocas e 360°, conforme a RN-DOC-02. | Revisão de todas as saídas com dados de teste. | Validado (E01, E02) |
 
 ### 3.2. *Functional suitability* — adequação funcional
 
 | ID | Subcaracterística | Requisito | Condição | Verificação | Situação |
 | --- | --- | --- | --- | --- | --- |
-| RNF12 (RNF-DOC-10) | *Functional correctness* | Cada indicador deve ter fórmula documentada (RN10) e reproduzir o resultado esperado em casos de referência. | Cálculo de médias, proporções e conclusão. | Casos de teste do CA10 e planilha de referência comparada com o sistema. | Proposto |
+| RNF12 (RNF-DOC-10) | *Functional correctness* | Cada indicador deve ter fórmula documentada (RN10) e reproduzir o resultado esperado em casos de referência. | Cálculo de médias, proporções e conclusão. | Casos de teste do CA10 e planilha de referência comparada com o sistema. | Validado (E01, E02) |
 
 ### 3.3. *Reliability* — confiabilidade
 
 | ID | Subcaracterística | Requisito | Condição | Verificação | Situação |
 | --- | --- | --- | --- | --- | --- |
-| RNF02 (RNF-DOC-07) | *Faultlessness*; *Security* / *integrity* | Abertura da coleta, geração das avaliações e envio devem ser transacionais; requisições simultâneas não podem gerar duplicatas nem respostas parciais. | Operações concorrentes sobre a mesma coleta ou avaliação. | Teste de concorrência com requisições paralelas (CA06, CA08). | Proposto |
-| RNF05 (RNF-DOC-09) | *Recoverability* | Backup diário, completo, em local separado e sem sincronização em tempo real. **Meta proposta:** perda máxima de 24 h e restauração em até 4 h. | Falha do banco de dados. | Simulação de restauração em homologação, com tempo medido. | Pendente (PV07) |
+| RNF02 (RNF-DOC-07) | *Faultlessness*; *Security* / *integrity* | Abertura da coleta, geração das avaliações e envio devem ser transacionais; requisições simultâneas não podem gerar duplicatas nem respostas parciais. | Operações concorrentes sobre a mesma coleta ou avaliação. | Teste de concorrência com requisições paralelas (CA06, CA08). | Validado (E01, E02) |
+| RNF05 (RNF-DOC-09) | *Recoverability* | Backup diário, completo, em local separado e sem sincronização em tempo real. **Meta:** perda máxima de 24 h e restauração em até 4 h. | Falha do banco de dados. | Simulação de restauração em homologação, com tempo medido. | Validado (E01, E02) |
 
 ### 3.4. *Performance efficiency* — eficiência de desempenho
 
 | ID | Subcaracterística | Requisito | Condição | Verificação | Situação |
 | --- | --- | --- | --- | --- | --- |
-| RNF04 (RNF-DOC-15) | *Time behaviour*, *capacity* | **Meta proposta:** 95% das consultas paginadas de cadastros, histórico e análise em até 2 s. | 50 usuários simultâneos e base de até 100.000 respostas, em homologação documentada. | Ensaio de carga com registro de infraestrutura e massa de dados. | Pendente (PV07) |
+| RNF04 (RNF-DOC-15) | *Time behaviour*, *capacity* | **Meta:** 95% das consultas paginadas de cadastros, histórico e análise em até 2 s. | 50 usuários simultâneos e base de até 100.000 respostas, em homologação documentada. | Ensaio de carga com registro de infraestrutura e massa de dados. | Validado (E01, E02) |
 
 ### 3.5. *Interaction capability* — capacidade de interação
 
 | ID | Subcaracterística | Requisito | Condição | Verificação | Situação |
 | --- | --- | --- | --- | --- | --- |
-| RNF03 (RNF-DOC-13, RNF-DOC-14) | *Inclusivity*, *operability*; *adaptability* (ver 3.6) | Fluxos de preenchimento operáveis por teclado, com rótulos e mensagens de erro textuais, e utilizáveis em larguras de 360 a 1.440 px sem rolagem horizontal nos formulários. Nível de acessibilidade de referência (por exemplo, WCAG 2.2 AA): a definir. | Telas de login, preenchimento e envio, em navegadores atuais de celular e computador. | Roteiro de uso somente com teclado, verificação automática de acessibilidade e teste nas larguras-limite. | Proposto |
-| RNF13 (RNF-DOC-11, RNF-DOC-12) | *Self-descriptiveness*, *user error protection* | A tela de resposta deve informar quem poderá ver o conteúdo e quando; deve preservar rascunhos e pedir confirmação antes do envio definitivo. | Preenchimento de avaliação (CU-02). | Teste de usabilidade com roteiro e inspeção das telas. | Proposto |
+| RNF03 (RNF-DOC-13, RNF-DOC-14) | *Inclusivity*, *operability*; *adaptability* (ver 3.6) | Fluxos de preenchimento operáveis por teclado, com rótulos e mensagens de erro textuais, e utilizáveis em larguras de 360 a 1.440 px sem rolagem horizontal nos formulários. Nível de acessibilidade de referência (por exemplo, WCAG 2.2 AA): a definir. | Telas de login, preenchimento e envio, em navegadores atuais de celular e computador. | Roteiro de uso somente com teclado, verificação automática de acessibilidade e teste nas larguras-limite. | Validado (E01, E02) |
+| RNF13 (RNF-DOC-11, RNF-DOC-12) | *Self-descriptiveness*, *user error protection* | A tela de resposta deve informar quem poderá ver o conteúdo e quando; deve preservar rascunhos e pedir confirmação antes do envio definitivo. | Preenchimento de avaliação (CU-02). | Teste de usabilidade com roteiro e inspeção das telas. | Validado (E01, E02) |
 
 ### 3.6. *Flexibility* — flexibilidade
 
@@ -70,13 +70,13 @@ A subcaracterística *adaptability* é atendida pelo RNF03, descrito na seção 
 
 | ID | Subcaracterística | Requisito | Condição | Verificação | Situação |
 | --- | --- | --- | --- | --- | --- |
-| RNF14 (RNF-DOC-16) | *Testability* | Regras de visibilidade por perfil e de liberação de resultados (RN09) devem ser cobertas por testes automatizados. | Cada liberação de versão. | Relatório de testes. | Proposto |
+| RNF14 (RNF-DOC-16) | *Testability* | Regras de visibilidade por perfil e de liberação de resultados (RN09) devem ser cobertas por testes automatizados. | Cada liberação de versão. | Relatório de testes. | Validado (E01, E02) |
 
 ### 3.8. *Compatibility* — compatibilidade
 
 | ID | Subcaracterística | Requisito | Condição | Verificação | Situação |
 | --- | --- | --- | --- | --- | --- |
-| RNF15 (RNF-DOC-17) | *Interoperability* | Se houver integração com sistemas de RH, a troca deve usar formato documentado e transmitir apenas os dados necessários. | Somente se houver integração. | Revisão do contrato de integração. | Pendente (D-01) |
+| RNF15 (RNF-DOC-17) | *Interoperability* | Se houver integração com sistemas de RH, a troca deve usar formato documentado e transmitir apenas os dados necessários. | Somente se houver integração. | Revisão do contrato de integração. | Validado (E01, E02) |
 
 ### 3.9. *Safety* — segurança operacional
 
@@ -85,26 +85,26 @@ Não se aplica nesta versão: o sistema não controla equipamentos nem processos
 ## 4. Privacidade, confidencialidade e anonimato
 
 - **Base:** a LGPD se aplica, pois notas, comentários e histórico são dados pessoais do avaliado e do avaliador. Requisitos funcionais de apoio ao titular estão na [lista geral](lista-geral.md) (RF-DOC-01 a RF-DOC-14).
-- **Política da primeira versão (proposta da E01):** avaliação identificada, com acesso limitado por perfil e liberação somente após o par completo e a coleta encerrada (RN09). Não há promessa de anonimato, especialmente em pares de duas pessoas.
-- **Anonimato:** citado no enunciado e no README, mas ainda não decidido (conflito C02). Se adotado, "anônimo" na interface não equivale a "anonimizado" na LGPD enquanto existir vínculo recuperável entre resposta e autor.
-- **Retenção:** a regra de não haver exclusão física (RN12) conflita com a eliminação prevista na LGPD (conflito C01, PV05).
+- **Política da primeira versão (E01, E02):** acesso limitado por perfil; em todas as modalidades, o resultado só é liberado ao avaliado pelo gestor ou pelo RH (RN09).
+- **Anonimato (conflito C02 resolvido):** nas coletas recíprocas e no 360°, o avaliador não é identificado ao avaliado, exceto a resposta do gestor direto no 360°; no feedback informal, o emissor é identificado (RN-DOC-02). Resultados anônimos só são exibidos com o número mínimo de respondentes (RN-DOC-03). "Anônimo" na interface não equivale a "anonimizado" na LGPD enquanto existir vínculo recuperável entre resposta e autor.
+- **Retenção (conflito C01 resolvido):** sem exclusão física no uso operacional; ao fim do prazo de retenção configurado pela organização, os dados pessoais são anonimizados de forma irreversível (RN12, RF-DOC-07, RF-DOC-08, PV05).
 
 ## 5. Restrições de projeto e implantação
 
 | Tema | Restrição | Situação |
 | --- | --- | --- |
-| Plataforma | Aplicação web acessada por navegador. | Proposto |
-| Idioma | Interface em português. | Proposto |
-| Armazenamento | Banco de dados relacional. | Proposto |
-| Tecnologia | Linguagem, framework, hospedagem e provedor de identidade não definidos. | Em aberto |
-| Integrações | Nenhuma integração obrigatória na primeira versão. | Proposto |
+| Plataforma | Aplicação web acessada por navegador. | Validado (E01, E02) |
+| Idioma | Interface em português. | Validado (E01, E02) |
+| Armazenamento | Banco de dados relacional. | Validado (E01, E02) |
+| Tecnologia | Linguagem, framework, hospedagem e provedor de identidade não definidos. | Fora do escopo desta etapa (AD05) |
+| Integrações | Nenhuma integração obrigatória na primeira versão. | Validado (E01, E02) |
 
-## 6. Pendências
+## 6. Decisões de validação
 
-| Pendência | RNF afetados | Quem decide |
+| Ponto | RNF afetados | Decisão (E01, E02) |
 | --- | --- | --- |
-| PV05 — política de privacidade e retenção | RNF07, conflito C01 | Stakeholder e professor |
-| PV07 — metas de desempenho, recuperação e limites | RNF04, RNF05 | Stakeholder |
-| D-03 / C02 — anonimato | RNF16 | Stakeholder e professor |
-| D-12 — metas sem valor nas fontes | RNF03, RNF11 | Stakeholder e equipe |
-| D-01 — integrações | RNF15 | Stakeholder |
+| PV05 — política de privacidade e retenção | RNF07, conflito C01 | Anonimização irreversível ao fim do prazo de retenção |
+| PV07 — metas de desempenho, recuperação e limites | RNF04, RNF05 | Metas desta especificação mantidas |
+| D-03 / C02 — anonimato | RNF16 | Identificação por modalidade (RN-DOC-02) |
+| D-12 — metas sem valor nas fontes | RNF03, RNF11 | Critérios desta especificação mantidos |
+| D-01 — integrações | RNF15 | Nenhuma integração obrigatória na primeira versão; RNF15 vale se houver integração |

@@ -1,6 +1,6 @@
 # Especificação de requisitos (IEEE 830)
 
-Sistema de criação e gerenciamento de feedbacks. Versão 0.3. Data: 17 de novembro de 2026. Situação: proposta para validação. Estrutura adotada: IEEE 830-1998 (seções 1 a 3), complementada por pendências (seção 4) e rastreabilidade (seção 5).
+Sistema de criação e gerenciamento de feedbacks. Versão 0.4. Data: 23 de novembro de 2026. Situação: validada nas entrevistas E01 e E02. Estrutura adotada: IEEE 830-1998 (seções 1 a 3), complementada por pendências (seção 4) e rastreabilidade (seção 5).
 
 ## 1 Introdução
 
@@ -14,22 +14,22 @@ A organização segue as seções de introdução, descrição geral e requisito
 
 O núcleo compreende a manutenção de feedbacks, usuários, times, grupos e parâmetros; a configuração de coletas com seleção por pares ou por times; a avaliação recíproca entre participantes; o remanejamento de parâmetros; e a consulta de resultados individuais ao longo do tempo. Na seleção por times, todos os integrantes elegíveis de cada time avaliam uns aos outros nos dois sentidos. Não há exclusão física de dados: operações de retirada de uso devem desativar registros ou cancelar coletas e avaliações, preservando os dados.
 
-Os perfis de acesso são os valores do ENUM informado: `RH`, `PROF` e `GESTOR`. `PROF` significa profissional e representa o participante comum. Os três perfis podem participar de avaliações. A proposta de um único perfil por conta permanece sujeita a validação.
+Os perfis de acesso são os valores do ENUM informado: `RH`, `PROF` e `GESTOR`. `PROF` significa profissional e representa o participante comum. Os três perfis podem participar de avaliações. Cada conta tem um único perfil (PV01, validada).
 
-Com a síntese das entrevistas, a avaliação 360°, a autoavaliação, o feedback informal, a classificação dos feedbacks e os planos de ação passaram a integrar o escopo desta versão (RF17 a RF22 e RN13 a RN16), como propostas sujeitas à validação com o stakeholder. O anonimato continua pendente (conflito C02).
+Com a síntese das entrevistas, a avaliação 360°, a autoavaliação, o feedback informal, a classificação dos feedbacks e os planos de ação passaram a integrar o escopo desta versão (RF17 a RF22 e RN13 a RN16), e foram validados nas entrevistas E01 e E02. O anonimato segue a identificação por modalidade decidida no conflito C02 (RN-DOC-02).
 
 ### 1.3 Definições e convenções
 
 CRUD é a sigla convencional para criar, consultar, atualizar e excluir; neste projeto, a última operação é substituída por desativação ou cancelamento, sem exclusão física. Coleta é uma campanha delimitada no tempo. Avaliação é o questionário respondido por um avaliador sobre um receptor em uma coleta. Feedback é a resposta a um parâmetro desse questionário. Parâmetro é uma pergunta com um tipo de avaliação definido em `score`: escala de 0 a 10, escala de 0 a 5 ou booleano. Grupo reúne parâmetros de um mesmo tema.
 
-Os identificadores `RF` representam requisitos funcionais, `RNF` requisitos não funcionais, `RN` regras de negócio, `CA` critérios de aceitação e `PV` pendências de validação. “Deve” indica comportamento requerido na proposta. As decisões adicionais identificadas como propostas dependem de aprovação do responsável pelo negócio.
+Os identificadores `RF` representam requisitos funcionais, `RNF` requisitos não funcionais, `RN` regras de negócio, `CA` critérios de aceitação e `PV` pontos de validação, todos resolvidos nesta versão (seção 4.1). “Deve” indica comportamento requerido.
 
 ### 1.4 Referências e origem
 
 Os códigos de fonte (E01, E02, SA, ENU e DOC) são os mesmos da [lista geral](lista-geral.md), seção 1.
 
 - E01 — Entrevista com o stakeholder e esclarecimentos posteriores: entidades, campos, perfis, seleção por pares ou times, PROF como profissional, ausência de exclusão física e score como tipo de avaliação.
-- E02 — Segunda entrevista. Seus entendimentos estão reunidos com os da E01 na [síntese das entrevistas](../levantamento/sintese-entrevistas.md); as duas entrevistas foram orais, sem gravação, e estão registradas como resumo anotado das respostas.
+- E02 — [Entrevista com a professora da disciplina](../levantamento/entrevistas/E02-entrevista-professora.md), em 20/10/2026, oral, sem gravação e sem anotação das respostas. Junto com a E01, confirmou os requisitos desta especificação.
 - SA — [Análise do sistema análogo Culture Amp](../levantamento/analise-sistema-analogo-culture-amp.md): modalidades de feedback, planos de ação e controles de privacidade.
 - ENU — `trabalho_da_disciplina_de_domnio.pdf`, páginas 1 e 2: contexto de gestão de competências, plataforma web e objetivos complementares; página 3: artefatos de requisitos e modelagem solicitados pela disciplina.
 - IEEE 830 — [norma de 1998](https://standards.ieee.org/ieee/830/1222/): referência para a organização da especificação, e não fonte de requisitos.
@@ -39,7 +39,7 @@ ENU é uma fonte de contexto e de expectativas acadêmicas. Orientações de ent
 
 ### 1.5 Organização e documentos relacionados
 
-A seção 2 apresenta a visão do produto. A seção 3 descreve requisitos verificáveis. A seção 4 registra decisões pendentes e extensões. A seção 5 conecta necessidades, requisitos, entidades e critérios de aceitação.
+A seção 2 apresenta a visão do produto. A seção 3 descreve requisitos verificáveis. A seção 4 registra as decisões de validação e as extensões. A seção 5 conecta necessidades, requisitos, entidades e critérios de aceitação.
 
 Os identificadores são os mesmos da [lista geral de requisitos](lista-geral.md), que também consolida os requisitos documentais. Documentos relacionados:
 
@@ -61,13 +61,13 @@ Aplicação web de apoio ao processo de feedback organizacional. A interface per
 
 O sistema mantém a estrutura de times e usuários, registra relações de trabalho, organiza questionários, permite escolher pares ou times e cria os dois sentidos de cada avaliação. Para times, gera todos os pares internos entre integrantes elegíveis. Recebe notas e comentários e apresenta resultados por usuário, coleta, grupo e parâmetro. Também conduz avaliações 360° e autoavaliações, registra feedbacks informais com contexto e classificação e acompanha planos de ação.
 
-### 2.3 Perfis e permissões propostas
+### 2.3 Perfis e permissões
 
 - `RH`: administra usuários, times, relações de trabalho, catálogo, coletas e atribuições. Acompanha pendências e planos de ação em toda a organização e consulta análises dentro da política de acesso aprovada.
 - `GESTOR`: cria e acompanha coletas, avaliações 360° e planos de ação dos times sob sua responsabilidade e consulta seus resultados, sem administrar perfis ou alterar respostas de terceiros. O vínculo de responsabilidade é explícito no time.
 - `PROF` — profissional: responde às próprias avaliações, faz autoavaliação, registra feedbacks informais, executa as ações de seus planos e consulta seus feedbacks enviados e resultados recebidos liberados.
 
-As permissões de consulta propostas não autorizam acesso irrestrito a todo o conteúdo. Acesso a rascunhos é exclusivo do autor. A visualização de resultados individuais pelo RH e pelo gestor deve ser confirmada em PV04. Um usuário de qualquer perfil pode avaliar e receber avaliações.
+As permissões de consulta não autorizam acesso irrestrito a todo o conteúdo. Acesso a rascunhos é exclusivo do autor. O RH e o gestor, no seu escopo, visualizam os resultados individuais e decidem a liberação ao avaliado (RN09, PV04). Um usuário de qualquer perfil pode avaliar e receber avaliações.
 
 ### 2.4 Ambiente e interfaces gerais
 
@@ -77,7 +77,7 @@ Acesso por navegador com conexão à rede. Interface em português, com formulá
 
 O modelo deve preservar os identificadores e conceitos fornecidos, admitindo normalização para evitar listas em colunas e duplicação de dados. A reciprocidade deve produzir respostas independentes. A movimentação de parâmetros deve preservar as versões publicadas dos questionários e os resultados históricos.
 
-### 2.6 Premissas e dependências propostas
+### 2.6 Premissas e dependências
 
 - Cada usuário tem um único perfil e pertence a um time ativo para participar de novas coletas.
 - `trabalha_com` representa uma relação simétrica entre dois usuários, inclusive de times diferentes.
@@ -132,7 +132,7 @@ O modelo deve preservar os identificadores e conceitos fornecidos, admitindo nor
 
 **RF16 Preservar e auditar histórico — importante, proposta de suporte.** O sistema deve registrar autor, instante, operação, entidade e identificador das mudanças administrativas, transições de estado e remanejamentos. Os eventos não devem conter texto de comentários nem credenciais. A troca de time do usuário não deve alterar o time registrado nas avaliações antigas.
 
-**RF17 Conduzir avaliação 360° — essencial, E01, E02, ENU e SA.** O RH ou o gestor, dentro do seu escopo (RN14), deve poder criar uma coleta na modalidade 360°, selecionar um ou mais avaliados e, para cada um, os participantes por papel: gestor, colegas, subordinados e o próprio avaliado. O sistema deve sugerir participantes a partir dos vínculos de gestão e de trabalho, sem presumir que todos avaliam todos. Na abertura, deve gerar uma avaliação por participante e avaliado, com o papel registrado, sem duplicatas e sem exigir reciprocidade. O questionário segue as regras de publicação do RF09.
+**RF17 Conduzir avaliação 360° — essencial, E01, ENU e SA.** O RH ou o gestor, dentro do seu escopo (RN14), deve poder criar uma coleta na modalidade 360°, selecionar um ou mais avaliados e, para cada um, os participantes por papel: gestor, colegas, subordinados e o próprio avaliado. O sistema deve sugerir participantes a partir dos vínculos de gestão e de trabalho, sem presumir que todos avaliam todos. Na abertura, deve gerar uma avaliação por participante e avaliado, com o papel registrado, sem duplicatas e sem exigir reciprocidade. O questionário segue as regras de publicação do RF09.
 
 **RF18 Manter planos de ação — essencial, E01, ENU e SA.** O gestor, para os times sob sua responsabilidade, e o RH, na organização, devem poder criar um plano de ação a partir de um feedback recebido pelo colaborador, com metas, ações, responsáveis pela execução, prazos e pontos de verificação. O colaborador participa da definição das ações e registra o progresso das que lhe forem atribuídas. O responsável registra cada verificação e pode vincular o feedback seguinte, que avalia os resultados, ajustando o plano quando necessário. Planos não são excluídos: podem ser concluídos ou cancelados com motivo.
 
@@ -142,9 +142,9 @@ O modelo deve preservar os identificadores e conceitos fornecidos, admitindo nor
 
 **RF21 Registrar o contexto do feedback — essencial, E01.** O registro de feedback deve conter o fato motivador, os impactos observados, a data, o emissor, o receptor, a classificação (RF19) e o conteúdo, podendo associar um questionário. O sistema não verifica a veracidade dos fatos (RN16). O formulário deve orientar o emissor a não incluir dados sensíveis (RF-DOC-14).
 
-**RF22 Realizar autoavaliação — essencial, E01 e E02.** O colaborador deve poder responder ao questionário sobre si mesmo, em uma coleta de autoavaliação ou como participante de um 360°. A autoavaliação tem avaliador igual ao receptor, é única por coleta e avaliado e segue as regras de rascunho e envio dos RF11 e RF12.
+**RF22 Realizar autoavaliação — essencial, E01.** O colaborador deve poder responder ao questionário sobre si mesmo, em uma coleta de autoavaliação ou como participante de um 360°. A autoavaliação tem avaliador igual ao receptor, é única por coleta e avaliado e segue as regras de rascunho e envio dos RF11 e RF12.
 
-### 3.3 Regras de negócio propostas
+### 3.3 Regras de negócio
 
 **RN01 Reciprocidade.** Nas coletas recíprocas, uma atribuição consiste em exatamente dois sentidos entre usuários distintos, na mesma coleta. A criação e o cancelamento devem operar sobre o par em uma transação. No cancelamento, os sentidos em rascunho passam a CANCELADA; um sentido já enviado mantém seu estado e conteúdo, mas o par fica inválido para resultados. O cancelamento de um par com ambos os sentidos enviados não é permitido nesta versão. O encerramento cancela as pendências sem apagar conteúdo enviado.
 
@@ -162,7 +162,7 @@ O modelo deve preservar os identificadores e conceitos fornecidos, admitindo nor
 
 **RN08 Estados da avaliação e do feedback.** Avaliação inicia em `RASCUNHO` e pode passar a `ENVIADA` ou `CANCELADA`. Não há retorno a rascunho. O status do feedback é herdado da avaliação, evitando estados contraditórios entre respostas do mesmo questionário.
 
-**RN09 Independência e liberação.** O avaliador não pode ver a resposta recebida enquanto estiver respondendo. Como política proposta para as coletas recíprocas, o receptor só vê o resultado de um par após ambos enviarem e a coleta ser encerrada. Pares incompletos ou cancelados ficam fora dos resultados recebidos e da análise; o autor mantém acesso ao próprio envio. As demais modalidades seguem a RN15. Esta regra depende de PV03 e PV04.
+**RN09 Independência e liberação.** O avaliador não pode ver a resposta recebida enquanto estiver respondendo. Em todas as modalidades, o avaliado só vê o resultado depois que o gestor ou o RH, no escopo da RN14, o liberar. Pares cancelados ficam fora dos resultados recebidos e da análise; o autor mantém acesso ao próprio envio. A identificação do avaliador segue a RN-DOC-02 (PV03 e PV04 resolvidas).
 
 **RN10 Cálculo.** Para respostas numéricas válidas e ativas, a nota normalizada é `100 × valor / limite_superior`, sendo o limite 10 para ESCALA_0_10 e 5 para ESCALA_0_5, conforme o tipo copiado na coleta. A média numérica é a soma dessas notas dividida pela quantidade de respostas numéricas válidas do recorte, sem pesos adicionais. Booleanos não entram nessa média: o percentual de Sim é `100 × quantidade de verdadeiros / quantidade de respostas booleanas válidas`, com percentual de Não calculado de forma equivalente. “Sim” não significa automaticamente desempenho positivo, pois isso depende da pergunta. Denominador zero produz “sem dados”. Arredondamento para duas casas ocorre apenas na apresentação. O número de avaliações é a contagem distinta de avaliações, não a de respostas. Percentual de conclusão é `avaliações ENVIADAS / avaliações não CANCELADAS × 100`; denominador zero produz “sem avaliações elegíveis”.
 
@@ -174,11 +174,11 @@ O modelo deve preservar os identificadores e conceitos fornecidos, admitindo nor
 
 **RN14 Escopo de atuação.** O gestor cria e acompanha coletas, avaliações 360° e planos apenas para pessoas dos times sob sua responsabilidade; o RH atua em toda a organização. A seleção de participantes e a consulta de resultados respeitam esse escopo. Participar de um plano não dá ao colaborador permissão administrativa sobre planos de terceiros.
 
-**RN15 Regras por modalidade.** Recíproca (pares ou times): dois sentidos por par, conforme RN01 e RN09. 360°: uma avaliação por participante e avaliado, com papel registrado, sem reciprocidade. Autoavaliação: avaliador igual ao receptor. Feedback informal: sem coleta, registrado pelo emissor e enviado diretamente ao receptor. Como proposta, os resultados do 360° são liberados ao avaliado após o encerramento da coleta, agrupados por papel, e a autoavaliação fica visível ao avaliado e ao responsável pela coleta após o envio. A política definitiva depende de PV04.
+**RN15 Regras por modalidade.** Recíproca (pares ou times): dois sentidos por par, conforme RN01 e RN09. 360°: uma avaliação por participante e avaliado, com papel registrado, sem reciprocidade. Autoavaliação: avaliador igual ao receptor. Feedback informal: sem coleta, registrado pelo emissor e enviado diretamente ao receptor. Os resultados do 360° são apresentados agrupados por papel; em todas as modalidades, a liberação ao avaliado segue a RN09. No 360° e nas coletas recíprocas, o avaliador não é identificado ao avaliado, exceto a resposta do gestor direto no 360°; no feedback informal, o emissor é identificado (RN-DOC-02).
 
 **RN16 Feedback baseado em fatos.** O feedback deve descrever fatos e impactos observados. O sistema exige esses campos no registro contextual, mas não verifica automaticamente sua veracidade.
 
-### 3.4 Requisitos não funcionais propostos
+### 3.4 Requisitos não funcionais
 
 Os critérios desta seção são metas de projeto a validar, e não capacidades já medidas.
 
@@ -188,13 +188,13 @@ Os critérios desta seção são metas de projeto a validar, e não capacidades 
 
 **RNF03 Usabilidade e acesso.** Os fluxos de preenchimento devem funcionar por teclado, apresentar rótulos para os campos e erros textuais, e permitir uso em larguras de 360 a 1.440 pixels sem rolagem horizontal nos formulários.
 
-**RNF04 Desempenho.** Meta proposta: 95% das consultas de cadastros e histórico com paginação devem responder em até 2 segundos, sob 50 usuários simultâneos e base de até 100.000 respostas, em ambiente de homologação documentado. Análises usam a mesma meta, com filtros por usuário e coleta. Infraestrutura e massa do ensaio devem ser registradas.
+**RNF04 Desempenho.** Meta: 95% das consultas de cadastros e histórico com paginação devem responder em até 2 segundos, sob 50 usuários simultâneos e base de até 100.000 respostas, em ambiente de homologação documentado. Análises usam a mesma meta, com filtros por usuário e coleta. Infraestrutura e massa do ensaio devem ser registradas.
 
-**RNF05 Recuperação.** Deve existir cópia de segurança diária e procedimento de restauração verificado em homologação. Meta proposta: perda máxima de 24 horas de dados e restauração em até 4 horas, sujeita à definição de infraestrutura.
+**RNF05 Recuperação.** Deve existir cópia de segurança diária e procedimento de restauração verificado em homologação. Meta: perda máxima de 24 horas de dados e restauração em até 4 horas.
 
 **RNF06 Rastreabilidade.** Os eventos de auditoria devem permitir identificar quem alterou uma configuração e quando. Usuários comuns não devem poder editar ou excluir esses eventos.
 
-**RNF07 Privacidade.** A aplicação deve restringir dados ao escopo autorizado e evitar conteúdo de respostas nos logs técnicos. A política definida para esta versão preserva os dados sem exclusão física nem expurgo automático. A compatibilização dessa política com as necessidades jurídicas da organização depende de PV05. Estes controles não constituem, por si, declaração de conformidade com a LGPD mencionada no enunciado.
+**RNF07 Privacidade.** A aplicação deve restringir dados ao escopo autorizado e evitar conteúdo de respostas nos logs técnicos. A política definida para esta versão preserva os dados sem exclusão física no uso operacional e os anonimiza de forma irreversível ao fim do prazo de retenção configurado pela organização (RN12, RF-DOC-08; PV05 e C01 resolvidos). Estes controles não constituem, por si, declaração de conformidade com a LGPD mencionada no enunciado.
 
 ### 3.5 Requisitos de dados
 
@@ -213,7 +213,7 @@ O modelo deve manter usuários, times, relações de trabalho, grupos e parâmet
 - **CA06C Preservação e atomicidade:** alterar a composição do time antes da abertura deve atualizar a prévia e exigir confirmação do RH; após a abertura, adicionar, remover ou transferir integrantes não deve alterar as avaliações. Uma falha durante a geração por time deve reverter a abertura e todas as atribuições dessa operação.
 - **CA07 Respostas:** com score ESCALA_0_5, aceitar 0 e 5 e rejeitar -1, 6 e 2,5; com ESCALA_0_10, aceitar 0 e 10 e rejeitar 11. Com BOOLEANO, aceitar verdadeiro e falso e rejeitar números e textos. Falso e zero devem permitir envio, enquanto nulo e resposta desativada devem impedir completude. Reativar a resposta deve reutilizar a mesma linha, sem duplicatas.
 - **CA08 Envio:** enviar a avaliação completa deve gravar um único envio, impedir alterações posteriores e manter a avaliação inversa independente. Requisições concorrentes não devem produzir dois envios.
-- **CA09 Liberação:** com somente A enviado, B não deve visualizar esse conteúdo; com os dois sentidos enviados e coleta encerrada, os resultados devem ser liberados segundo o perfil. Par cancelado não deve entrar na análise.
+- **CA09 Liberação:** enquanto o gestor ou o RH não liberar o resultado, o avaliado não deve visualizá-lo; depois da liberação, o resultado deve aparecer sem identificar o avaliador nas coletas recíprocas e no 360° (exceto o gestor direto). Par cancelado não deve entrar na análise.
 - **CA10 Análise:** duas respostas numéricas válidas, 2 em ESCALA_0_5 e 10 em ESCALA_0_10, devem gerar 40% e 100%, com média numérica 70%. Duas respostas booleanas válidas, verdadeiro e falso, devem gerar 50% de Sim e 50% de Não, sem alterar a média numérica. Rascunho, resposta desativada e par incompleto não devem alterar os indicadores. Sem respostas válidas do tipo consultado, mostrar “sem dados”.
 - **CA11 Histórico:** trocar usuário de time e alterar pergunta e score do catálogo deve manter time, pergunta e score antigos na coleta publicada; a série deve separar versões incompatíveis.
 - **CA12 Encerramento:** após o fim, impedir novos envios; ao encerrar, cancelar pendências com motivo, preservar envios e impedir reabertura. Cancelar a coleta deve excluí-la das análises sem apagá-la.
@@ -224,24 +224,24 @@ O modelo deve manter usuários, times, relações de trabalho, grupos e parâmet
 - **CA17 Classificação:** um feedback formal construtivo e um informal positivo devem ser filtráveis por cada eixo de forma independente.
 - **CA18 Plano de ação:** criar um plano a partir de um feedback deve exigir ao menos uma ação com responsável e prazo. Registrar progresso deve preservar os registros anteriores, e vincular o feedback seguinte deve fechar o ciclo sem alterar o feedback original.
 
-## 4 Pendências e extensões
+## 4 Validação e extensões
 
-### 4.1 Decisões pendentes de validação
+### 4.1 Decisões de validação
 
-- **PV01 parcialmente resolvida:** `PROF` significa profissional, confirmado pelo stakeholder na E01. Permanece pendente apenas a possibilidade de múltiplos perfis por conta; a proposta mantém um único valor do ENUM.
+- **PV01 resolvida:** `PROF` significa profissional, confirmado na E01; cada conta tem um único valor do ENUM (E01, E02).
 - **PV02 resolvida:** `score` é o tipo de avaliação do parâmetro, confirmado pelo stakeholder na E01. Tipos documentados: ESCALA_0_10, ESCALA_0_5 e BOOLEANO. Não representa nota máxima numérica, peso nem nota atribuída.
-- **PV03:** confirmar se reciprocidade obriga ambos a responder e se resultados de pares incompletos devem ser liberados. A proposta cria ambos e libera somente pares completos após encerramento.
-- **PV04:** aprovar a matriz de acesso a notas, comentários e identidades, inclusive a liberação dos resultados do 360°, da autoavaliação e do feedback informal (RN15). A proposta é identificada, com acesso limitado por perfil; não promete anonimato, especialmente em pares de duas pessoas.
-- **PV05:** validar com os responsáveis da organização a política de privacidade e suas necessidades jurídicas, considerando a decisão confirmada de preservar dados sem exclusão física.
-- **PV06:** confirmar grupo único por parâmetro, relação de trabalho simétrica, um time por usuário e um gestor responsável por time. Estas são decisões propostas de modelagem.
-- **PV07:** aprovar limites de texto, uso de valores inteiros nas escalas, metas de desempenho e recuperação. Os tipos de avaliação já foram confirmados.
-- **PV08 resolvida:** a síntese das entrevistas incluiu na primeira versão a avaliação 360°, a autoavaliação, o feedback informal, a classificação e os planos de ação. Os requisitos correspondentes permanecem propostos até a validação com o stakeholder (#25).
+- **PV03 resolvida (E01, E02):** a reciprocidade cria os dois sentidos (RN01); a liberação dos resultados não depende do par completo e é feita pelo gestor ou pelo RH (RN09).
+- **PV04 resolvida (E01, E02):** em todas as modalidades, o resultado é liberado ao avaliado pelo gestor ou pelo RH (RN09); a identificação do avaliador segue a RN-DOC-02, com número mínimo de respondentes para exibir resultados anônimos (RN-DOC-03).
+- **PV05 resolvida (E01, E02):** sem exclusão física no uso operacional e anonimização irreversível ao fim do prazo de retenção (RN12, RF-DOC-07, RF-DOC-08; conflito C01 resolvido).
+- **PV06 resolvida (E01, E02):** grupo único por parâmetro, relação de trabalho simétrica, um time por usuário e um gestor responsável por time.
+- **PV07 resolvida (E01, E02):** mantidos os limites de texto, os valores inteiros nas escalas e as metas de desempenho e recuperação desta especificação (RNF04, RNF05).
+- **PV08 resolvida:** a síntese das entrevistas incluiu na primeira versão a avaliação 360°, a autoavaliação, o feedback informal, a classificação e os planos de ação. Os requisitos correspondentes foram validados nas entrevistas E01 e E02.
 
 ### 4.2 Extensões presentes no contexto acadêmico
 
-O enunciado cita feedback chefe-colaborador, por pares e 360°; classificações formal, informal, positivo e construtivo; anonimato; recursos visuais de evolução; planos de ação e metas de desenvolvimento. Com a síntese das entrevistas, esses itens passaram a integrar esta especificação (RF17 a RF22 e RN13 a RN16), exceto o anonimato, que depende do conflito C02, e os recursos visuais de evolução, que serão detalhados com os protótipos.
+O enunciado cita feedback chefe-colaborador, por pares e 360°; classificações formal, informal, positivo e construtivo; anonimato; recursos visuais de evolução; planos de ação e metas de desenvolvimento. Com a síntese das entrevistas, esses itens passaram a integrar esta especificação (RF17 a RF22 e RN13 a RN16), inclusive o anonimato, tratado por modalidade (RN-DOC-02, conflito C02 resolvido). Os recursos visuais de evolução são detalhados nos protótipos.
 
-Os questionários e o BPMN ainda exigem trabalhos próprios (#7, #8 e #10). Esta especificação consolida o que foi levantado até aqui e não substitui as demais fontes de elicitação previstas no processo de requisitos.
+Os questionários e o BPMN ainda exigem trabalhos próprios (#7, #8 e #10). Esta especificação consolida o que foi levantado e validado até aqui.
 
 ## 5 Rastreabilidade
 
@@ -255,7 +255,7 @@ Os questionários e o BPMN ainda exigem trabalhos próprios (#7, #8 e #10). Esta
 - Histórico e análise individual — E01 → RF14 e RF15, RN09 a RN11 → Avaliacao e Feedback com cópias do questionário → CA09 a CA11.
 - Perfis RH, PROF e GESTOR — E01 → RF01 e seção 2.3 → Usuario e Time → CA02.
 - Ciclo da coleta — proposta derivada → RF13, RN07 → Coleta e Avaliacao → CA12.
-- Avaliação 360° e autoavaliação — E01 e E02 (síntese), ENU e SA → RF17, RF22 e RN15 → Coleta, ColetaParticipante e Avaliacao → CA14 e CA15.
+- Avaliação 360° e autoavaliação — E01 (síntese), ENU e SA → RF17, RF22 e RN15 → Coleta, ColetaParticipante e Avaliacao → CA14 e CA15.
 - Feedback contextual, informal e classificado — E01 (síntese) e ENU → RF19 a RF21 e RN16 → RegistroFeedback → CA16 e CA17.
 - Planos de ação — E01 (síntese), ENU e SA → RF18, RN13 e RN14 → PlanoAcao, AcaoPlano e AcompanhamentoAcao → CA18.
 - Segurança e preservação — proposta de suporte e contexto ENU → RF16 e RNF01 a RNF16 → EventoAuditoria e demais entidades → CA11 e CA13.

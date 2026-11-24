@@ -3,9 +3,9 @@
 | Campo | Informação |
 | --- | --- |
 | Autoria | Brenner Rodrigues Sardinha |
-| Versão | 0.1 — 16 de novembro de 2026 |
+| Versão | 0.2 — 23 de novembro de 2026 |
 | Formato | Completo, estilo essencial (Larman, cap. 6) |
-| Situação | Proposto para validação |
+| Situação | Validado (E01, E02) |
 
 ## Escopo
 
@@ -162,7 +162,7 @@ O RH decide iniciar um ciclo de feedback, por exemplo no calendário de avaliaç
 
 **14c. O fim do período já passou.**
 
-1. O sistema não abre a coleta e solicita um novo período, pois ninguém poderia responder (RN07; regra proposta, ver questões em aberto). O fluxo volta ao passo 3.
+1. O sistema não abre a coleta e solicita um novo período, pois ninguém poderia responder (RN07). O fluxo volta ao passo 3.
 
 **14d. Falha durante a abertura.**
 
@@ -177,9 +177,9 @@ O RH decide iniciar um ciclo de feedback, por exemplo no calendário de avaliaç
 
 - Autorização, estados, período, composição e elegibilidade são validados no servidor, inclusive em chamadas diretas à API (RF01, RNF01).
 - A abertura é atômica e idempotente: duas solicitações simultâneas não produzem duas transições nem avaliações duplicadas, e uma falha não deixa avaliações parciais (RNF02).
-- A prévia do passo 12 e a confirmação protegem o RH contra erros de uso, pois a abertura não pode ser desfeita (RNF13, aplicado a este fluxo como proposta).
+- A prévia do passo 12 e a confirmação protegem o RH contra erros de uso, pois a abertura não pode ser desfeita (RNF13).
 - Os eventos de auditoria da configuração e da abertura ficam protegidos contra alteração e não copiam dados além dos identificadores e metadados administrativos (RF16, RNF06).
-- Configuração e prévia operáveis por teclado, com rótulos e mensagens de erro textuais, em telas de 360 a 1.440 px (RNF03, aplicado a este fluxo como proposta).
+- Configuração e prévia operáveis por teclado, com rótulos e mensagens de erro textuais, em telas de 360 a 1.440 px (RNF03).
 - Nas listas de times e usuários, homônimos são distinguidos por cargo, time ou setor, sem exigir digitação de identificadores (RI02).
 
 ## Lista de variantes tecnológicas e de dados
@@ -194,14 +194,14 @@ O RH decide iniciar um ciclo de feedback, por exemplo no calendário de avaliaç
 
 Uma abertura por coleta, conforme o calendário de ciclos da organização, que ainda não foi informado pelo stakeholder. A preparação pode envolver várias sessões. No modo TIMES, o volume da abertura cresce com o quadrado do tamanho do time: um time de 10 integrantes elegíveis gera 90 avaliações.
 
-## Questões em aberto e decisões propostas
+## Decisões e questões
 
-- **Fim do período já passado (14c):** a abertura com o fim no passado é rejeitada nesta elaboração. A regra é proposta e deve ser validada.
-- **Início no passado:** pode-se abrir uma coleta cujo início já passou? Nesta elaboração, sim, desde que o fim seja futuro; o preenchimento fica liberado imediatamente.
+- **Fim do período já passado (14c):** a abertura com o fim no passado é rejeitada (validado, E01, E02).
+- **Início no passado:** a coleta cujo início já passou pode ser aberta, desde que o fim seja futuro; o preenchimento fica liberado imediatamente (validado, E01, E02).
 - **Gestor responsável fora do time:** no modo TIMES, só entram os usuários lotados no time. O gestor responsável que não está lotado no time não participa automaticamente. O feedback gestor-colaborador previsto no enunciado é atendido pela avaliação 360° (CU-09), em que o gestor participa com o papel de gestor.
-- **Quem pode alterar a preparação:** qualquer pessoa do RH ou somente o criador? Esta elaboração permite qualquer pessoa do RH, com o registro de autoria na auditoria.
+- **Quem pode alterar a preparação:** qualquer pessoa do RH, com o registro de autoria na auditoria (validado, E01, E02).
 - **Aviso aos participantes:** os avaliadores são informados da abertura? Não há requisito de notificação nesta versão (mesma questão do CU-02).
-- **PV06:** a premissa de um time por usuário evita que a mesma pessoa apareça em dois times selecionados. Se a premissa mudar, a geração precisa evitar pares repetidos entre times.
+- **PV06 (resolvida, E01, E02):** cada usuário pertence a um único time, o que evita que a mesma pessoa apareça em dois times selecionados.
 - **Lacuna L07 resolvida:** a coleta recíproca continua rejeitando autoavaliações (RF10); a autoavaliação passou a ser uma modalidade própria (RF22) e parte do 360° (RF17, CU-09).
 - **Gestor como ator (RN14):** com a consolidação da issue #40, o gestor também configura e abre coletas dos times sob sua responsabilidade. O fluxo é o mesmo, limitado a esse escopo.
 
@@ -211,7 +211,7 @@ Uma abertura por coleta, conforme o calendário de ciclos da organização, que 
 | --- | --- |
 | Requisitos funcionais | RF01, RF07 (atualização explícita), RF08, RF09, RF10, RF16 |
 | Regras de negócio | RN01, RN02, RN03, RN04, RN05, RN07, RN12 |
-| Requisitos não funcionais | RNF01, RNF02, RNF03 (aplicação proposta), RNF06, RNF13 (aplicação proposta) |
+| Requisitos não funcionais | RNF01, RNF02, RNF03, RNF06, RNF13 |
 | Interfaces | RI01, RI02 |
 | Critérios de aceitação | CA01, CA05, CA06, CA06A, CA06B, CA06C |
 | Entidades | COLETA, COLETA_TIME, COLETA_PAR, COLETA_GRUPO, COLETA_PARAM, AVALIACAO, EVENTO_AUDITORIA; leitura de USUARIO, TIME, RELACAO_TRABALHO, GRUPO_PARAM e PARAM |

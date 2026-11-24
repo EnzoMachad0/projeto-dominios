@@ -17,7 +17,7 @@ IDs primários são obrigatórios, únicos e imutáveis. FKs apontam para IDs ex
 - `nome` — VARCHAR(150), obrigatório.
 - `cargo` — VARCHAR(100), obrigatório; não concede permissões.
 - `email` — VARCHAR(254), obrigatório, único e normalizado; identificador de conta proposto.
-- `role` — ENUM `RH | PROF | GESTOR`, obrigatório e sem padrão automático. PROF significa profissional. Um perfil por conta permanece como proposta.
+- `role` — ENUM `RH | PROF | GESTOR`, obrigatório e sem padrão automático. PROF significa profissional. Um perfil por conta (PV01, validada).
 - `ativo` — BOOLEAN, obrigatório; falso bloqueia autenticação e novas atribuições.
 - `trabalha_com` — propriedade derivada dos vínculos ativos em RELACAO_TRABALHO; coleção de usuários, sem coluna física.
 
@@ -249,7 +249,7 @@ O cálculo utiliza valores históricos, sem arredondar as parcelas. O resultado 
 
 - **Unidades:** tamanhos em caracteres (`VARCHAR(n)`); instantes em UTC (`TIMESTAMPTZ`); notas sem unidade física, normalizadas em percentual (0 a 100) apenas nos indicadores; tempos de desempenho e recuperação, em segundos e horas, estão na [especificação suplementar](requisitos/especificacao-suplementar.md).
 - **Não aplicável:** unidade de medida para IDs, textos, booleanos e ENUMs; tamanho para `BOOLEAN`, `UUID`, `TIMESTAMPTZ` e `INTEGER`.
-- **Pendente:** limites de texto e uso de inteiros nas escalas (PV07); múltiplos perfis por conta (PV01); dados de anonimato ainda não têm atributos, pois dependem do conflito C02; a liberação dos resultados do 360°, da autoavaliação e do feedback informal depende de PV04; campos de retenção e anonimização dependem do conflito C01.
+- **Decisões validadas (E01, E02):** limites de texto e uso de inteiros nas escalas (PV07); um perfil por conta (PV01); identificação do avaliador por modalidade (C02, RN-DOC-02); liberação dos resultados pelo gestor ou pelo RH em todas as modalidades (PV04, RN09); anonimização irreversível ao fim do prazo de retenção (C01, RN12). Os atributos de liberação, prazo de retenção e anonimização ainda devem ser acrescentados ao dicionário e ao MER.
 
 ## Glossário
 

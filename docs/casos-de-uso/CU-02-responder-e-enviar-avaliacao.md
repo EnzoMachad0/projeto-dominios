@@ -3,9 +3,9 @@
 | Campo | Informação |
 | --- | --- |
 | Autoria | Luiz Augusto Vaz |
-| Versão | 0.1 — 8 de novembro de 2026 |
+| Versão | 0.2 — 23 de novembro de 2026 |
 | Formato | Completo, estilo essencial (Larman, cap. 6) |
-| Situação | Proposto para validação |
+| Situação | Validado (E01, E02) |
 
 ## Escopo
 
@@ -141,12 +141,15 @@ O participante decide responder a uma avaliação pendente, por exemplo depois d
 
 Em cada coleta, uma vez por avaliação atribuída. No modo por times, um time com `n` integrantes gera `n − 1` avaliações para cada participante, e o uso se concentra perto do fim do período.
 
-## Questões em aberto
+## Decisões validadas (E01, E02)
 
-- **PV03:** a reciprocidade obriga os dois a responder? Pares incompletos ficam fora dos resultados.
-- **PV04:** quem pode ver notas, comentários e identidade do avaliador? Afeta a mensagem do passo 4.
-- **Conflito C02:** se o anonimato for adotado, o passo 4 e a extensão 4a precisam ser revistos.
-- O participante recebe lembretes de avaliações pendentes? Não há requisito de notificação nesta versão.
+- **PV03:** a reciprocidade cria os dois sentidos (RN01), mas a liberação dos resultados não depende do par completo (RN09).
+- **PV04:** o resultado só fica visível ao avaliado depois de liberado pelo gestor ou pelo RH (RN09). A mensagem do passo 4 informa isso.
+- **Conflito C02:** nas coletas recíprocas e no 360°, o avaliador não é identificado ao avaliado, exceto a resposta do gestor direto no 360°; no feedback informal, o emissor é identificado (RN-DOC-02). A mensagem do passo 4 informa o regime de identificação da modalidade.
+
+## Questão em aberto
+
+- O participante recebe lembretes de avaliações pendentes? Não há requisito de notificação nesta versão (lacuna L08).
 
 ## Rastreabilidade
 

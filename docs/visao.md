@@ -1,6 +1,6 @@
 # Documento de visão
 
-Sistema de gestão de competências e feedback — versão 0.2, 17 de novembro de 2026. Situação: proposta para validação.
+Sistema de gestão de competências e feedback — versão 0.3, 23 de novembro de 2026. Situação: validada nas entrevistas E01 e E02.
 
 Estrutura baseada no modelo de documento de visão de Larman (*Utilizando UML e padrões*, cap. 7): problema, stakeholders, necessidades, visão geral do produto, funcionalidades e restrições.
 
@@ -56,7 +56,7 @@ Qualquer perfil pode avaliar e ser avaliado. *Avaliador* e *receptor* são papé
 | --- | --- | --- |
 | Padronizar critérios de avaliação | Alta | Catálogo de grupos e parâmetros com tipos de avaliação (RF05 a RF07). |
 | Organizar ciclos de avaliação mútua | Alta | Coletas por pares ou por times, com avaliações nos dois sentidos (RF08 a RF10). |
-| Responder de forma independente e segura | Alta | Rascunho, envio imutável e liberação após o par completo (RF11, RF12, RN09). |
+| Responder de forma independente e segura | Alta | Rascunho, envio imutável e liberação dos resultados pelo gestor ou pelo RH (RF11, RF12, RN09). |
 | Acompanhar a evolução individual | Alta | Histórico e análise com indicadores comparáveis (RF14, RF15, RN10, RN11). |
 | Proteger dados pessoais | Alta | Controle de acesso, auditoria e requisitos da LGPD (RF16, RNF01, RF-DOC). |
 | Contemplar diferentes perspectivas | Alta | Avaliação 360°, autoavaliação, feedback informal e classificação dos feedbacks (RF17, RF19, RF20, RF22). |
@@ -89,26 +89,24 @@ Aplicação web, em português, acessada por navegador e preparada para telas de
 9. Registro de feedback informal, com contexto e classificação formal ou informal e positivo ou construtivo.
 10. Planos de ação com metas, ações, prazos e acompanhamento.
 
-### 5.2. Fora do escopo ou pendente de confirmação
+### 5.2. Fora do escopo
 
-- Anonimato das respostas (conflito C02).
-- Regras de liberação dos resultados do 360°, da autoavaliação e do feedback informal (PV04).
 - Aplicativo móvel nativo e integrações com sistemas de RH.
 - Calibração, reuniões individuais, reconhecimento e pesquisas de engajamento, observados no sistema análogo.
 
-A avaliação 360°, a autoavaliação, o feedback informal, a classificação e os planos de ação passaram a integrar o escopo com a síntese das entrevistas e permanecem como propostas até a validação com o stakeholder.
+A avaliação 360°, a autoavaliação, o feedback informal, a classificação e os planos de ação passaram a integrar o escopo com a síntese das entrevistas e foram validados nas entrevistas E01 e E02. O anonimato segue a identificação por modalidade (RN-DOC-02) e a liberação dos resultados é feita pelo gestor ou pelo RH em todas as modalidades (RN09).
 
 ## 6. Restrições
 
-- Não há exclusão física de dados (RN12), sujeita à compatibilização com a LGPD (conflito C01).
+- Não há exclusão física de dados no uso operacional; ao fim do prazo de retenção, os dados pessoais são anonimizados de forma irreversível (RN12, conflito C01 resolvido).
 - Questionários publicados e resultados históricos não podem ser alterados retroativamente.
 - Requisitos de qualidade: ver a [especificação suplementar](requisitos/especificacao-suplementar.md).
 
-## 7. Pontos pendentes de confirmação
+## 7. Pontos de validação
 
-| Pendência | Descrição |
+| Ponto | Situação |
 | --- | --- |
-| PV03, PV04 | Obrigatoriedade da reciprocidade e matriz de acesso aos resultados. |
-| PV05 | Política de privacidade e retenção. |
-| PV08 | Resolvida pela síntese das entrevistas: as modalidades e os planos do enunciado integram a primeira versão, ainda como proposta. |
-| Fontes | Questionários (#7, #8) ainda não aplicados. As entrevistas foram orais, sem gravação, e estão registradas como resumo anotado. |
+| PV03, PV04 | Resolvidos (E01, E02): a liberação dos resultados é feita pelo gestor ou pelo RH em todas as modalidades (RN09). |
+| PV05 | Resolvido (E01, E02): anonimização irreversível ao fim do prazo de retenção (RN12). |
+| PV08 | Resolvido: as modalidades e os planos do enunciado integram a primeira versão, validados nas entrevistas E01 e E02. |
+| Fontes | Questionários (#7, #8) ainda não aplicados. As entrevistas foram orais, sem gravação: a E01 está registrada como resumo anotado, e a E02, com a professora, sem anotação das respostas. |

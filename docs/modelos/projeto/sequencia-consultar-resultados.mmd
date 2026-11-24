@@ -19,7 +19,7 @@ sequenceDiagram
         Rep-->>Ctl: avaliações da pessoa
         loop cada avaliação
             Ctl->>Pol: resultadoLiberado(avaliacao)
-            Note right of Pol: Recíproca: par completo e coleta encerrada (RN09). Outras modalidades: RN15
+            Note right of Pol: Todas as modalidades: liberado pelo gestor ou pelo RH (RN09)
         end
         Ctl->>Calc: mediaNormalizada e percentualSim(respostas liberadas)
         Calc-->>Ctl: indicadores separados por versão da pergunta (RN10, RN11)

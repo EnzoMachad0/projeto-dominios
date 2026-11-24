@@ -6,7 +6,7 @@
 | Normas pesquisadas | LGPD (Lei nº 13.709/2018) e ISO/IEC 25010 |
 | Edição da ISO/IEC 25010 utilizada | **ISO/IEC 25010:2023, segunda edição (2023-11)** |
 | Data de consulta das fontes | 08/11/2026 |
-| Situação | Requisitos candidatos propostos, ainda não validados com o stakeholder |
+| Situação | Requisitos candidatos consolidados na lista geral e validados nas entrevistas E01 e E02 (lista geral, versão 0.3) |
 
 ## 1. Síntese
 
@@ -139,59 +139,59 @@ Os identificadores usam o sufixo **DOC** para indicar origem documental e evitar
 - **Qualidade:** derivado do modelo da ISO/IEC 25010, que não estabelece obrigação.
 - **Interpretação:** proposta da equipe a partir da fonte indicada.
 
-**Situação:** *Proposto* pode seguir para validação. *Pendente* depende da dúvida indicada.
+**Situação:** todos os candidatos foram consolidados na [lista geral](../requisitos/lista-geral.md) e validados nas entrevistas E01 e E02; os RNF-DOC estão consolidados nos RNF01 a RNF16.
 
 ### 5.1. Requisitos funcionais
 
 | ID | Requisito candidato | Origem | Natureza | Situação |
 | --- | --- | --- | --- | --- |
-| RF-DOC-01 | O sistema deve apresentar, antes do primeiro uso e sempre disponível depois, aviso com finalidades, forma e duração do tratamento, controlador e contato, compartilhamentos e direitos do titular. | F01, arts. 6º, VI, e 9º | Legal | Proposto |
-| RF-DOC-02 | O sistema deve exibir o contato do encarregado ou o canal de comunicação com o titular em local de destaque e de fácil acesso. | F01, art. 41, §1º; F05, art. 9º; F03, art. 11, §1º | Legal | Proposto |
-| RF-DOC-03 | O titular deve poder consultar, em formato simplificado e de imediato, os dados pessoais que o sistema mantém sobre ele, respeitadas as regras de confidencialidade do avaliador. | F01, arts. 18, I e II, e 19, I | Legal | Pendente (D-04) |
-| RF-DOC-04 | O sistema deve registrar requisições de titulares com tipo, data, responsável, resposta e situação, e alertar antes do vencimento do prazo de 15 dias para declaração completa. | F01, arts. 18, §§3º e 5º, e 19, II | Legal | Proposto |
-| RF-DOC-05 | O sistema deve permitir corrigir dados cadastrais incompletos, inexatos ou desatualizados. | F01, art. 18, III | Legal | Proposto |
-| RF-DOC-06 | O sistema deve permitir que o titular registre contestação sobre feedback recebido, mantendo o conteúdo original e a contestação associados. | F01, arts. 6º, V, e 18, III | Interpretação | Pendente (D-05) |
-| RF-DOC-07 | O sistema deve permitir anonimizar, bloquear ou eliminar dados pessoais, registrando a medida e o motivo de eventual retenção por exceção legal. | F01, arts. 16 e 18, IV e VI | Legal | Proposto |
-| RF-DOC-08 | O sistema deve permitir configurar o prazo de retenção por tipo de dado e sinalizar os registros vencidos para eliminação ou anonimização. | F01, arts. 15 e 16 | Legal | Pendente (D-06) |
-| RF-DOC-09 | O sistema deve exportar os dados do titular em formato estruturado e de uso comum. | F01, arts. 18, V, e 19, §3º | Legal | Pendente (D-02, D-13) |
-| RF-DOC-10 | Quando o consentimento for a base legal adotada, o sistema deve registrar titular, finalidade, versão do texto e data, e permitir a revogação de forma gratuita. | F01, arts. 8º e 18, IX | Legal | Pendente (D-02) |
-| RF-DOC-11 | O sistema deve informar ao titular com quais terceiros seus dados foram compartilhados e comunicar a eles correções, eliminações, anonimizações ou bloqueios. | F01, art. 18, VII e §6º | Legal | Pendente (D-01) |
-| RF-DOC-12 | O sistema deve gerar relatório das operações de tratamento, com categorias de dados, finalidades, perfis com acesso e prazos de retenção. | F01, art. 37; F03, art. 9º | Legal | Proposto |
-| RF-DOC-13 | O sistema deve permitir listar os titulares e as categorias de dados afetados em um incidente, a partir do período e do escopo informados. | F01, art. 48; F04, arts. 6º, §2º, 9º e 10 | Interpretação | Proposto |
-| RF-DOC-14 | O campo de comentário livre deve orientar o avaliador a não incluir dados sensíveis, nem informações que revelem sua identidade em avaliações anônimas. | F01, arts. 6º, III, 11 e 12 | Interpretação | Proposto |
+| RF-DOC-01 | O sistema deve apresentar, antes do primeiro uso e sempre disponível depois, aviso com finalidades, forma e duração do tratamento, controlador e contato, compartilhamentos e direitos do titular. | F01, arts. 6º, VI, e 9º | Legal | Validado (E01, E02) |
+| RF-DOC-02 | O sistema deve exibir o contato do encarregado ou o canal de comunicação com o titular em local de destaque e de fácil acesso. | F01, art. 41, §1º; F05, art. 9º; F03, art. 11, §1º | Legal | Validado (E01, E02) |
+| RF-DOC-03 | O titular deve poder consultar, em formato simplificado e de imediato, os dados pessoais que o sistema mantém sobre ele, respeitadas as regras de confidencialidade do avaliador. | F01, arts. 18, I e II, e 19, I | Legal | Validado (E01, E02) |
+| RF-DOC-04 | O sistema deve registrar requisições de titulares com tipo, data, responsável, resposta e situação, e alertar antes do vencimento do prazo de 15 dias para declaração completa. | F01, arts. 18, §§3º e 5º, e 19, II | Legal | Validado (E01, E02) |
+| RF-DOC-05 | O sistema deve permitir corrigir dados cadastrais incompletos, inexatos ou desatualizados. | F01, art. 18, III | Legal | Validado (E01, E02) |
+| RF-DOC-06 | O sistema deve permitir que o titular registre contestação sobre feedback recebido, mantendo o conteúdo original e a contestação associados. | F01, arts. 6º, V, e 18, III | Interpretação | Validado (E01, E02) |
+| RF-DOC-07 | O sistema deve permitir anonimizar, bloquear ou eliminar dados pessoais, registrando a medida e o motivo de eventual retenção por exceção legal. | F01, arts. 16 e 18, IV e VI | Legal | Validado (E01, E02) |
+| RF-DOC-08 | O sistema deve permitir configurar o prazo de retenção por tipo de dado e sinalizar os registros vencidos para eliminação ou anonimização. | F01, arts. 15 e 16 | Legal | Validado (E01, E02) |
+| RF-DOC-09 | O sistema deve exportar os dados do titular em formato estruturado e de uso comum. | F01, arts. 18, V, e 19, §3º | Legal | Validado (E01, E02) |
+| RF-DOC-10 | Quando o consentimento for a base legal adotada, o sistema deve registrar titular, finalidade, versão do texto e data, e permitir a revogação de forma gratuita. | F01, arts. 8º e 18, IX | Legal | Validado (E01, E02) |
+| RF-DOC-11 | O sistema deve informar ao titular com quais terceiros seus dados foram compartilhados e comunicar a eles correções, eliminações, anonimizações ou bloqueios. | F01, art. 18, VII e §6º | Legal | Validado (E01, E02) |
+| RF-DOC-12 | O sistema deve gerar relatório das operações de tratamento, com categorias de dados, finalidades, perfis com acesso e prazos de retenção. | F01, art. 37; F03, art. 9º | Legal | Validado (E01, E02) |
+| RF-DOC-13 | O sistema deve permitir listar os titulares e as categorias de dados afetados em um incidente, a partir do período e do escopo informados. | F01, art. 48; F04, arts. 6º, §2º, 9º e 10 | Interpretação | Validado (E01, E02) |
+| RF-DOC-14 | O campo de comentário livre deve orientar o avaliador a não incluir dados sensíveis, nem informações que revelem sua identidade em avaliações anônimas. | F01, arts. 6º, III, 11 e 12 | Interpretação | Validado (E01, E02) |
 
 ### 5.2. Regras de negócio
 
 | ID | Regra candidata | Origem | Natureza | Situação |
 | --- | --- | --- | --- | --- |
-| RN-DOC-01 | Cada dado solicitado em cadastros e questionários deve estar associado a uma finalidade definida; dados sem finalidade não devem ser coletados. | F01, art. 6º, I a III | Legal | Proposto |
-| RN-DOC-02 | Cada modalidade de avaliação deve definir previamente um regime de identificação do avaliador: identificado, confidencial ou anônimo, informado antes do início da resposta. | F01, arts. 5º, III, 6º, VI, e 12; README | Interpretação | Pendente (D-03) |
-| RN-DOC-03 | Resultados agregados de avaliações anônimas só devem ser exibidos quando houver um número mínimo de respondentes, a ser definido. | F01, arts. 5º, III, e 12 | Interpretação | Pendente (D-03) |
-| RN-DOC-04 | Dados de avaliação só devem ser usados para as finalidades informadas; nova finalidade exige reavaliação de base legal e novo aviso aos titulares. | F01, arts. 6º, I, e 9º | Legal | Proposto |
-| RN-DOC-05 | Questionários não devem solicitar dados pessoais sensíveis, salvo hipótese legal aprovada pelo controlador. | F01, arts. 5º, II, 6º, III e IX, e 11; F06 | Legal | Proposto |
-| RN-DOC-06 | Decisões que afetem o colaborador não devem ser tomadas unicamente por tratamento automatizado; quando existirem, devem admitir pedido de revisão e explicação dos critérios. | F01, art. 20 | Legal | Pendente (D-09) |
+| RN-DOC-01 | Cada dado solicitado em cadastros e questionários deve estar associado a uma finalidade definida; dados sem finalidade não devem ser coletados. | F01, art. 6º, I a III | Legal | Validado (E01, E02) |
+| RN-DOC-02 | Cada modalidade de avaliação deve definir previamente um regime de identificação do avaliador: identificado, confidencial ou anônimo, informado antes do início da resposta. | F01, arts. 5º, III, 6º, VI, e 12; README | Interpretação | Validado (E01, E02) |
+| RN-DOC-03 | Resultados agregados de avaliações anônimas só devem ser exibidos quando houver um número mínimo de respondentes, a ser definido. | F01, arts. 5º, III, e 12 | Interpretação | Validado (E01, E02) |
+| RN-DOC-04 | Dados de avaliação só devem ser usados para as finalidades informadas; nova finalidade exige reavaliação de base legal e novo aviso aos titulares. | F01, arts. 6º, I, e 9º | Legal | Validado (E01, E02) |
+| RN-DOC-05 | Questionários não devem solicitar dados pessoais sensíveis, salvo hipótese legal aprovada pelo controlador. | F01, arts. 5º, II, 6º, III e IX, e 11; F06 | Legal | Validado (E01, E02) |
+| RN-DOC-06 | Decisões que afetem o colaborador não devem ser tomadas unicamente por tratamento automatizado; quando existirem, devem admitir pedido de revisão e explicação dos critérios. | F01, art. 20 | Legal | Validado (E01, E02) |
 
 ### 5.3. Requisitos não funcionais
 
 | ID | Característica ISO/IEC 25010:2023 | Requisito candidato | Origem | Natureza | Situação |
 | --- | --- | --- | --- | --- | --- |
-| RNF-DOC-01 | *Security* / *confidentiality* | Todo acesso a feedbacks e resultados deve ser autorizado no servidor conforme o perfil e o vínculo do usuário com o avaliado, negando o acesso por padrão. | F01, arts. 6º, III e VII, e 46; F07, §§34–35; F09 | Legal | Proposto |
-| RNF-DOC-02 | *Security* / *confidentiality* | Em avaliações anônimas, nenhuma tela, relatório, exportação ou registro de auditoria disponível aos perfis do sistema deve revelar o autor da resposta. | F01, arts. 12 e 46; README | Interpretação | Pendente (D-03) |
-| RNF-DOC-03 | *Security* / *authenticity* | O acesso deve exigir autenticação individual, com política de complexidade de senha, sem credenciais padrão, e autenticação multifator para perfis administrativos. | F07, seção 3.2.1, §§36–37 | Orientação | Proposto |
-| RNF-DOC-04 | *Security* / *confidentiality* | Toda comunicação entre cliente e servidor deve usar conexão cifrada com TLS/HTTPS. | F01, art. 46; F07, §53 | Orientação | Proposto |
-| RNF-DOC-05 | *Security* / *confidentiality* | Credenciais, vínculos de identidade de avaliadores e comentários devem ser armazenados de forma protegida, de modo que uma cópia indevida da base não os torne inteligíveis. | F01, arts. 46 e 48, §3º; F04, art. 5º, IV; F07, §46 | Interpretação | Proposto |
-| RNF-DOC-06 | *Security* / *accountability* e *non-repudiation* | O sistema deve registrar usuário, ação, objeto, data e hora em acessos e alterações de dados de avaliação, em registro protegido contra alteração pelos perfis comuns. | F01, arts. 6º, X, e 37; F07, §34; F09 | Orientação | Proposto |
-| RNF-DOC-07 | *Security* / *integrity* | Após o envio definitivo, uma avaliação só deve ser alterada por regra prevista e com histórico da alteração. | F01, art. 6º, V; F09 | Qualidade | Proposto |
-| RNF-DOC-08 | *Security* / *resistance* | O sistema deve limitar tentativas sucessivas de autenticação e não pode apresentar vulnerabilidades críticas conhecidas na liberação, conforme critério de verificação a definir. | F01, art. 46; F09, F11 | Interpretação | Pendente (D-12) |
-| RNF-DOC-09 | *Reliability* / *recoverability* | Devem ser feitas cópias de segurança regulares, completas, em local separado e sem sincronização em tempo real, com restauração testada e metas de recuperação a definir. | F07, §49; F11 | Orientação | Pendente (D-12) |
-| RNF-DOC-10 | *Functional suitability* / *functional correctness* | Cada indicador deve ter fórmula documentada e reproduzir o resultado esperado em um conjunto de casos de referência. | F01, art. 6º, V; F09, F11 | Qualidade | Proposto |
-| RNF-DOC-11 | *Interaction capability* / *self-descriptiveness* | A tela de resposta deve indicar o regime de identificação e quem poderá visualizar o conteúdo antes do envio. | F01, art. 6º, VI; F11, F13 | Interpretação | Pendente (D-03) |
-| RNF-DOC-12 | *Interaction capability* / *user error protection* | O sistema deve preservar rascunhos e pedir confirmação antes do envio definitivo de uma avaliação. | F11, F13 | Qualidade | Proposto |
-| RNF-DOC-13 | *Interaction capability* / *inclusivity* e *user assistance* | As interfaces devem atender a um nível de acessibilidade a definir. | F09, F11 | Qualidade | Pendente (D-12) |
-| RNF-DOC-14 | *Flexibility* / *adaptability* | As interfaces web devem funcionar em telas de dispositivos móveis, conforme tamanhos mínimos a definir. | Processo de requisitos, §1; F11 | Qualidade | Pendente (D-12) |
-| RNF-DOC-15 | *Performance efficiency* / *time behaviour* e *capacity*; *Reliability* / *availability* | O sistema deve atender às metas de tempo de resposta, usuários simultâneos e disponibilidade durante os ciclos, a definir. | F11, F13 | Qualidade | Pendente (D-12) |
-| RNF-DOC-16 | *Maintainability* / *testability* | As regras de visibilidade por perfil e por regime de identificação devem ser cobertas por testes automatizados. | F01, art. 46, §2º; F11 | Interpretação | Proposto |
-| RNF-DOC-17 | *Compatibility* / *interoperability* | Caso haja integração com sistemas de RH, a troca de dados deve seguir formato documentado e transmitir somente os dados necessários. | F01, art. 6º, III; F11, F13 | Qualidade | Pendente (D-01) |
+| RNF-DOC-01 | *Security* / *confidentiality* | Todo acesso a feedbacks e resultados deve ser autorizado no servidor conforme o perfil e o vínculo do usuário com o avaliado, negando o acesso por padrão. | F01, arts. 6º, III e VII, e 46; F07, §§34–35; F09 | Legal | Validado (E01, E02) |
+| RNF-DOC-02 | *Security* / *confidentiality* | Em avaliações anônimas, nenhuma tela, relatório, exportação ou registro de auditoria disponível aos perfis do sistema deve revelar o autor da resposta. | F01, arts. 12 e 46; README | Interpretação | Validado (E01, E02) |
+| RNF-DOC-03 | *Security* / *authenticity* | O acesso deve exigir autenticação individual, com política de complexidade de senha, sem credenciais padrão, e autenticação multifator para perfis administrativos. | F07, seção 3.2.1, §§36–37 | Orientação | Validado (E01, E02) |
+| RNF-DOC-04 | *Security* / *confidentiality* | Toda comunicação entre cliente e servidor deve usar conexão cifrada com TLS/HTTPS. | F01, art. 46; F07, §53 | Orientação | Validado (E01, E02) |
+| RNF-DOC-05 | *Security* / *confidentiality* | Credenciais, vínculos de identidade de avaliadores e comentários devem ser armazenados de forma protegida, de modo que uma cópia indevida da base não os torne inteligíveis. | F01, arts. 46 e 48, §3º; F04, art. 5º, IV; F07, §46 | Interpretação | Validado (E01, E02) |
+| RNF-DOC-06 | *Security* / *accountability* e *non-repudiation* | O sistema deve registrar usuário, ação, objeto, data e hora em acessos e alterações de dados de avaliação, em registro protegido contra alteração pelos perfis comuns. | F01, arts. 6º, X, e 37; F07, §34; F09 | Orientação | Validado (E01, E02) |
+| RNF-DOC-07 | *Security* / *integrity* | Após o envio definitivo, uma avaliação só deve ser alterada por regra prevista e com histórico da alteração. | F01, art. 6º, V; F09 | Qualidade | Validado (E01, E02) |
+| RNF-DOC-08 | *Security* / *resistance* | O sistema deve limitar tentativas sucessivas de autenticação e não pode apresentar vulnerabilidades críticas conhecidas na liberação, conforme critério de verificação a definir. | F01, art. 46; F09, F11 | Interpretação | Validado (E01, E02) |
+| RNF-DOC-09 | *Reliability* / *recoverability* | Devem ser feitas cópias de segurança regulares, completas, em local separado e sem sincronização em tempo real, com restauração testada e metas de recuperação a definir. | F07, §49; F11 | Orientação | Validado (E01, E02) |
+| RNF-DOC-10 | *Functional suitability* / *functional correctness* | Cada indicador deve ter fórmula documentada e reproduzir o resultado esperado em um conjunto de casos de referência. | F01, art. 6º, V; F09, F11 | Qualidade | Validado (E01, E02) |
+| RNF-DOC-11 | *Interaction capability* / *self-descriptiveness* | A tela de resposta deve indicar o regime de identificação e quem poderá visualizar o conteúdo antes do envio. | F01, art. 6º, VI; F11, F13 | Interpretação | Validado (E01, E02) |
+| RNF-DOC-12 | *Interaction capability* / *user error protection* | O sistema deve preservar rascunhos e pedir confirmação antes do envio definitivo de uma avaliação. | F11, F13 | Qualidade | Validado (E01, E02) |
+| RNF-DOC-13 | *Interaction capability* / *inclusivity* e *user assistance* | As interfaces devem atender a um nível de acessibilidade a definir. | F09, F11 | Qualidade | Validado (E01, E02) |
+| RNF-DOC-14 | *Flexibility* / *adaptability* | As interfaces web devem funcionar em telas de dispositivos móveis, conforme tamanhos mínimos a definir. | Processo de requisitos, §1; F11 | Qualidade | Validado (E01, E02) |
+| RNF-DOC-15 | *Performance efficiency* / *time behaviour* e *capacity*; *Reliability* / *availability* | O sistema deve atender às metas de tempo de resposta, usuários simultâneos e disponibilidade durante os ciclos, a definir. | F11, F13 | Qualidade | Validado (E01, E02) |
+| RNF-DOC-16 | *Maintainability* / *testability* | As regras de visibilidade por perfil e por regime de identificação devem ser cobertas por testes automatizados. | F01, art. 46, §2º; F11 | Interpretação | Validado (E01, E02) |
+| RNF-DOC-17 | *Compatibility* / *interoperability* | Caso haja integração com sistemas de RH, a troca de dados deve seguir formato documentado e transmitir somente os dados necessários. | F01, art. 6º, III; F11, F13 | Qualidade | Validado (E01, E02) |
 
 ## 6. Dúvidas de interpretação e pendências
 

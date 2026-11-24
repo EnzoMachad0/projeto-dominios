@@ -1,6 +1,6 @@
 # Pauta de validação com o stakeholder
 
-Atende à issue #25 e à etapa 3.5 do [processo de requisitos](../PROCESSO_REQUISITOS.md). Autoria: Luiz Augusto Vaz. Situação: **pauta preparada; reunião ainda não realizada**.
+Atende à issue #25 e à etapa 3.5 do [processo de requisitos](../PROCESSO_REQUISITOS.md). Autoria: Luiz Augusto Vaz. Situação: **pauta não utilizada**. A validação ocorreu nas entrevistas E01 e E02, conforme registro da equipe em 23/11/2026; as decisões estão na [lista geral](../requisitos/lista-geral.md) (versão 0.3, seção 7) e no [registro da E02](../levantamento/entrevistas/E02-entrevista-professora.md).
 
 ## Objetivo
 

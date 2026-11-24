@@ -2,7 +2,7 @@
 
 Registro das entrevistas do levantamento de requisitos. O roteiro está em [roteiro-entrevista-stakeholder.md](../../roteiro-entrevista-stakeholder.md).
 
-As entrevistas E01 e E02 foram feitas oralmente e não foram gravadas. Por isso não há transcrição: o registro de cada entrevista é o resumo anotado das respostas, feito pela equipe a partir do que foi dito. O [modelo de transcrição](modelo-transcricao.md) fica disponível para entrevistas futuras que forem gravadas.
+As entrevistas E01 e E02 foram feitas oralmente e não foram gravadas. Por isso não há transcrição. O registro da E01 é o resumo anotado das respostas, feito pela equipe a partir do que foi dito. A E02, com a professora da disciplina, não teve gravação nem anotação das respostas, e o registro traz só a identificação e o resultado. O [modelo de transcrição](modelo-transcricao.md) fica disponível para entrevistas futuras que forem gravadas.
 
 ## Situação das entrevistas
 
@@ -11,15 +11,15 @@ Atualize esta tabela somente depois que a entrevista tiver acontecido. Use a fun
 | Código | Data | Função do participante | Papel no projeto | Entrevistador | Forma | Registro | Registro restrito | Situação |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | E01 | — | — | — | — | Oral, sem gravação | [Perguntas e resumo das respostas](E01-perguntas-e-resumo-das-respostas.md) | — | Realizada — registrada como resumo anotado |
-| E02 | — | — | — | — | Oral, sem gravação | [Perguntas e resumo das respostas](E02-perguntas-e-resumo-das-respostas.md) | — | Realizada — registrada como resumo anotado |
+| E02 | 20/10/2026 | Professora da disciplina | Cliente do projeto | — | Oral, sem gravação | [Identificação e resultado](E02-entrevista-professora.md) | — | Realizada — sem anotação das respostas |
 
-As duas entrevistas foram realizadas. Os arquivos vinculados são o registro delas: as perguntas feitas e o resumo anotado das respostas, não uma transcrição literal. Os demais dados das coletas e a situação dos registros restritos permanecem a confirmar; os traços não indicam que as entrevistas deixaram de ocorrer.
+As duas entrevistas foram realizadas e confirmaram os requisitos da lista geral (versão 0.3), conforme registro da equipe em 23/11/2026. Os arquivos vinculados são o registro delas, não uma transcrição literal. Os demais dados das coletas e a situação dos registros restritos permanecem a confirmar; os traços não indicam que as entrevistas deixaram de ocorrer.
 
 Na coluna **Registro restrito**, informe apenas se o registro de E01 ou E02 foi preenchido (`Sim` ou `Não`), sem copiar dados dele.
 
 ## Síntese dos requisitos
 
-A [síntese dos requisitos das entrevistas](../sintese-entrevistas.md) reúne os entendimentos de E01 e E02, com base nos resumos anotados. As interpretações e propostas da síntese ainda serão validadas com o stakeholder (#25).
+A [síntese dos requisitos das entrevistas](../sintese-entrevistas.md) reúne os entendimentos levantados, com base no resumo anotado da E01. As propostas da síntese foram confirmadas nas entrevistas E01 e E02.
 
 ## Regras de acesso
 

@@ -53,11 +53,11 @@ Três famílias são usadas:
 | --- | --- |
 | Microsserviços | Descartado na AD01: as regras dependem de transações únicas, e o volume previsto é pequeno. |
 | *Event Sourcing* | A auditoria simples (PP13) atende o RF16. Reconstruir estado a partir de eventos aumentaria a complexidade sem requisito que peça isso. |
-| CQRS completo | As consultas de análise (RF14, RF15) cabem no mesmo modelo. Pode ser revisto se as metas do RNF04 (PV07) exigirem. |
+| CQRS completo | As consultas de análise (RF14, RF15) cabem no mesmo modelo. Pode ser revisto se as metas do RNF04 exigirem. |
 | *Singleton* | Não há recurso que precise de instância única no domínio. Configurações e conexões ficam a cargo da tecnologia escolhida. |
 
 ## 5. Pontos que dependem de decisão
 
-- **Anonimato (C02):** se for adotado, a `PoliticaVisibilidade` (PP19) e o DTO (PP22) passam a esconder o autor, e talvez seja preciso separar o vínculo entre resposta e autor no banco. As interfaces de PP09 foram pensadas para essa mudança.
-- **Liberação no 360° e na autoavaliação (PV04):** muda só a `PoliticaVisibilidade`.
+- **Anonimato (C02, resolvido):** nas coletas recíprocas e no 360° (exceto o gestor direto), a `PoliticaVisibilidade` (PP19) e o DTO (PP22) escondem o autor; pode ser preciso separar o vínculo entre resposta e autor no banco. As interfaces de PP09 foram pensadas para essa mudança.
+- **Liberação (PV04, resolvida):** feita pelo gestor ou pelo RH em todas as modalidades; fica na `PoliticaVisibilidade`.
 - **Novas escalas ou modalidades:** entram como uma nova `Escala` (PP11) ou um novo `GeradorAvaliacoes` (PP12), sem alterar as classes existentes.
